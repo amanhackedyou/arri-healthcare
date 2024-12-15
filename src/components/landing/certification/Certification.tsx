@@ -2,7 +2,13 @@ import React from "react";
 import styles from "./certification.module.css";
 import Image from "next/image";
 import Images from "@/lib/assets";
-import { roboto } from "@/app/layout";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ["100", '300', '400', '500', '700', '900']
+})
+
 
 const Certification = () => {
   return (
