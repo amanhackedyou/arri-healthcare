@@ -17,7 +17,7 @@ const Hero = () => {
         <p>Get Quote Now</p>
       </div>
 
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <ImageSlider />
       </div>
 

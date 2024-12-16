@@ -8,6 +8,10 @@ const ServicesWeOffer = () => {
 
             <p className='mt-2 text-center'>We offer a range of services tailored to your needs. If you require something specific, please let us know, and we&#39;ll do our best to accommodate you.</p>
 
+            {/* <ul>
+                <li></li>
+            </ul> */}
+
         </section>
     )
 }
