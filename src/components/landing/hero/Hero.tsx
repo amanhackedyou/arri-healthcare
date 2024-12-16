@@ -11,11 +11,11 @@ const Hero = () => {
   return (
     <section className={styles.body}>
       <h1 className="font-breeSerif font-bold text-primary">Providing Compassionate Care in the comfort of your home.</h1>
-      <div className={`${styles.cta} bg-[#e6b400]`}>
+      <button className={`${styles.cta} bg-[#e6b400]- bg-gradient-to-l from-[#e6b400] to-[#c09601]`}>
         {/* <FaPhoneAlt /> */}
         {/* <p>+1 (419) 346-8826</p> */}
-        <p>Get Quote Now</p>
-      </div>
+        <p className="font-medium">Get a personalized quote</p>
+      </button>
 
       <div className="w-full overflow-hidden">
         <ImageSlider />

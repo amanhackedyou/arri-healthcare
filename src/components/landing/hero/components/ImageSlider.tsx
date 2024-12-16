@@ -27,7 +27,7 @@ export default function ImageSlider() {
 
 
 const ImageView: React.FC<ImageViewProps> = ({ src }) => {
-    return <div className="w-full h-56">
+    return <div className="w-full h-64">
         <img className="w-full h-full object-cover object-center" src={src} />
     </div>
 }
