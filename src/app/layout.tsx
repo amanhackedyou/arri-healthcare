@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
-import { Roboto, Bree_Serif } from "next/font/google";
+import { Roboto, Bree_Serif, Poppins } from "next/font/google";
 import "./globals.css";
 
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ["100", '300', '400', '500', '700', '900']
+})
+
+const breeSerif = Bree_Serif({
+  subsets: ['latin'],
+  // weight: ['400', '500', '700', '900']
+  weight: "400"
+})
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -26,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className}  ${bree.className} antialiased`}
+        className={`${roboto.className} ${breeSerif.className} ${bree.className} antialiased`}
       >
         {children}
       </body>

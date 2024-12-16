@@ -2,8 +2,8 @@
     @apply flex flex-col gap-4 px-4 py-3 items-center bg-white;
 }
 
-.body > h2 {
-    @apply text-2xl;
+.body>h2 {
+    @apply text-2xl font-breeSerif font-bold;
 }
 
 .reasons {
@@ -11,9 +11,9 @@
 }
 
 .reason {
-    @apply flex flex-col items-center justify-center gap-1 text-center py-2 px-2 shadow rounded w-[170px] h-[100px];
+    @apply flex flex-col items-center justify-center gap-1 text-center py-2 px-2 rounded w-[170px] h-[100px];
 }
 
-.reason > span {
+.reason>span {
     @apply text-[26px] text-primary;
 }

@@ -15,7 +15,8 @@ export default {
         secondary: "#2BCB69"
       },
       fontFamily: {
-        roboto: 'Roboto, sans-serif'
+        roboto: 'Roboto, sans-serif',
+        breeSerif: "bree serif"
       }
     },
   },
