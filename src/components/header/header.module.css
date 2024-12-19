@@ -1,5 +1,5 @@
 .body {
-  @apply px-4 py-2 flex items-center justify-between relative;
+  @apply px-4 py-2 flex items-center justify-between relative bg-white;
 }
 
 .logo {

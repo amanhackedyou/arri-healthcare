@@ -15,7 +15,7 @@ export default function ImageSlider() {
     const images = ["/assets/images/hero/slider/1.jpg", "/assets/images/hero/slider/2.jpeg", "/assets/images/hero/slider/3.jpg", "/assets/images/hero/slider/4.jpg", "/assets/images/hero/slider/5.png", "/assets/images/hero/slider/6.jpg", "/assets/images/hero/slider/7.jpg", "/assets/images/hero/slider/8.jpg"];
 
     return (
-        <Slider {...settings}>
+        <Slider className="bg-white" {...settings}>
             {
                 images.map((src, i) => {
                     return <ImageView key={i} src={src} />
@@ -27,7 +27,7 @@ export default function ImageSlider() {
 
 
 const ImageView: React.FC<ImageViewProps> = ({ src }) => {
-    return <div className="w-full h-64">
+    return <div className="w-full h-64 bg-white">
         <img className="w-full h-full object-cover object-center" src={src} />
     </div>
 }

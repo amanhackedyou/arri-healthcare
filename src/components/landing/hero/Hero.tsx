@@ -10,16 +10,17 @@ import ImageSlider from "./components/ImageSlider";
 const Hero = () => {
   return (
     <section className={styles.body}>
-      <h1 className="font-breeSerif font-bold text-primary">Providing Compassionate Care in the comfort of your home.</h1>
+      <div className="w-full overflow-hidden pt-6">
+        <ImageSlider />
+      </div>
+      {/* <h1 className="font-breeSerif font-bold text-primary">Providing Compassionate Care in the comfort of your home.</h1> */}
       <button className={`${styles.cta} bg-[#e6b400]- bg-gradient-to-l from-[#e6b400] to-[#c09601]`}>
         {/* <FaPhoneAlt /> */}
         {/* <p>+1 (419) 346-8826</p> */}
         <p className="font-medium">Get a personalized quote</p>
       </button>
 
-      <div className="w-full overflow-hidden">
-        <ImageSlider />
-      </div>
+
 
 
       {/* <div className={styles.images}>

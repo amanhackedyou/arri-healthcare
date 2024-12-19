@@ -25,7 +25,15 @@ export default WhyChooseUs
 
 const Reason = ({ icon, title }: { icon: React.ReactNode, title: string }) => {
   return (<div className={styles.reason}>
-    <span className='!text-4xl'>{icon}</span>
+    <div className='w-20 aspect-square relative z-10  text-white rounded-full'>
+      <div className='w-full h-full bg-[#096982] absolute z-10 flex items-center justify-center rounded-full'>
+        <span className='!text-4xl'>{icon}</span>
+      </div>
+
+      <div className='w-full h-full bg-[#fe8f01] absolute top-0 z-0 rounded-full translate-x-[3px] -translate-y-px'></div>
+      <div className='w-full h-full bg-[#6a0dad] absolute top-0 z-0 rounded-full -translate-x-[2px] -translate-y-1-'></div>
+
+    </div>
     <h6>{title}</h6>
   </div>)
 }
