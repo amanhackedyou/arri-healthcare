@@ -5,6 +5,7 @@ import WhyChooseUs from "@/components/landing/why-choose-us/WhyChooseUs";
 import ServiceWeOffer from "@/components/landing/services-we-offer/ServicesWeOffer";
 import OurCareModel from "@/components/landing/our-care-model/OurCareModel";
 import BringOwnCareGiver from "@/components/landing/bring-own-care-giver/BringOwnCareGiver";
+import GetPersonalizedQuote from "@/components/landing/get-personalized-quote/GetPersonalizedQuote";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ServiceWeOffer />
       <OurCareModel />
       <BringOwnCareGiver />
+      <GetPersonalizedQuote />
     </div>
   );
 }
