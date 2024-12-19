@@ -8,7 +8,10 @@ import { GiPeaceDove } from 'react-icons/gi';
 const WhyChooseUs = () => {
   return (
     <section className={styles.body}>
-      <h2>Why Arri Healthcare?</h2>
+      <div className='flex items-center gap-2 mb-2'>
+        <img className='h-5' src="/assets/images/logo_icon.svg" />
+        <h2 className='font-rubik'>Why Arri?</h2>
+      </div>
       <div className={styles.reasons}>
         <Reason icon={<FaHandHoldingHeart />} title="Compassionate Team" />
         <Reason icon={<FaHome />} title="Independence and Comfort" />
@@ -17,6 +20,8 @@ const WhyChooseUs = () => {
         <Reason icon={<HiClipboardDocumentList />} title="Tailored Care" />
         <Reason icon={<FaAward />} title="Skilled Carers" />
       </div>
+
+      <button className='px-4 py-2 bg-[#fe8f01] rounded-full font-medium'>Schedule a call</button>
     </section>
   )
 }

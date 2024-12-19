@@ -16,6 +16,7 @@ export default {
       },
       fontFamily: {
         roboto: 'Roboto, sans-serif',
+        rubik: 'Rubik, Roboto, sans-serif',
         breeSerif: "bree serif"
       }
     },

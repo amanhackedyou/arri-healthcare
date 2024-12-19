@@ -1,28 +1,34 @@
 import type { Metadata } from "next";
-import { Roboto, Bree_Serif, Poppins } from "next/font/google";
+import { Roboto, Bree_Serif, Poppins, Rubik } from "next/font/google";
 import "./globals.css";
 
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ["100", '300', '400', '500', '700', '900']
-})
+});
 
-const breeSerif = Bree_Serif({
-  subsets: ['latin'],
-  // weight: ['400', '500', '700', '900']
-  weight: "400"
-})
 
-const roboto = Roboto({
+const rubik = Rubik({
   subsets: ['latin'],
-  weight: ["100", '300', '400', '500', '700', '900']
-})
+  weight: ['300', '400', '500', '600', '700', '800', '900']
+});
 
-const bree = Bree_Serif({
-  subsets: ['latin'],
-  weight: ["400"]
-})
+// const breeSerif = Bree_Serif({
+//   subsets: ['latin'],
+//   // weight: ['400', '500', '700', '900']
+//   weight: "400"
+// })
+
+// const roboto = Roboto({
+//   subsets: ['latin'],
+//   weight: ["100", '300', '400', '500', '700', '900']
+// })
+
+// const bree = Bree_Serif({
+//   subsets: ['latin'],
+//   weight: ["400"]
+// })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} ${breeSerif.className} ${bree.className} antialiased`}
+        className={`${rubik.className} antialiased`}
       >
         {children}
       </body>

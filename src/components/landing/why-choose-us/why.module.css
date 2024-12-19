@@ -2,8 +2,8 @@
     @apply flex flex-col gap-4 px-4 py-3 items-center bg-white;
 }
 
-.body>h2 {
-    @apply text-2xl font-breeSerif font-bold;
+.body h2 {
+    @apply text-2xl font-rubik font-bold;
 }
 
 .reasons {
