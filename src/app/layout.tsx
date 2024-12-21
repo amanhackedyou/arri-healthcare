@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Bree_Serif, Poppins, Rubik } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer/Footer";
 
 
 const poppins = Poppins({
@@ -46,6 +47,7 @@ export default function RootLayout({
         className={`${rubik.className} antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

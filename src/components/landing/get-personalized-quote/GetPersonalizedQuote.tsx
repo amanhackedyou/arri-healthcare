@@ -9,8 +9,9 @@ const GetPersonalizedQuote = () => {
     const [lastName, setLastName] = useState<string>("");
     const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [email, setEmail] = useState<string>("");
-    const [hoursPerPay, setHoursPerPay] = useState<string>("");
-    const [daysPerWeek, setDaysPerWeek] = useState<string>("");
+    const [hoursAndDays, setHoursAndDays] = useState<string>("");
+    const [zipCode, setZipCode] = useState<string>("");
+    // const [daysPerWeek, setDaysPerWeek] = useState<string>("");
     const [selectedDropdownOptions, setSelectedDropdownOptions] = useState<string[]>([]);
 
     const handleChange = (value: string) => {
@@ -47,35 +48,46 @@ const GetPersonalizedQuote = () => {
                         type="radio"
                         name="option"
                         value="Seeking a caregiver job"
-                        checked={selectedOption === "Seeking a caregiver job"}
-                        onChange={() => handleChange("Seeking a caregiver job")}
+                        checked={selectedOption === "DSP/Caregiver"}
+                        onChange={() => handleChange("DSP/Caregiver")}
                         className="hidden peer"
                     />
                     <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-[#096982] flex items-center justify-center">
-                        {selectedOption === "Seeking a caregiver job" && (
+                        {selectedOption === "DSP/Caregiver" && (
                             <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                         )}
                     </div>
                     <span className="text-gray-700 font-medium">
-                        Seeking a caregiver job
+                        DSP/Caregiver
                     </span>
                 </label>
 
 
-                <DropDownView selectedOptions={selectedDropdownOptions} setSelectedOptions={setSelectedDropdownOptions} />
+
+                {
+                    selectedOption !== "DSP/Caregiver" &&
+                    <>
+
+                        <DropDownView selectedOptions={selectedDropdownOptions} setSelectedOptions={setSelectedDropdownOptions} />
+
+                        <InputField placeholder='First name' value={firstName} onChange={e => setFirstName(e.target.value)} />
+                        <InputField placeholder='Last name' value={lastName} onChange={e => setLastName(e.target.value)} />
+                        <InputField type='number' placeholder='Phone Number' value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
+                        <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
+                        <InputField type='text' placeholder='How many hours/days per week' value={hoursAndDays} onChange={e => setHoursAndDays(e.target.value)} />
+                        <InputField type='number' placeholder='Zip code' value={zipCode} onChange={e => setZipCode(e.target.value)} />
 
 
-
-                <InputField placeholder='First name' value={firstName} onChange={e => setFirstName(e.target.value)} />
-                <InputField placeholder='Last name' value={lastName} onChange={e => setLastName(e.target.value)} />
-                <InputField type='number' placeholder='Phone Number' value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
-                <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
-                <InputField type='number' placeholder='Howmany hours a day?' value={hoursPerPay} onChange={e => setHoursPerPay(e.target.value)} />
-                <InputField type='number' placeholder='Howmany days per week?' value={daysPerWeek} onChange={e => setDaysPerWeek(e.target.value)} />
-
+                    </>
+                }
                 <div className='flex justify-center mt-2'>
                     <button className='px-10 py-2 text-white rounded-full bg-[#096982]'>Sumit</button>
                 </div>
+
+
+
+
+
 
             </div>
         </section>

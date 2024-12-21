@@ -11,7 +11,12 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Hero />
+      <Hero imagesOriantation="portrait" imagesForSliding={[
+        "/assets/images/landing/slider/1.jpg",
+        "/assets/images/landing/slider/2.jpg",
+        "/assets/images/landing/slider/3.jpg",
+        "/assets/images/landing/slider/4.jpg",
+      ]} />
       <hr className="border-slate-400 border-t-[1px] mx-4" />
       <Certification />
       <WhyChooseUs />
