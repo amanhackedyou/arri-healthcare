@@ -1,5 +1,6 @@
 "use client";
 
+import InputField from '@/components/GLOBAL/InputField';
 import React, { ChangeEventHandler, useState } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
@@ -48,24 +49,24 @@ const GetPersonalizedQuote = () => {
                         type="radio"
                         name="option"
                         value="Seeking a caregiver job"
-                        checked={selectedOption === "DSP/Caregiver"}
-                        onChange={() => handleChange("DSP/Caregiver")}
+                        checked={selectedOption === "Seeking DSP/Caregiver job"}
+                        onChange={() => handleChange("Seeking DSP/Caregiver job")}
                         className="hidden peer"
                     />
                     <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-[#096982] flex items-center justify-center">
-                        {selectedOption === "DSP/Caregiver" && (
+                        {selectedOption === "Seeking DSP/Caregiver job" && (
                             <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                         )}
                     </div>
                     <span className="text-gray-700 font-medium">
-                        DSP/Caregiver
+                        Seeking DSP/Caregiver job
                     </span>
                 </label>
 
 
 
                 {
-                    selectedOption !== "DSP/Caregiver" &&
+                    selectedOption !== "Seeking DSP/Caregiver job" &&
                     <>
 
                         <DropDownView selectedOptions={selectedDropdownOptions} setSelectedOptions={setSelectedDropdownOptions} />
@@ -76,6 +77,7 @@ const GetPersonalizedQuote = () => {
                         <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
                         <InputField type='text' placeholder='How many hours/days per week' value={hoursAndDays} onChange={e => setHoursAndDays(e.target.value)} />
                         <InputField type='number' placeholder='Zip code' value={zipCode} onChange={e => setZipCode(e.target.value)} />
+
 
 
                     </>
@@ -95,12 +97,7 @@ const GetPersonalizedQuote = () => {
 }
 
 
-const InputField = ({ placeholder, type = "text", value, onChange }: { placeholder: string, type?: string, value: string, onChange: ChangeEventHandler<HTMLInputElement> }) => {
-    return <div className='flex flex-col'>
-        <label className='text-[#777] text-sm'>{placeholder} <b className='text-[#fe8f01]'>*</b></label>
-        <input className='px-3 py-2 outline-none border rounded-md focus:border-[#096982]' type={type} value={value} onChange={onChange} />
-    </div>
-}
+
 
 const DropDownView = ({ selectedOptions, setSelectedOptions }: { selectedOptions: string[], setSelectedOptions: Function }) => {
     const [isOpened, setIsOpened] = useState<boolean>(false);

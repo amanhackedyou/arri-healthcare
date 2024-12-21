@@ -52,7 +52,7 @@ const Header = () => {
             <Link href="#">Training</Link>
           </li>
           <li>
-            <Link href="#">Contact</Link>
+            <Link href="/contact_us">Contact</Link>
           </li>
           <li>
             <Link href="#">Resources</Link>
