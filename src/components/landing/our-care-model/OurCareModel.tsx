@@ -3,7 +3,7 @@ import styles from './our-care-model.module.css';
 
 const OurCareModel = () => {
     return (
-        <section className='bg-white px-4 py-4'>
+        <section className='bg-white px-4 py-4 pt-6'>
             <div className='flex items-center gap-2 mb-2 justify-center'>
                 <img className='h-5' src="/assets/images/logo_icon.svg" />
                 <h2 className='font-rubik text-xl font-bold'>Our care model</h2>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const MapView = ({ hasInternalPadding = false }: { hasInternalPadding?: boolean }) => {
     return (
-        <section className={`w-full  h-80 ${hasInternalPadding ? 'px-4' : ''}`}>
+        <section className={`w-full mt-6 h-80 ${hasInternalPadding ? 'px-4' : ''}`}>
             <div className='rounded overflow-hidden h-full'>
                 <iframe
                     style={{ border: '0', width: '100%', height: '100%' }}

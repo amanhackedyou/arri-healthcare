@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
         <Reason icon={<FaAward />} title="Skilled Carers" />
       </div>
 
-      <button className='px-4 py-2 bg-[#fe8f01] rounded-full font-medium'>Schedule a call</button>
+      <button className='px-6 py-3 mt-2 bg-[#fe8f01] rounded-full font-medium'>Schedule a call</button>
     </section>
   )
 }

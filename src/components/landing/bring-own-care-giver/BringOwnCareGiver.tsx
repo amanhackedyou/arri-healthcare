@@ -2,7 +2,7 @@ import React from 'react'
 
 const BringOwnCareGiver = () => {
     return (
-        <section className='bg-white py-2'>
+        <section className='bg-white py-2 pt-6'>
             <h3 className='text-lg font-medium px-4'>Bring your own care giver</h3>
             <div className='relative w-full overflow-hidden mt-1'>
                 <img className='rounded w-full' src="/assets/images/bring-own-care-giver/img1.jpg" alt="Bring yoour own care giver." />

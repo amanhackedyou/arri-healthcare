@@ -21,7 +21,7 @@ const GetPersonalizedQuote = () => {
     };
 
     return (
-        <section className='bg-white px-4 py-2 pt-4'>
+        <section className='bg-[#f1fdff] px-4 py-2 pt-6'>
             <h2 className='font-rubik text-lg font-bold text-center'>Get a personalized Quote</h2>
 
             <div className='flex flex-col gap-2 mt-2'>
@@ -149,7 +149,7 @@ const DropDownView = ({ selectedOptions, setSelectedOptions }: { selectedOptions
     }} onMouseLeave={e => {
         setIsOpened(false);
 
-    }} className='flex MAIN_CONTAINER w-full items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
+    }} className='flex MAIN_CONTAINER bg-white w-full items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
         <span className='text-xl text-gray-700 pointer-events-none'>
             {
                 isOpened ? <IoIosArrowUp /> :
