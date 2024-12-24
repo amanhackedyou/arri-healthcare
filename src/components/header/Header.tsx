@@ -7,9 +7,13 @@ import Images from "@/lib/assets";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
 import { FaPhoneAlt } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+
+  let pathname = usePathname();
 
   return (
     <header className={styles.body}>
@@ -58,26 +62,26 @@ const Header = () => {
 
 
         <ul>
-          <li className="opened">
+          <li className={pathname === "/" ? styles.opened : ''}>
             <Link href="/">Home</Link>
           </li>
-          <li>
+          <li className={pathname === "/aboutus" ? styles.opened : ''}>
             <Link href="/aboutus">About Us</Link>
           </li>
-          <li>
-            <Link href="#">Services</Link>
+          <li className={pathname === "/services" ? styles.opened : ''}>
+            <Link href="/services">Services</Link>
           </li>
-          <li>
-            <Link href="#">Training</Link>
+          <li className={pathname === "/training" ? styles.opened : ''}>
+            <Link href="/training">Training</Link>
           </li>
-          <li>
+          <li className={pathname === "/contact_us" ? styles.opened : ''}>
             <Link href="/contact_us">Contact</Link>
           </li>
-          <li>
-            <Link href="#">Resources</Link>
+          <li className={pathname === "/resources" ? styles.opened : ''}>
+            <Link href="/resources">Resources</Link>
           </li>
-          <li>
-            <Link href="#">Career</Link>
+          <li className={pathname === "/career" ? styles.opened : ''}>
+            <Link href="/career">Career</Link>
           </li>
         </ul>
       </nav>
