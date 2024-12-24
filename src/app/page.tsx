@@ -6,10 +6,11 @@ import ServiceWeOffer from "@/components/landing/services-we-offer/ServicesWeOff
 import OurCareModel from "@/components/landing/our-care-model/OurCareModel";
 import BringOwnCareGiver from "@/components/landing/bring-own-care-giver/BringOwnCareGiver";
 import GetPersonalizedQuote from "@/components/landing/get-personalized-quote/GetPersonalizedQuote";
+import MapView from "@/components/GLOBAL/MapView";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-hidden-">
       <Header />
       <Hero imagesOriantation="portrait" imagesForSliding={[
         "/assets/images/landing/slider/1.jpg",
@@ -24,6 +25,8 @@ export default function Home() {
       <OurCareModel />
       <BringOwnCareGiver />
       <GetPersonalizedQuote />
+
+      <MapView hasInternalPadding />
     </div>
   );
 }

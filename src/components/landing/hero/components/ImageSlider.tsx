@@ -22,7 +22,7 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
 
     return (
         <section className="w-full overflow-hidden- relative">
-            <div className="w-full h-full text-white z-10 flex flex-col items-center justify-center absolute top-0 left-0 bg-[#00000080] pointer-events-none">
+            {oriantation === "portrait" && <div className="w-full h-full text-white z-10 flex flex-col items-center justify-center absolute top-0 left-0 bg-[#00000080] pointer-events-none">
                 <h2 style={{
                     // textShadow: '0px 0px 10px rgba(255, 255, 255, 0.5)'
                     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
@@ -40,7 +40,7 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
 
                     </div>
                 </div>
-            </div>
+            </div>}
             <Slider className="bg-white" {...settings}>
                 {
                     images.map((src, i) => {
