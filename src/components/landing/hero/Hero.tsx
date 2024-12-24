@@ -13,15 +13,13 @@ const defaultImages = ["/assets/images/slider/1.jpg", "/assets/images/slider/2.j
 const Hero = ({ imagesForSliding = defaultImages, imagesOriantation = "landscape" }: { imagesForSliding?: string[], imagesOriantation?: string }) => {
   return (
     <section className={styles.body}>
-      <div className="w-full overflow-hidden pt-6">
+      <div className="w-full overflow-hidden- py-6">
         <ImageSlider oriantation={imagesOriantation} images={imagesForSliding} />
       </div>
       {/* <h1 className="font-breeSerif font-bold text-primary">Providing Compassionate Care in the comfort of your home.</h1> */}
-      <button className={`${styles.cta} bg-[#e6b400]- bg-gradient-to-l from-[#e6b400] to-[#c09601]`}>
-        {/* <FaPhoneAlt /> */}
-        {/* <p>+1 (419) 346-8826</p> */}
+      {/* <button className={`${styles.cta} bg-[#e6b400]- bg-gradient-to-l from-[#e6b400] to-[#c09601]`}>
         <p className="font-medium">Get a personalized quote</p>
-      </button>
+      </button> */}
 
 
 

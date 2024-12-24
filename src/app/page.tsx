@@ -17,7 +17,7 @@ export default function Home() {
         "/assets/images/landing/slider/3.jpg",
         "/assets/images/landing/slider/4.jpg",
       ]} />
-      <hr className="border-slate-400 border-t-[1px] mx-4" />
+      {/* <hr className="border-slate-400 border-t-[1px] mx-4" /> */}
       <Certification />
       <WhyChooseUs />
       <ServiceWeOffer />

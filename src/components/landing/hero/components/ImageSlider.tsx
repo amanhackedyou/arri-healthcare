@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import styles from '../hero.module.css'
 
 export default function ImageSlider({ images, oriantation }: { images: string[], oriantation: string }) {
     let settings = {
@@ -20,13 +21,34 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
 
 
     return (
-        <Slider className="bg-white" {...settings}>
-            {
-                images.map((src, i) => {
-                    return <ImageView key={i} src={src} />
-                })
-            }
-        </Slider>
+        <section className="w-full overflow-hidden- relative">
+            <div className="w-full h-full text-white z-10 flex flex-col items-center justify-center absolute top-0 left-0 bg-[#00000080] pointer-events-none">
+                <h2 style={{
+                    // textShadow: '0px 0px 10px rgba(255, 255, 255, 0.5)'
+                    filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
+                }} className=" font-extrabold text-4xl text-center leading-[55px]">The Care <br /> You Deserve,<br /><span className="font-medium">Right in<br />Your Home.</span></h2>
+
+                <div className="w-[80%] gap-3 flex flex-col items-center shadow-md py-4 bg-white rounded-lg absolute -bottom-[10%] z-20">
+                    <button className={`${styles.cta} bg-[#e6b400]- bg-gradient-to-l from-[#e6b400] to-[#c09601]`}>
+                        <p className="font-medium leading-none">Get a personalized quote</p>
+                    </button>
+
+
+                    <div className="flex items-center gap-2">
+                        <span className="text-black leading-none">or</span>
+                        <p className="text-black font-semibold- text-lg underline leading-none">DSP/Caregiver jobs</p>
+
+                    </div>
+                </div>
+            </div>
+            <Slider className="bg-white" {...settings}>
+                {
+                    images.map((src, i) => {
+                        return <ImageView key={i} src={src} />
+                    })
+                }
+            </Slider>
+        </section>
     );
 }
 
