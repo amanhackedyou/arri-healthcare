@@ -55,8 +55,10 @@ const Header = () => {
             rounded
           />
         </div>
+
+
         <ul>
-          <li>
+          <li className="opened">
             <Link href="/">Home</Link>
           </li>
           <li>

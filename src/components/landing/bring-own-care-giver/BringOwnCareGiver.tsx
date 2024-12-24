@@ -2,8 +2,8 @@ import React from 'react'
 
 const BringOwnCareGiver = () => {
     return (
-        <section className='bg-white py-2 pt-6'>
-            <h3 className='text-lg font-medium px-4'>Bring your own care giver</h3>
+        <section className='bg-white pt-6'>
+            <h3 className='text-xl font-semibold text-center mb-2 px-4'>Bring your own care giver</h3>
             <div className='relative w-full overflow-hidden mt-1'>
                 <img className='rounded w-full' src="/assets/images/bring-own-care-giver/img1.jpg" alt="Bring yoour own care giver." />
                 <div className='w-full flex justify-start px-2 overflow-hidden h-full z-10 bg-gradient-to-l text-black  from-[#00000000] via-[#00000000]- to-[#ffffffbb]  absolute top-0 left-0'>
