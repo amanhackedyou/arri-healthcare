@@ -3,6 +3,7 @@ import styles from "./certification.module.css";
 import Image from "next/image";
 import Images from "@/lib/assets";
 import { Roboto } from "next/font/google";
+import Heading from "@/components/GLOBAL/Heading";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -27,10 +28,12 @@ const Certification = () => {
 
       {/* <h2>Who We Are</h2> */}
 
-      <div className='flex items-center gap-2'>
+      {/* <div className='flex items-center gap-2'>
         <img className='h-5' src="/assets/images/logo_icon.svg" />
         <h2 className='font-rubik leading-none'>Who We Are?</h2>
-      </div>
+      </div> */}
+
+      <Heading text="Who We Are?" />
 
       <div className="flex flex-col relative w-full px-4-  ">
         <p className='text-sm z-10 text-center absolute px-8 top-[20%] text-balance'>

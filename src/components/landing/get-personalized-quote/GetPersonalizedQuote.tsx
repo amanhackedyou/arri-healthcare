@@ -1,5 +1,6 @@
 "use client";
 
+import Heading from '@/components/GLOBAL/Heading';
 import InputField from '@/components/GLOBAL/InputField';
 import React, { ChangeEventHandler, useState } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -21,8 +22,9 @@ const GetPersonalizedQuote = () => {
     };
 
     return (
-        <section className='bg-[#f1fdff]- bg-transparent px-4 py-2 pt-6'>
-            <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2>
+        <section className='bg-[#f1fdff]- bg-transparent px-4 py-3'>
+            {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
+            <Heading text='Get a personalized Quote' />
 
             <div className='flex flex-col gap-2 mt-2'>
                 <label className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">

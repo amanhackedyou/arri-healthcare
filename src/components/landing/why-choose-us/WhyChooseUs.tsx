@@ -4,14 +4,20 @@ import { FaHandHoldingHeart, FaHandshakeSimple, FaHeadset } from 'react-icons/fa
 import { FaAward, FaHome } from 'react-icons/fa';
 import { HiClipboardDocumentList } from 'react-icons/hi2';
 import { GiPeaceDove } from 'react-icons/gi';
+import Heading from '@/components/GLOBAL/Heading';
 
 const WhyChooseUs = () => {
   return (
     <section className={styles.body}>
-      <div className='flex items-center gap-2 mb-2'>
+      {/* <div className='flex items-center gap-2 mb-2'>
         <img className='h-5' src="/assets/images/logo_icon.svg" />
         <h2 className='font-rubik'>Why Arri?</h2>
-      </div>
+      </div> */}
+
+
+      <Heading text="Why Arri?" />
+
+
       <div className={styles.reasons}>
         <Reason icon={<FaHandHoldingHeart />} title="Compassionate Team" />
         <Reason icon={<FaHome />} title="Independence and Comfort" />

@@ -1,5 +1,5 @@
 .body {
-    @apply flex flex-col items-center w-full py-2 pt-6 bg-white;
+    @apply flex flex-col items-center w-full py-3 bg-white;
 }
 
 .body h2 {
