@@ -33,7 +33,7 @@ const ContactUs = () => {
                     <InputField type='number' placeholder='Phone' value={phone} onChange={e => setPhone(e.target.value)} />
                     <div className='flex flex-col gap-1'>
                         <label className='text-[#777]- text-black text-sm'>Message/Question <b className='text-[#fe8f01]'>*</b></label>
-                        <textarea placeholder='' className=' px-3 py-2 outline-none border rounded-md focus:border-[#096982]'></textarea>
+                        <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder='' className=' px-3 py-2 outline-none border rounded-md focus:border-[#096982]'></textarea>
                     </div>
 
                     <div className='flex justify-center mt-2'>
