@@ -69,7 +69,7 @@ const Header = () => {
             <Link href="/aboutus">About Us</Link>
           </li>
           <li className={pathname === "/services" ? styles.opened : ''}>
-            <Link href="/services">Services</Link>
+            <Link onClick={e => setMenuOpen(false)} href="/#services-we-offer">Services</Link>
           </li>
           <li className={pathname === "/training" ? styles.opened : ''}>
             <Link href="/training">Training</Link>

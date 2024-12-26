@@ -23,7 +23,7 @@ const AboutUs = () => {
                 <div className='flex flex-col gap-3'>
                     <h2 className={styles.heading}>MISSION STATEMENT</h2>
                     <p className=''>
-                        Our mission is to provide community-based services that support person-centered to improve the quelity of life for individuals as families.
+                        Our mission is to provide community-based services that support person-centered to improve the quality of life for individuals as families.
                     </p>
                 </div>
 

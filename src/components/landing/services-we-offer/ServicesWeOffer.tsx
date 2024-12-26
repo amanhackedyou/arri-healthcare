@@ -3,7 +3,7 @@ import React from 'react'
 
 const ServicesWeOffer = () => {
     return (
-        <section className='px-4 bg-transparent font-rubik flex flex-col py-2 items-center gap-2'>
+        <section id='services-we-offer' className='px-4 bg-transparent font-rubik flex flex-col py-2 items-center gap-2'>
             {/* <h2 className='text-2xl text-center font-breeSerif font-bold'>Services we offer</h2>
             <hr className="border-slate-400 border-t-[1px] mt-4 mx-4" /> */}
 
