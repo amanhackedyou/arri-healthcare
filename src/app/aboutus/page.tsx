@@ -2,20 +2,21 @@ import Header from '@/components/header/Header'
 import React from 'react'
 import styles from './styles.module.css';
 import Hero from '@/components/landing/hero/Hero';
+import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 
 const AboutUs = () => {
     return (
         <>
             <Header />
-            <Hero />
+            <HeroSectionWithTitle title='About Us' />
             <hr className="border-slate-400 border-t-[1px] mx-4" />
 
             <div className={styles.body}>
 
                 <div className='flex flex-col gap-4 mt-4'>
-                    <h2 className={styles.heading}>About Us</h2>
+                    <h2 className={styles.heading}>We We Are</h2>
                     <p className=''>
-                        <b className='font-semibold'>At Arri Healthcare, we are more than caregivers -</b> we are companions, advocates, and extended family. As a licensed non-medical home health company, we specialize in providing compassionate support to individuals with developmental disabilities, elderly clients, and those with unique medical needs. Every client is treated with the utmost dignity, respect, and warmth, ensuring their needs are met with kindness and tailored care. Our mission is to create a safe, nurturing environment where every individual feels valued, loved, and empowered to thrive. At Arri Healthcare, your well-being is our heart&#39;s work.
+                        <span className=''>At Arri Healthcare, we are more than caregivers -</span> we are companions, advocates, and extended family. As a licensed non-medical home health company, we specialize in providing compassionate support to individuals with developmental disabilities, elderly clients, and those with unique medical needs. Every client is treated with the utmost dignity, respect, and warmth, ensuring their needs are met with kindness and tailored care. Our mission is to create a safe, nurturing environment where every individual feels valued, loved, and empowered to thrive. At Arri Healthcare, your well-being is our heart&#39;s work.
                     </p>
                 </div>
 

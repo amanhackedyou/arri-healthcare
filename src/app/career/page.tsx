@@ -57,7 +57,7 @@ const Career = () => {
 
 
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-sm'>Upload your resume</label>
+                        <label className='text-[#777]- text-black text-sm'>Upload your resume <b className='text-[#fe8f01]'>*</b></label>
                         <input type='file' />
                     </div>
 
@@ -87,7 +87,7 @@ const OptionalField = ({ label, isYes, setOption }: { label: string, isYes: bool
     }
 
     return <div className='flex flex-col gap-1'>
-        <label className='text-[#777]- text-black text-sm'>{label} <b className='text-[#fe8f01]'>*</b></label>
+        <label className='text-[#777]- text-black text-lg'>{label} <b className='text-[#fe8f01]'>*</b></label>
 
         <div className='flex flex-col'>
             <OptionButton optionText='Yes' isSelected={isYes} onClick={() => setOption(true)} />
