@@ -13,7 +13,7 @@ const defaultImages = ["/assets/images/slider/1.jpg", "/assets/images/slider/2.j
 const Hero = ({ imagesForSliding = defaultImages, imagesOriantation = "landscape" }: { imagesForSliding?: string[], imagesOriantation?: string }) => {
   return (
     <section className={`${styles.body} ${imagesOriantation == "portrait" ? "pb-16" : 'pb-0'}`}>
-      <div className="w-full overflow-hidden- py-2">
+      <div className="w-full overflow-hidden-">
         <ImageSlider oriantation={imagesOriantation} images={imagesForSliding} />
       </div>
 

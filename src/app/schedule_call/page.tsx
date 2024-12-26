@@ -5,6 +5,7 @@ import Hero from '@/components/landing/hero/Hero'
 import styles from './page.module.css';
 import React, { useEffect, useState } from 'react'
 import InputField from '@/components/GLOBAL/InputField';
+import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 
 const ScheduleACall = () => {
     const date = new Date();
@@ -58,10 +59,8 @@ const ScheduleACall = () => {
             {/* <hr className="border-slate-400 border-t-[1px] mx-4" /> */}
 
             <div className='flex flex-col'>
-                <section className='flex flex-col items-center- bg-primary py-5'>
-                    <Hero />
-                    <h1 className='text-white font-semibold text-3xl uppercase tracking-widest text-center'>Schedule A Call</h1>
-                </section>
+
+                <HeroSectionWithTitle title='Schedule A Call' />
 
                 <form className={`py-4 flex flex-col gap-2 ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
                     <p className='text-lg'>Please fill out the form to set an appointment and we will do our best to contact you on your preferred date and time.</p>
