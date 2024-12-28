@@ -8,11 +8,11 @@
 
 .nav {
   --bar-height: calc(100vh - (2 * 4px));
-  @apply fixed top-[4px] h-[var(--bar-height)] rounded-md pt-5 pr-3 w-[70vw] flex flex-col items-end gap-3 bg-white z-40 isolate transition-all duration-200;
+  @apply fixed top-0 h-full right-0 w-full flex flex-col items-end gap-3 bg-[#00000080] z-40 isolate transition-all duration-200;
 }
 
 .nav.open {
-  @apply right-[4px];
+  @apply right-0;
 }
 
 .nav.closed {
@@ -23,15 +23,21 @@
   @apply flex items-center justify-between w-full pl-5;
 }
 
-.nav>ul {
-  @apply flex flex-col items-end w-full gap-3 pl-5 pr-2 py-2;
+.container {
+  @apply bg-white w-[70vw] h-full  pt-5 pr-3 flex flex-col gap-5;
 }
 
-.nav>ul>li {
+.nav ul {
+  @apply flex flex-col items-end gap-3 pl-5 pr-2 py-2;
+}
+
+
+
+.nav ul li {
   @apply text-lg flex w-full rounded-xl border;
 }
 
-.nav>ul>li>a {
+.nav ul li a {
   @apply px-4 py-2;
 }
 

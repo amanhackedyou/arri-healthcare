@@ -34,7 +34,7 @@ const Career = () => {
 
             <div className='flex flex-col gap-2'>
                 <form className={`py-4 flex flex-col gap-5 scroll-smooth ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
-                    <p className='text-lg mb-4'>At Arri Healthcare We are always looking for talented and compassionate Direct Support Professionals and Caregivers.<br />Please submit your resume to be considered for one of our open positions.</p>
+                    <p className='text-lg mb-4'>At Arri Healthcare we are always looking for talented and compassionate Direct Support Professionals and Caregivers.<br />Please submit your resume to be considered for one of our open positions.</p>
 
                     <InputField placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} />
                     <InputField placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} />
@@ -46,7 +46,7 @@ const Career = () => {
                     <OptionalField label="Are you allowed to work in the US and can provided a document to prove this?" isYes={hasUSADocument} setOption={setHasUSADocument} />
                     <OptionalField label="Do you have a high school diploma?" isYes={hasHighSchoolDiploma} setOption={setHasHighSchoolDiploma} />
                     {/* <OptionalField required={false} label="List any related certifications" isYes={hasCertifications} setOption={setHasCertifications} /> */}
-                    <OptionalField label="Do you have a reliable means of transportation for this job?" isYes={hasReliableTransportation} setOption={setHasReliableTransportation} />
+                    <OptionalField label="Do you have a reliable means of transportation with active insurance for this job?" isYes={hasReliableTransportation} setOption={setHasReliableTransportation} />
                     <OptionalField label="Do you agree to undergo a background check for the position you are applying to?" isYes={isAgreedForBackgroundCheck} setOption={setIsAgreedForBackgroundCheck} />
                     <OptionalField label="Do you understand that you may be required to take a 4 -hour training course for this position?" isYes={agreeForTrainingCourse} setOption={setAgreeForTrainingCourse} />
 
