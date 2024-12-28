@@ -37,13 +37,13 @@ const ContactUs = () => {
                     </div>
 
                     <div className='flex justify-center mt-2'>
-                        <button className='px-10 py-2 text-white rounded-full bg-[#096982]'>Sumit</button>
+                        <button className='px-10 py-2 text-white rounded-full bg-primaryBlue'>Sumit</button>
                     </div>
                 </form>
 
                 <div className='flex flex-col gap-10 mt-4'>
                     <div className='flex flex-col gap-1'>
-                        <div className='flex items-center gap-2 text-[#096982] font-semibold'>
+                        <div className='flex items-center gap-2 text-primaryBlue font-semibold'>
                             <FaPhoneAlt className='text-lg' />
                             <span className='text-lg'>Contact Us</span>
                         </div>
@@ -55,7 +55,7 @@ const ContactUs = () => {
                     </div>
 
                     <div className='flex flex-col gap-1'>
-                        <div className='flex items-center gap-2 text-[#096982] font-semibold'>
+                        <div className='flex items-center gap-2 text-primaryBlue font-semibold'>
                             <IoMail className='text-2xl' />
                             <span className='text-lg'>Email Us</span>
                         </div>
@@ -67,7 +67,7 @@ const ContactUs = () => {
                     </div>
 
                     <div className='flex flex-col gap-1'>
-                        <div className='flex items-center gap-2 text-[#096982] font-semibold'>
+                        <div className='flex items-center gap-2 text-primaryBlue font-semibold'>
                             <GoHomeFill className='text-2xl' />
                             <span className='text-lg'>Visit Us</span>
                         </div>

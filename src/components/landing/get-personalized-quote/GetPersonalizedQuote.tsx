@@ -36,7 +36,7 @@ const GetPersonalizedQuote = () => {
                         onChange={() => handleChange("Seeking a caregiver")}
                         className="hidden peer"
                     />
-                    <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-[#096982] flex items-center justify-center">
+                    <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-primaryBlue flex items-center justify-center">
                         {selectedOption === "Seeking a caregiver" && (
                             <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                         )}
@@ -55,7 +55,7 @@ const GetPersonalizedQuote = () => {
                         onChange={() => handleChange("Seeking DSP/Caregiver job")}
                         className="hidden peer"
                     />
-                    <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-[#096982] flex items-center justify-center">
+                    <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-primaryBlue flex items-center justify-center">
                         {selectedOption === "Seeking DSP/Caregiver job" && (
                             <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                         )}
@@ -85,7 +85,7 @@ const GetPersonalizedQuote = () => {
                     </>
                 }
                 <div className='flex justify-center mt-2'>
-                    <button className='px-10 py-2 text-white rounded-full bg-[#096982]'>Sumit</button>
+                    <button className='px-10 py-2 text-white rounded-full bg-primaryBlue'>Sumit</button>
                 </div>
 
 
@@ -130,7 +130,7 @@ const DropDownView = ({ selectedOptions, setSelectedOptions }: { selectedOptions
         }} className={`w-full py-3 px-4 ${index != 0 ? 'border-t' : ''} flex gap-4 items-center active:bg-[#e5e5e5] transition-all`}>
 
             <div className={`min-w-[20px] min-h-[20px] rounded-full border border-[#777] flex items-center justify-center`}>
-                <div className={`w-[50%] aspect-square bg-[#096982] transition-all rounded-full ${isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
+                <div className={`w-[50%] aspect-square bg-primaryBlue transition-all rounded-full ${isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
             </div>
 
             <span className='text-left'>

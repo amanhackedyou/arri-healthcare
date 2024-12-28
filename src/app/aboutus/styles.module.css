@@ -3,7 +3,7 @@
 }
 
 .heading {
-    @apply text-2xl text-[#096982];
+    @apply text-2xl text-primaryBlue;
 }
 
 

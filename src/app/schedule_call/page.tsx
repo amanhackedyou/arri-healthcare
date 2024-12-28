@@ -84,7 +84,7 @@ const ScheduleACall = () => {
 
 
                     <div className='flex justify-center mt-2'>
-                        <button type='submit' className='px-10 py-2 text-white select-none rounded-full bg-[#096982] active:bg-[#0f5a6d]'>Sumit</button>
+                        <button type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button>
                     </div>
                 </form>
             </div>
@@ -102,7 +102,7 @@ const ContactOptionsView = ({ currentSelectedOption, setOptions }: { currentSele
         return <button className='flex items-center p-3 justify-between border-b rounded active:bg-[#e5e5e5]' onClick={e => setOptions(optionText)}>
             <span className='text-lg leading-loose'>{optionText}</span>
             <div className={`min-w-[20px] min-h-[20px] rounded-full border border-[#777] flex items-center justify-center`}>
-                <div className={`w-[50%] aspect-square bg-[#096982] transition-all rounded-full ${isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
+                <div className={`w-[50%] aspect-square bg-primaryBlue transition-all rounded-full ${isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
             </div>
         </button>
     }
