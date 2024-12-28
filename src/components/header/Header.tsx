@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
 import Images from "@/lib/assets";
@@ -15,11 +15,16 @@ const Header = () => {
 
   let pathname = usePathname();
 
-  if (menuOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
+
+
+
 
   return (
     <header className={styles.body}>
