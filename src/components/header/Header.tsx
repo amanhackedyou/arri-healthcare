@@ -15,6 +15,12 @@ const Header = () => {
 
   let pathname = usePathname();
 
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
   return (
     <header className={styles.body}>
       {/* <Image

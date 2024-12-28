@@ -8,7 +8,7 @@
 
 .nav {
   --bar-height: calc(100vh - (2 * 4px));
-  @apply fixed top-0 h-full right-0 w-full flex flex-col items-end gap-3 bg-[#00000080] z-40 isolate transition-all duration-200;
+  @apply fixed top-0 h-full right-0 w-full flex flex-col items-end gap-3 bg-[#000000dd] z-40 isolate transition-all duration-200;
 }
 
 .nav.open {
