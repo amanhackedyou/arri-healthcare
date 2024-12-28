@@ -15,6 +15,7 @@ const Career = () => {
     const [city, setCity] = useState<string>("");
     const [howSoonAvailable, setHowSoonAvailable] = useState<string>("");
     const [howHourlyPayExpectation, setHourlyPayExpectation] = useState<string>("");
+    const [certifications, setCertifications] = useState<string>("");
     const [resume, setResume] = useState<File>();
     const [hasDrivingLicense, setHasDrivingLicense] = useState<boolean | null>(null);
     const [hasUSADocument, setHasUSADocument] = useState<boolean | null>(null);
@@ -29,6 +30,8 @@ const Career = () => {
         <>
             <Header />
             <HeroSectionWithTitle title='Careers at Arri' />
+
+
             <div className='flex flex-col gap-2'>
                 <form className={`py-4 flex flex-col gap-5 scroll-smooth ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
                     <p className='text-lg mb-4'>At Arri Healthcare We are always looking for talented and compassionate Direct Support Professionals and Caregivers.<br />Please submit your resume to be considered for one of our open positions.</p>
@@ -42,11 +45,17 @@ const Career = () => {
                     <OptionalField label="Do you have a valid driver's license?" isYes={hasDrivingLicense} setOption={setHasDrivingLicense} />
                     <OptionalField label="Are you allowed to work in the US and can provided a document to prove this?" isYes={hasUSADocument} setOption={setHasUSADocument} />
                     <OptionalField label="Do you have a high school diploma?" isYes={hasHighSchoolDiploma} setOption={setHasHighSchoolDiploma} />
+                    {/* <OptionalField required={false} label="List any related certifications" isYes={hasCertifications} setOption={setHasCertifications} /> */}
                     <OptionalField label="Do you have a reliable means of transportation for this job?" isYes={hasReliableTransportation} setOption={setHasReliableTransportation} />
                     <OptionalField label="Do you agree to undergo a background check for the position you are applying to?" isYes={isAgreedForBackgroundCheck} setOption={setIsAgreedForBackgroundCheck} />
                     <OptionalField label="Do you understand that you may be required to take a 4 -hour training course for this position?" isYes={agreeForTrainingCourse} setOption={setAgreeForTrainingCourse} />
 
+
+
+                    <InputField required={false} placeholder='List any related certifications' value={certifications} onChange={e => setCertifications(e.target.value)} />
                     <InputField placeholder='How soon are you available to start work?' value={howSoonAvailable} onChange={e => setHowSoonAvailable(e.target.value)} />
+
+                    {/* <div className='bg-[#e5e5e5] h-[0.1px]'></div> */}
                     <InputField placeholder='Howmuch is your expected hourly pay?' value={howHourlyPayExpectation} onChange={e => setHourlyPayExpectation(e.target.value)} />
 
                     {/* <OptionalField label="Do you Have a resume?" isYes={hasResume} setOption={setHasResume} /> */}
@@ -75,7 +84,7 @@ const Career = () => {
 }
 
 
-const OptionalField = ({ label, isYes, setOption }: { label: string, isYes: boolean | null, setOption: Function }) => {
+const OptionalField = ({ label, isYes, setOption, required = true }: { label: string, isYes: boolean | null, required?: boolean, setOption: Function }) => {
 
     const OptionButton = ({ optionText, isSelected, onClick }: { optionText: string, onClick: Function, isSelected: boolean | null }) => {
         return <button type='button' className='flex items-center p-3 justify-between border-b rounded active:bg-[#e5e5e5]' onClick={e => onClick()}>
@@ -87,7 +96,7 @@ const OptionalField = ({ label, isYes, setOption }: { label: string, isYes: bool
     }
 
     return <div className='flex flex-col gap-1'>
-        <label className='text-[#777]- text-black text-lg'>{label} <b className='text-[#fe8f01]'>*</b></label>
+        <label className='text-[#777]- text-black text-lg'>{label} {required && <b className='text-[#fe8f01]'>*</b>}</label>
 
         <div className='flex flex-col'>
             <OptionButton optionText='Yes' isSelected={isYes} onClick={() => setOption(true)} />
