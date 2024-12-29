@@ -6,6 +6,7 @@ import styles from './page.module.css';
 import React, { useEffect, useState } from 'react'
 import InputField from '@/components/GLOBAL/InputField';
 import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
+import Link from 'next/link';
 
 const ScheduleACall = () => {
     const date = new Date();
@@ -72,20 +73,23 @@ const ScheduleACall = () => {
                     <InputField type='number' placeholder='Zip' value={zip} onChange={e => setZip(e.target.value)} />
 
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-sm'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
+                        <label className='text-[#777]- text-black text-lg'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
                         <ContactOptionsView currentSelectedOption={selectedContactOption} setOptions={setSelectedContactOption} />
                     </div>
-                    <InputField min={minimumDate} type='date' placeholder='Preferred date' value={preferredDate} onChange={e => setPreferredDate(e.target.value)} />
-                    <InputField min={minimumTime} type='time' placeholder='Preferred time' value={preferredTime} onChange={e => setPreferredTime(e.target.value)} />
+                    <InputField min={minimumDate} type='date' placeholder='Best day to contact you' value={preferredDate} onChange={e => setPreferredDate(e.target.value)} />
+                    <InputField min={minimumTime} type='time' placeholder='Best time to contact you' value={preferredTime} onChange={e => setPreferredTime(e.target.value)} />
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-sm'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
-                        <textarea value={comment} onChange={e => setComment(e.target.value)} placeholder='' className=' px-3 py-2 outline-none border rounded-md focus:border-[#096982]'></textarea>
+                        <label className='text-[#777]- text-black text-lg'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
+                        <textarea value={comment} onChange={e => setComment(e.target.value)} placeholder='' className='  px-3 py-3 w-full outline-none shadow focus:shodow-md border rounded-2xl focus:border-[#096982]'></textarea>
                     </div>
 
 
-                    <div className='flex justify-center mt-2'>
-                        <button type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button>
+                    <div className='flex flex-col items-center mt-2'>
+                        <button type='submit' className='px-10 py-2 text-white font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
+                        <Link className='text-lg underline text-primaryBlue' href="/contact_us">Leave a message instead</Link>
                     </div>
+
+
                 </form>
             </div>
         </>

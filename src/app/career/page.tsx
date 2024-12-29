@@ -6,6 +6,7 @@ import styles from './styles.module.css';
 import React, { useState } from 'react'
 import InputField from '@/components/GLOBAL/InputField';
 import AgreementCheckButton from '@/components/GLOBAL/AgreementCheckButton';
+import Link from 'next/link';
 
 const Career = () => {
     const [firstName, setFirstName] = useState<string>("");
@@ -75,6 +76,8 @@ const Career = () => {
                     <div className='flex justify-center mt-2'>
                         <button type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button>
                     </div>
+
+
 
 
                 </form>
