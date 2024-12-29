@@ -15,7 +15,8 @@ export default {
         primary: "#1A79CB",
         secondary: "#2BCB69",
         primaryBlue: "#096982",
-        primaryYellow: "#fe8f01"
+        primaryYellow: "#fe8f01",
+        primaryBg: "#f5f5f5"
       },
       fontFamily: {
         roboto: 'Roboto, sans-serif',

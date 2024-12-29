@@ -39,7 +39,7 @@ const ContactUs = () => {
                         <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder='' className=' px-3 py-3 w-full outline-none shadow focus:shodow-md border rounded-2xl focus:border-[#096982]'></textarea>
                     </div>
 
-                    <div className='flex flex-col items-center mt-2'>
+                    <div className='flex flex-col items-center mt-4'>
                         <button type='submit' className='px-10 py-2 text-white font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
                         <Link className='text-lg underline text-primaryBlue' href="/schedule_call">Schedule a call instead</Link>
                     </div>

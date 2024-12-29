@@ -5,7 +5,7 @@ import styles from "./header.module.css";
 import Image from "next/image";
 import Images from "@/lib/assets";
 import Link from "next/link";
-import Hamburger from "hamburger-react";
+// import Hamburger from "hamburger-react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 
@@ -72,12 +72,15 @@ const Header = () => {
               className={styles.icon}
               alt="Arri Healthcare"
             />
-            <Hamburger
+            {/* <Hamburger
               toggled={menuOpen}
               toggle={setMenuOpen}
               size={38}
               rounded
-            />
+            /> */}
+
+            <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+
           </div>
 
 
@@ -98,18 +101,36 @@ const Header = () => {
               <Link href="/contact_us">Contact</Link>
             </li>
             <li className={pathname === "/resources" ? styles.opened : ''}>
-              <Link href="/resources">Resources</Link>
+              <Link href="/resources">Wellness Resources</Link>
             </li>
             <li className={pathname === "/career" ? styles.opened : ''}>
-              <Link href="/career">Career</Link>
+              <Link href="/career">Careers</Link>
             </li>
           </ul>
         </div>
       </nav>
 
-      <Hamburger toggled={menuOpen} toggle={setMenuOpen} size={38} rounded />
+      <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
     </header>
   );
 };
+
+
+
+const Hamburger = ({ toggled, toggle }: { toggled: boolean, toggle: Function }) => {
+  const Line = ({ width = 100, index }: { width?: number, index: number }) => {
+    return <div style={{
+      width: width + "%"
+    }} className={`h-[0.4rem] transition-all duration-200 ${toggled ? 'bg-[#0d92b4]' : 'bg-primaryBlue'} ${toggled && index == 2 ? 'opacity-0' : ''} ${toggled && index == 1 ? '!w-full rotate-45 translate-y-2' : ''}  ${toggled && index == 3 ? '!w-full -rotate-45 -translate-y-[0.83rem]' : ''} rounded-full`}></div>
+  }
+
+  return <button onClick={e => toggle(!toggled)} className="w-11 items-end h-7 flex flex-col justify-between">
+    {toggle && <>
+      <Line index={1} width={80} />
+      <Line index={2} />
+      <Line index={3} width={70} />
+    </>}
+  </button>
+}
 
 export default Header;

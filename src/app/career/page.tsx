@@ -44,7 +44,7 @@ const Career = () => {
                     <InputField type='number' placeholder='Zip' value={zip} onChange={e => setZip(e.target.value)} />
 
                     <OptionalField label="Do you have a valid driver's license?" isYes={hasDrivingLicense} setOption={setHasDrivingLicense} />
-                    <OptionalField label="Are you allowed to work in the US and can provided a document to prove this?" isYes={hasUSADocument} setOption={setHasUSADocument} />
+                    <OptionalField label="Are you allowed to work in the US and can provide a document to prove this?" isYes={hasUSADocument} setOption={setHasUSADocument} />
                     <OptionalField label="Do you have a high school diploma?" isYes={hasHighSchoolDiploma} setOption={setHasHighSchoolDiploma} />
                     {/* <OptionalField required={false} label="List any related certifications" isYes={hasCertifications} setOption={setHasCertifications} /> */}
                     <OptionalField label="Do you have a reliable means of transportation with active insurance for this job?" isYes={hasReliableTransportation} setOption={setHasReliableTransportation} />

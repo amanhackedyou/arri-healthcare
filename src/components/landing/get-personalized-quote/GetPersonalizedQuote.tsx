@@ -84,7 +84,7 @@ const GetPersonalizedQuote = () => {
 
                     </>
                 }
-                <div className='flex justify-center mt-2'>
+                <div className='flex justify-center mt-8'>
                     <button className='px-10 py-2 text-white rounded-full font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
                 </div>
 

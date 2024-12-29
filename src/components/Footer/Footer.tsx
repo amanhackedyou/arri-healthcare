@@ -47,8 +47,8 @@ const Footer = () => {
 
 
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages to visit</h2>
-                        <nav className="list-none mb-10">
+                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-base mb-3">Pages to visit</h2>
+                        <nav className="list-none mb-10 text-lg flex flex-col gap-2">
                             <li>
                                 <Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link>
                             </li>
@@ -59,11 +59,11 @@ const Footer = () => {
                                 <Link href="/training" className="text-gray-600 hover:text-gray-800">Training</Link>
                             </li>
                             <li>
-                                <Link href="/resources" className="text-gray-600 hover:text-gray-800">Resources</Link>
+                                <Link href="/resources" className="text-gray-600 hover:text-gray-800">Wellness Resources</Link>
                             </li>
 
                             <li>
-                                <Link href="/career" className="text-gray-600 hover:text-gray-800">Career</Link>
+                                <Link href="/career" className="text-gray-600 hover:text-gray-800">Careers</Link>
                             </li>
 
                             <li>
@@ -77,7 +77,7 @@ const Footer = () => {
                     </div>
 
 
-                    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+                    {/* <div className="lg:w-1/4 md:w-1/2 w-full px-4">
                         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Guidlines</h2>
                         <nav className="list-none mb-10">
                             <li>
@@ -87,7 +87,7 @@ const Footer = () => {
                                 <a className="text-gray-600 hover:text-gray-800">Privacy Policy</a>
                             </li>
                         </nav>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

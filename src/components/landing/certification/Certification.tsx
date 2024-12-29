@@ -33,7 +33,7 @@ const Certification = () => {
         <h2 className='font-rubik leading-none'>Who We Are?</h2>
       </div> */}
 
-      <Heading text="Who We Are?" />
+      <Heading text="Who We Are" />
 
       <div className="flex flex-col relative w-full px-4-  ">
         <p className='text-sm z-10 text-center absolute px-8 top-[20%] text-balance'>

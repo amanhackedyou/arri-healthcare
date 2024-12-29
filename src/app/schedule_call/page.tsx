@@ -73,7 +73,7 @@ const ScheduleACall = () => {
                     <InputField type='number' placeholder='Zip' value={zip} onChange={e => setZip(e.target.value)} />
 
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-lg'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
+                        <label className='text-[#777]- text-black text-lg'> Best way to contact you <b className='text-[#fe8f01]'>*</b></label>
                         <ContactOptionsView currentSelectedOption={selectedContactOption} setOptions={setSelectedContactOption} />
                     </div>
                     <InputField min={minimumDate} type='date' placeholder='Best day to contact you' value={preferredDate} onChange={e => setPreferredDate(e.target.value)} />
@@ -84,7 +84,7 @@ const ScheduleACall = () => {
                     </div>
 
 
-                    <div className='flex flex-col items-center mt-2'>
+                    <div className='flex flex-col items-center mt-4'>
                         <button type='submit' className='px-10 py-2 text-white font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
                         <Link className='text-lg underline text-primaryBlue' href="/contact_us">Leave a message instead</Link>
                     </div>
@@ -98,7 +98,7 @@ const ScheduleACall = () => {
 
 
 const ContactOptionsView = ({ currentSelectedOption, setOptions }: { currentSelectedOption: string, setOptions: Function }) => {
-    const OPTIONS = ["Phone", "Email"];
+    const OPTIONS = ["Phone", "Email", "Text"];
 
 
 

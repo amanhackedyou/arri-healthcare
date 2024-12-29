@@ -4,11 +4,13 @@ import Heading from '@/components/GLOBAL/Heading';
 
 const OurCareModel = () => {
     return (
-        <section className='bg-white px-4- py-3'>
+        <section className='bg-white px-4- py-3- relative'>
             {/* <div className='flex items-center gap-2 mb-2 justify-center'>
                 <img className='h-5' src="/assets/images/logo_icon.svg" />
                 <h2 className='font-rubik text-xl font-bold'>Our care model</h2>
             </div> */}
+
+            <div className='bg-primaryBg h-6 w-full top-0 left-0 rounded-b-[100%]'></div>
 
             <div className='px-4'>
                 <Heading text='Our care model' />
