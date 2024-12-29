@@ -12,11 +12,11 @@
 }
 
 .nav.open {
-  @apply right-0;
+  @apply left-0;
 }
 
 .nav.closed {
-  @apply right-[-999px];
+  @apply left-full;
 }
 
 .bar {
@@ -24,7 +24,7 @@
 }
 
 .container {
-  @apply bg-white w-[70vw] h-full  pt-5 pr-3 flex flex-col gap-5;
+  @apply bg-white w-[70vw] h-full pt-5 pr-3 flex flex-col gap-5;
 }
 
 .nav ul {
@@ -34,7 +34,7 @@
 
 
 .nav ul li {
-  @apply text-lg flex w-full rounded-xl border;
+  @apply text-lg flex w-full rounded-xl border border-primaryBlue;
 }
 
 .nav ul li a {
@@ -42,5 +42,5 @@
 }
 
 li.opened {
-  @apply bg-primary text-white font-medium;
+  @apply bg-primaryBlue text-white font-medium;
 }

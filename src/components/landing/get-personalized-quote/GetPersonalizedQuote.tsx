@@ -24,7 +24,7 @@ const GetPersonalizedQuote = () => {
     return (
         <section className='bg-[#f1fdff]- bg-transparent px-4 py-3'>
             {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
-            <Heading text='Get a personalized Quote' />
+            <Heading text='Get a Personalized Quote' />
 
             <div className='flex flex-col gap-2 mt-2'>
                 <label className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
@@ -85,7 +85,7 @@ const GetPersonalizedQuote = () => {
                     </>
                 }
                 <div className='flex justify-center mt-2'>
-                    <button className='px-10 py-2 text-white rounded-full bg-primaryBlue'>Sumit</button>
+                    <button className='px-10 py-2 text-white rounded-full font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
                 </div>
 
 

@@ -10,6 +10,7 @@ import { MdEmail, MdOutlineEmail, MdOutlineMailOutline } from 'react-icons/md';
 import { GoHomeFill } from 'react-icons/go';
 import { IoMail } from 'react-icons/io5';
 import MapView from '@/components/GLOBAL/MapView';
+import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 
 const ContactUs = () => {
     const [fullName, setFullName] = useState("");
@@ -22,18 +23,19 @@ const ContactUs = () => {
     return (
         <>
             <Header />
-            <Hero />
+            <HeroSectionWithTitle title='Contact Us' />
             <hr className="border-slate-400 border-t-[1px] mx-4" />
 
             <div className={styles.body}>
                 <form className='flex flex-col gap-2' onSubmit={e => e.preventDefault()}>
+                    <p className='text-lg mb-4'>Do you have a question about our services? Please feel free to contact us at <b className='font-semibold'>+1 (419) 346-8826</b> or fill out the form below.</p>
                     <InputField placeholder='Full name' value={fullName} onChange={e => setFullName(e.target.value)} />
                     <InputField placeholder='Address' value={address} onChange={e => setAddress(e.target.value)} />
                     <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
                     <InputField type='number' placeholder='Phone' value={phone} onChange={e => setPhone(e.target.value)} />
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-sm'>Message/Question <b className='text-[#fe8f01]'>*</b></label>
-                        <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder='' className=' px-3 py-2 outline-none border rounded-md focus:border-[#096982]'></textarea>
+                        <label className='text-[#777]- text-black text-lg'>Message/Question <b className='text-[#fe8f01]'>*</b></label>
+                        <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder='' className=' px-3 py-3 w-full outline-none shadow focus:shodow-md border rounded-2xl focus:border-[#096982]'></textarea>
                     </div>
 
                     <div className='flex justify-center mt-2'>
