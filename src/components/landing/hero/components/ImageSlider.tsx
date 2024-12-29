@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import styles from '../hero.module.css'
+import Link from "next/link";
 
 export default function ImageSlider({ images, oriantation }: { images: string[], oriantation: string }) {
     let settings = {
@@ -29,15 +30,18 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
                 }} className=" font-extrabold text-4xl text-center leading-[55px]">The Care <br /> You Deserve,<br /><span className="font-medium">Right in<br />Your Home.</span></h2>
 
                 <div className="w-[80%] gap-3 flex flex-col items-center shadow-md py-4 bg-white rounded-lg absolute -bottom-[10%] z-20">
-                    <button className={`${styles.cta} bg-[#e6b400]- bg-gradient-to-l from-[#e6b400] to-[#c09601]`}>
-                        <p className="font-medium leading-none">Get a personalized quote</p>
-                    </button>
+                    <Link onClick={e => {
+                        document.getElementById("get_personalized_quote_seeking_caregiver_button")?.click()
+                    }} href="/#get-personalized-quote" className={`${styles.cta} pointer-events-auto bg-[#e6b400]- bg-gradient-to-l from-[#e6b400] to-[#c09601]`}>
+                        <span className="font-medium leading-none">Get a personalized quote</span>
+                    </Link>
 
 
                     <div className="flex items-center gap-2">
                         <span className="text-black leading-none">or</span>
-                        <p className="text-black font-semibold- text-lg underline leading-none">DSP/Caregiver jobs</p>
-
+                        <Link href="/#get-personalized-quote" onClick={e => {
+                            document.getElementById("get_personalized_quote_seeking_dsp_caregiver_job_button")?.click()
+                        }} className="text-black pointer-events-auto font-semibold- text-lg underline leading-none">DSP/Caregiver jobs</Link>
                     </div>
                 </div>
             </div>}

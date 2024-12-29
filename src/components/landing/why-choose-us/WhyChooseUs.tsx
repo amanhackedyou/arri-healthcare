@@ -5,6 +5,7 @@ import { FaAward, FaHome } from 'react-icons/fa';
 import { HiClipboardDocumentList } from 'react-icons/hi2';
 import { GiPeaceDove } from 'react-icons/gi';
 import Heading from '@/components/GLOBAL/Heading';
+import Link from 'next/link';
 
 const WhyChooseUs = () => {
   return (
@@ -27,7 +28,7 @@ const WhyChooseUs = () => {
         <Reason icon={<FaAward />} title="Skilled Carers" />
       </div>
 
-      <button className='px-6 py-3 mt-2 bg-[#fe8f01] rounded-full font-medium'>Schedule a call</button>
+      <Link href="/schedule_call" className='px-6 py-3 mt-2 bg-[#fe8f01] rounded-full font-medium'>Schedule a call</Link>
     </section>
   )
 }

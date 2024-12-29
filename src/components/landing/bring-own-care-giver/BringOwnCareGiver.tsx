@@ -1,9 +1,10 @@
 import Heading from '@/components/GLOBAL/Heading'
+import Link from 'next/link'
 import React from 'react'
 
 const BringOwnCareGiver = () => {
     return (
-        <section className='bg-white'>
+        <section id='get-personalized-quote' className='bg-white'>
             {/* <h3 className='text-xl font-semibold text-center mb-2 px-4'>Bring your own care giver</h3> */}
             <Heading text='Bring your own care giver' />
 
@@ -18,7 +19,7 @@ const BringOwnCareGiver = () => {
                         <p className=' text-[12px] mt-1 text-center font-semibold'>Bring them with you...</p>
                         <p className=' text-[12px] mt-3 text-center w-full font-medium italic'>We Want to keep the caregiver you love on your team. Now they can get paid while they care for you.</p>
                         <div className='flex justify-center w-full mt-2'>
-                            <button className='text-sm px-3 py-3 leading-none bg-[#FE8F01] w-fit rounded-full font-medium'>Contact Us</button>
+                            <Link href="/contact_us" className='text-sm px-3 py-3 leading-none bg-[#FE8F01] w-fit rounded-full font-medium'>Contact Us</Link>
                         </div>
                     </div>
                 </div>

@@ -50,27 +50,27 @@ const Footer = () => {
                         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages to visit</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Home</a>
+                                <Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Services</a>
+                                <Link href="/#services-we-offer" className="text-gray-600 hover:text-gray-800">Services</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Training</a>
+                                <Link href="/training" className="text-gray-600 hover:text-gray-800">Training</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Resources</a>
-                            </li>
-
-                            <li>
-                                <a className="text-gray-600 hover:text-gray-800">Career</a>
+                                <Link href="/resources" className="text-gray-600 hover:text-gray-800">Resources</Link>
                             </li>
 
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">About Us</a>
+                                <Link href="/career" className="text-gray-600 hover:text-gray-800">Career</Link>
+                            </li>
+
+                            <li>
+                                <Link href="/aboutus" className="text-gray-600 hover:text-gray-800">About Us</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Contact Us</a>
+                                <Link href="/contact_us" className="text-gray-600 hover:text-gray-800">Contact Us</Link>
                             </li>
 
                         </nav>

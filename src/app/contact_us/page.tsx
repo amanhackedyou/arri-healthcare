@@ -83,8 +83,8 @@ const ContactUs = () => {
 
                 </div>
 
-                <MapView />
             </div>
+            <MapView />
         </>
     )
 }

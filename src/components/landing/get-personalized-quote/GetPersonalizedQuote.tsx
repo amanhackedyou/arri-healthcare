@@ -27,7 +27,7 @@ const GetPersonalizedQuote = () => {
             <Heading text='Get a Personalized Quote' />
 
             <div className='flex flex-col gap-2 mt-2'>
-                <label className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
+                <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
                     <input
                         type="radio"
                         name="option"
@@ -46,7 +46,7 @@ const GetPersonalizedQuote = () => {
                     </span>
                 </label>
 
-                <label className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
+                <label id='get_personalized_quote_seeking_dsp_caregiver_job_button' className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
                     <input
                         type="radio"
                         name="option"

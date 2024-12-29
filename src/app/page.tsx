@@ -26,7 +26,7 @@ export default function Home() {
       <BringOwnCareGiver />
       <GetPersonalizedQuote />
 
-      <MapView hasInternalPadding />
+      <MapView />
     </div>
   );
 }
