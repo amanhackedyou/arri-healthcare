@@ -21,21 +21,21 @@ const AboutUs = () => {
                 </div>
 
                 <div className='flex flex-col gap-3'>
-                    <h2 className={styles.heading}>MISSION STATEMENT</h2>
+                    <h2 className={styles.heading}>Mission Statement</h2>
                     <p className=''>
                         Our mission is to provide community-based services that support person-centered to improve the quality of life for individuals as families.
                     </p>
                 </div>
 
                 <div className='flex flex-col gap-3'>
-                    <h2 className={styles.heading}>VISION STATEMENT</h2>
+                    <h2 className={styles.heading}>Vision Statement</h2>
                     <p className=''>
                         We envision to create a  comfortable enviroment and ensure health needs to gain higher awareness, well-being, creativity and joy.
                     </p>
                 </div>
 
                 <div className='flex flex-col gap-3'>
-                    <h2 className={styles.heading}>OUR VALUES</h2>
+                    <h2 className={styles.heading}>Our Values</h2>
                     {/* <p className=''>
                         We envision to create a  comfortable enviroment and ensure health needs to gain higher awareness, well-being, creativity and joy.
                     </p> */}

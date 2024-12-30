@@ -6,7 +6,11 @@
 }
 
 .heading {
-    @apply text-2xl text-primaryBlue font-bold uppercase;
+    @apply text-3xl text-primaryBlue font-bold ;
+}
+
+.body p, .body span{
+    @apply text-xl;
 }
 
 
