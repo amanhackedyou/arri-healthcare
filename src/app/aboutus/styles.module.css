@@ -3,7 +3,7 @@
 }
 
 .heading {
-    @apply text-2xl text-primaryBlue font-semibold uppercase;
+    @apply text-2xl text-primaryBlue font-bold uppercase;
 }
 
 
