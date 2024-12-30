@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+
 .body{
+    font-family: "Assistant", serif;
     @apply px-4 py-2 pb-4 bg-white flex flex-col gap-8 text-lg;
 }
 
