@@ -107,7 +107,14 @@ const Header = () => {
               <Link href="/career">Careers</Link>
             </li>
           </ul>
+
+
+          <div className="flex mt-2 ml-3 items-center justify-center">
+            <a href="tel:+12404139953" className="font-semibold text-2xl text-primaryBlue">+1 (240) 413-9953</a>
+          </div>
+
         </div>
+
       </nav>
 
       <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
@@ -121,7 +128,7 @@ const Hamburger = ({ toggled, toggle }: { toggled: boolean, toggle: Function }) 
   const Line = ({ width = 100, index }: { width?: number, index: number }) => {
     return <div style={{
       width: width + "%"
-    }} className={`h-[0.4rem] transition-all duration-200 ${toggled ? 'bg-[#0d92b4]' : 'bg-primaryBlue'} ${toggled && index == 2 ? 'opacity-0' : ''} ${toggled && index == 1 ? '!w-full rotate-45 translate-y-2' : ''}  ${toggled && index == 3 ? '!w-full -rotate-45 -translate-y-[0.83rem]' : ''} rounded-full`}></div>
+    }} className={`h-[0.3rem] transition-all duration-200 ${toggled ? 'bg-[#0d92b4]' : 'bg-primaryBlue'} ${toggled && index == 2 ? 'opacity-0' : ''} ${toggled && index == 1 ? '!w-full rotate-45 translate-y-[0.63rem]' : ''}  ${toggled && index == 3 ? '!w-full -rotate-45 -translate-y-[0.83rem]' : ''} rounded-full`}></div>
   }
 
   return <button onClick={e => toggle(!toggled)} className="w-11 items-end h-7 flex flex-col justify-between">

@@ -8,12 +8,16 @@
   --foreground: #171717;
 }
 
+html {
+  font-family: "Nunito" !important;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-rubik);
+  /* font-family: "Nunito"; */
 }
 
 .text-shadow-lg {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

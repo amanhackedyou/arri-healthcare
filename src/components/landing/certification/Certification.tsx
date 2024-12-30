@@ -5,11 +5,6 @@ import Images from "@/lib/assets";
 import { Roboto } from "next/font/google";
 import Heading from "@/components/GLOBAL/Heading";
 
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ["100", '300', '400', '500', '700', '900']
-})
-
 
 const Certification = () => {
   return (

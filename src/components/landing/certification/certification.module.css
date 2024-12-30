@@ -3,7 +3,7 @@
 }
 
 .body h2 {
-    @apply text-left text-2xl font-semibold font-rubik;
+    @apply text-left text-2xl font-semibold;
 }
 
 .ohio {

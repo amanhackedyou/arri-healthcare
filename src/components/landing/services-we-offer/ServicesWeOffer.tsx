@@ -3,7 +3,7 @@ import React from 'react'
 
 const ServicesWeOffer = () => {
     return (
-        <section id='services-we-offer' className='px-4 bg-transparent font-rubik flex flex-col py-2 items-center gap-2'>
+        <section id='services-we-offer' className='px-4 bg-transparent flex flex-col py-2 items-center gap-2'>
             {/* <h2 className='text-2xl text-center font-breeSerif font-bold'>Services we offer</h2>
             <hr className="border-slate-400 border-t-[1px] mt-4 mx-4" /> */}
 
@@ -15,7 +15,7 @@ const ServicesWeOffer = () => {
 
             </div> */}
 
-            <Heading text="Services we offer" />
+            <Heading text="Services We Offer" />
 
 
             {/* <ServiceCard title='Out-of-home Services' dotColor='#fe8f01' list={["Transportation: We provide reliable and friendly transportation to ensure you or your loved ones reach appointments, events, or visits safely and comfortably.", "Shopping: Whether it's groceries or essentials, we'll accompany you or your loved ones to make shopping stress-free and enjoyable.", "Errands: Let us assist with errands, ensuring tasks are completed efficiently while keeping your preferences a priority.", "Outings: We accompany you or your loved ones on outings, helping create moments of joy and fostering meaningful connections."]} /> */}

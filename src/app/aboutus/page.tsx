@@ -15,7 +15,7 @@ const AboutUs = () => {
 
                 <div className='flex flex-col gap-4 mt-4'>
                     <h2 className={styles.heading}>Who We Are</h2>
-                    <p className=''>
+                    <p className='font-normal'>
                         <span className=''>At Arri Healthcare, we are more than caregivers -</span> we are companions, advocates, and extended family. As a licensed non-medical home health company, we specialize in providing compassionate support to individuals with developmental disabilities, elderly clients, and those with unique medical needs. Every client is treated with the utmost dignity, respect, and warmth, ensuring their needs are met with kindness and tailored care. Our mission is to create a safe, nurturing environment where every individual feels valued, loved, and empowered to thrive. At Arri Healthcare, your well-being is our heart&#39;s work.
                     </p>
                 </div>

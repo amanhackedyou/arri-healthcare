@@ -13,7 +13,7 @@ const OurCareModel = () => {
             <div className='bg-primaryBg h-6 w-full top-0 left-0 rounded-b-[100%]'></div>
 
             <div className='px-4'>
-                <Heading text='Our care model' />
+                <Heading text='Our Care Model' />
             </div>
 
 

@@ -6,7 +6,7 @@ const BringOwnCareGiver = () => {
     return (
         <section id='get-personalized-quote' className='bg-white'>
             {/* <h3 className='text-xl font-semibold text-center mb-2 px-4'>Bring your own care giver</h3> */}
-            <Heading text='Bring your own care giver' />
+            <Heading text='Choose Your Caregiver' />
 
             <div className='relative w-full overflow-hidden mt-1'>
                 <img className='rounded w-full' src="/assets/images/bring-own-care-giver/img1.jpg" alt="Bring yoour own care giver." />
