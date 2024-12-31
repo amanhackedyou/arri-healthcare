@@ -31,8 +31,8 @@ const Certification = () => {
       <Heading text="Who We Are" />
 
       <div className="flex flex-col relative w-full px-4-  ">
-        <p className='text-sm z-10 text-center absolute px-8 top-[20%] text-balance'>
-          <b className='font-semibold'>At Arri Healthcare, We Serve with Compassion</b><br />We provide dedicated support to individuals with developmental disabilities, seniors, and those with unique health needs. As a licensed non-medical home health company, we ensure every client is treated with dignity, respect, and tailored care. Our mission is to create a nurturing environment where everyone feels valued, loved, and empowered to thrive. At Arri Healthcare, your well-being is our purpose.
+        <p className='text-[0.9rem] z-10 text-center absolute px-8 top-[20%] text-balance font-medium'>
+          <b className='font-bold'>At Arri Healthcare, We Serve with Compassion</b><br />We provide dedicated support to individuals with developmental disabilities, seniors, and those with unique health needs. As a licensed non-medical home health company, we ensure every client is treated with dignity, respect, and tailored care. Our mission is to create a nurturing environment where everyone feels valued, loved, and empowered to thrive. At Arri Healthcare, your well-being is our purpose.
         </p>
         <img className="" src={Images.ohioMap} alt="Ohio Map" />
         {/* <Image className="absolute" width={300}
