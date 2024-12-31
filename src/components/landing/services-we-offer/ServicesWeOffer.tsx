@@ -101,12 +101,12 @@ const ServicesWeOffer = () => {
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, services, dotColor, thumbnailScr }) => {
     const ListItem = ({ service }: { service: Service }) => {
         // 8594
-        return <div className='flex items-start gap-3'>
+        return <div className={`flex items-start  gap-3 ${title === "Out-of-home Services" ? "text-xl" : "text-lg"}`}>
             {/* <div style={{ background: dotColor }} className='min-w-[5px] mt-[0.55rem] aspect-square rounded-full'></div> */}
             <span style={{
                 color: dotColor
             }} className="">&#62;&#62;</span>
-            <p className='font-light'><b className='font-semibold'>{service.title}</b>: {service.description}</p>
+            <p className='font-normal'><b className='font-semibold'>{service.title}</b>: {service.description}</p>
         </div>
     }
 
