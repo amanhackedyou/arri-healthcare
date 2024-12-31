@@ -22,12 +22,12 @@ const GetPersonalizedQuote = () => {
     };
 
     return (
-        <section className='bg-[#f1fdff]- bg-transparent px-4 py-3'>
+        <section className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3'>
             {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
             <Heading text='Get a Personalized Quote' />
 
             <div className='flex flex-col gap-2 mt-2'>
-                <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
+                <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] font-medium focus-within:ring-offset-2">
                     <input
                         type="radio"
                         name="option"
@@ -41,7 +41,7 @@ const GetPersonalizedQuote = () => {
                             <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                         )}
                     </div>
-                    <span className="text-blac font-medium">
+                    <span className="text-black font-medium">
                         Seeking a caregiver
                     </span>
                 </label>
@@ -85,7 +85,7 @@ const GetPersonalizedQuote = () => {
                     </>
                 }
                 <div className='flex justify-center mt-8'>
-                    <button className='px-10 py-2 text-white rounded-full font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
+                    <button className='px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
                 </div>
 
 
