@@ -28,7 +28,7 @@ const WhyChooseUs = () => {
         <Reason icon={<FaAward />} title="Skilled Carers" />
       </div>
 
-      <Link href="/schedule_call" className='px-6 py-3 mt-2 bg-[#fe8f01] rounded-full font-medium'>Schedule a call</Link>
+      <Link href="/schedule_call" className='px-6 py-3 mt-2 bg-[#fe8f01] rounded-full text-lg font-semibold'>Schedule a call</Link>
     </section>
   )
 }
@@ -46,6 +46,6 @@ const Reason = ({ icon, title }: { icon: React.ReactNode, title: string }) => {
       <div className='min-w-full min-h-full bg-[#6a0dad] absolute top-0 z-0 rounded-full -translate-x-[2px] -translate-y-1-'></div>
 
     </div>
-    <h6>{title}</h6>
+    <h6 className='text-lg leading-none'>{title}</h6>
   </div>)
 }

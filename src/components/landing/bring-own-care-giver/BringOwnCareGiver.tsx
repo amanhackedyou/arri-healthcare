@@ -15,11 +15,11 @@ const BringOwnCareGiver = () => {
                         <div className='flex justify-center w-full'>
                             <img className='w-4' src="/assets/images/logo_icon.svg" alt="Logo icon" />
                         </div>
-                        <p className=' text-[14px] font-medium leading-none mt-2 text-center'>Chosen your caregiver??</p>
-                        <p className=' text-[12px] mt-1 text-center font-semibold'>Bring them with you...</p>
-                        <p className=' text-[12px] mt-3 text-center w-full font-medium italic'>We Want to keep the caregiver you love on your team. Now they can get paid while they care for you.</p>
+                        <p className=' text-[16px] font-semibold leading-none mt-2 text-center'>Chosen your caregiver??</p>
+                        <p className=' text-[14px] mt-1 text-center font-semibold'>Bring them with you...</p>
+                        <p className=' text-[14px] mt-3 text-center w-full font-medium italic'>We Want to keep the caregiver you love on your team. Now they can get paid while they care for you.</p>
                         <div className='flex justify-center w-full mt-2'>
-                            <Link href="/contact_us" className='text-sm px-3 py-3 leading-none bg-[#FE8F01] w-fit rounded-full font-medium'>Contact Us</Link>
+                            <Link href="/contact_us" className='text-sm px-3 py-3 leading-none bg-[#FE8F01] w-fit rounded-full font-semibold'>Contact Us</Link>
                         </div>
                     </div>
                 </div>
