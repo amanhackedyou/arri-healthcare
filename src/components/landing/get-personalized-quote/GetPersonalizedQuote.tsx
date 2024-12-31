@@ -27,7 +27,7 @@ const GetPersonalizedQuote = () => {
             <Heading text='Get a Personalized Quote' />
 
             <div className='flex flex-col gap-2 mt-2'>
-                <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
+                <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
                     <input
                         type="radio"
                         name="option"
@@ -41,12 +41,12 @@ const GetPersonalizedQuote = () => {
                             <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                         )}
                     </div>
-                    <span className="text-gray-700 font-medium">
+                    <span className="text-blac font-medium">
                         Seeking a caregiver
                     </span>
                 </label>
 
-                <label id='get_personalized_quote_seeking_dsp_caregiver_job_button' className="cursor-pointer flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
+                <label id='get_personalized_quote_seeking_dsp_caregiver_job_button' className="cursor-pointer text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
                     <input
                         type="radio"
                         name="option"
@@ -60,7 +60,7 @@ const GetPersonalizedQuote = () => {
                             <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                         )}
                     </div>
-                    <span className="text-gray-700 font-medium">
+                    <span className="text-black font-medium">
                         Seeking DSP/Caregiver job
                     </span>
                 </label>
@@ -151,15 +151,15 @@ const DropDownView = ({ selectedOptions, setSelectedOptions }: { selectedOptions
     }} onMouseLeave={e => {
         setIsOpened(false);
 
-    }} className='flex MAIN_CONTAINER bg-white w-full items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
-        <span className='text-xl text-gray-700 pointer-events-none'>
+    }} className='flex MAIN_CONTAINER bg-white w-full text-lg items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
+        <span className='text-xl text-black pointer-events-none'>
             {
                 isOpened ? <IoIosArrowUp /> :
                     <IoIosArrowDown />
             }
         </span>
 
-        <span className='text-gray-700 font-medium pointer-events-none'>Select the Services You Need</span>
+        <span className='font-medium pointer-events-none'>Select the Services You Need</span>
 
         <div className={`w-full flex-col max-h-[50vh] overflow-hidden overflow-y-auto rounded-lg bg-white shadow left-0 top-16 absolute ${isOpened ? 'flex' : 'hidden'}`}>
             {
