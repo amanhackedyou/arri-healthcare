@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Bree_Serif, Poppins, Rubik, Nunito } from "next/font/google";
+import { Roboto, Bree_Serif, Poppins, Rubik, Nunito, Assistant } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import localFont from 'next/font/local'
@@ -51,6 +51,10 @@ const nunito = Nunito({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"]
 });
 
+const assistantFont = Assistant({
+  subsets: ["latin"]
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -67,7 +71,7 @@ export default function RootLayout({
       scrollBehavior: "smooth"
     }} lang="en">
       <body
-        className={`${nunito.className} antialiased`}
+        className={`${assistantFont.className} antialiased`}
       >
         {children}
         <Footer />
