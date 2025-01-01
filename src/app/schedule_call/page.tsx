@@ -64,7 +64,7 @@ const ScheduleACall = () => {
                 <HeroSectionWithTitle title='Schedule A Call' />
 
                 <form className={`py-4 flex flex-col gap-2 ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
-                    <p className='text-lg'>Please fill out the form to set an appointment and we will do our best to contact you on your preferred date and time.</p>
+                    <p className='text-xl font-medium mb-2'>Please fill out the form to set an appointment and we will do our best to contact you on your preferred date and time.</p>
 
                     <InputField placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} />
                     <InputField placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} />
@@ -73,20 +73,20 @@ const ScheduleACall = () => {
                     <InputField type='number' placeholder='Zip' value={zip} onChange={e => setZip(e.target.value)} />
 
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-lg'> Best way to contact you <b className='text-[#fe8f01]'>*</b></label>
+                        <label className='text-[#777]- text-black text-xl'> Best way to contact you <b className='text-[#fe8f01]'>*</b></label>
                         <ContactOptionsView currentSelectedOption={selectedContactOption} setOptions={setSelectedContactOption} />
                     </div>
                     <InputField min={minimumDate} type='date' placeholder='Best day to contact you' value={preferredDate} onChange={e => setPreferredDate(e.target.value)} />
                     <InputField min={minimumTime} type='time' placeholder='Best time to contact you' value={preferredTime} onChange={e => setPreferredTime(e.target.value)} />
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-lg'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
+                        <label className='text-[#777]- text-black text-xl'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
                         <textarea value={comment} onChange={e => setComment(e.target.value)} placeholder='' className='  px-3 py-3 w-full outline-none shadow focus:shodow-md border rounded-2xl focus:border-[#096982]'></textarea>
                     </div>
 
 
                     <div className='flex flex-col items-center mt-4'>
-                        <button type='submit' className='px-10 py-2 text-white font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
-                        <Link className='text-lg underline text-primaryBlue' href="/contact_us">Leave a message instead</Link>
+                        <button type='submit' className='px-10 py-2 text-white font-semibold text-lg select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
+                        <Link className='text-xl underline text-primaryBlue' href="/contact_us">Leave a message instead</Link>
                     </div>
 
 
@@ -104,7 +104,7 @@ const ContactOptionsView = ({ currentSelectedOption, setOptions }: { currentSele
 
     const OptionButton = ({ optionText, isSelected }: { optionText: string, isSelected: boolean }) => {
         return <button className='flex items-center p-3 justify-between border-b rounded active:bg-[#e5e5e5]' onClick={e => setOptions(optionText)}>
-            <span className='text-lg leading-loose'>{optionText}</span>
+            <span className='text-xl leading-loose'>{optionText}</span>
             <div className={`min-w-[20px] min-h-[20px] rounded-full border border-[#777] flex items-center justify-center`}>
                 <div className={`w-[50%] aspect-square bg-primaryBlue transition-all rounded-full ${isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
             </div>

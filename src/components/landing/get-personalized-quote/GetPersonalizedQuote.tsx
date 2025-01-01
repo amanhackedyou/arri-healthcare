@@ -2,6 +2,7 @@
 
 import Heading from '@/components/GLOBAL/Heading';
 import InputField from '@/components/GLOBAL/InputField';
+import { useRouter } from 'next/navigation';
 import React, { ChangeEventHandler, useState } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
@@ -20,6 +21,9 @@ const GetPersonalizedQuote = () => {
 
         setSelectedOption(value);
     };
+
+
+    const router = useRouter();
 
     return (
         <section className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3'>
@@ -85,7 +89,11 @@ const GetPersonalizedQuote = () => {
                     </>
                 }
                 <div className='flex justify-center mt-8'>
-                    <button className='px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
+                    <button onClick={e => {
+                        if (selectedOption === "Seeking DSP/Caregiver job") {
+                            router.push("/career")
+                        }
+                    }} className='px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
                 </div>
 
 
