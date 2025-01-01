@@ -47,7 +47,7 @@ const Header = () => {
 
         <a href="tel:+12404139953" className="flex items-center text-lg gap-2 text-primary">
           <FaPhoneAlt />
-          <span className="leading-none font-medium underline">+1 (240) 413-9953</span>
+          <span className="leading-none font-extrabold underline">+1 (240) 413-9953</span>
         </a>
       </div>
 
@@ -110,7 +110,7 @@ const Header = () => {
 
 
           <div className="flex mt-2 ml-3 items-center justify-center">
-            <a href="tel:+12404139953" className="font-semibold text-2xl text-primaryBlue">+1 (240) 413-9953</a>
+            <a href="tel:+12404139953" className="font-extrabold text-2xl text-primaryBlue">+1 (240) 413-9953</a>
           </div>
 
         </div>
@@ -131,7 +131,7 @@ const Hamburger = ({ toggled, toggle }: { toggled: boolean, toggle: Function }) 
     }} className={`h-[0.3rem] transition-all duration-200 ${toggled ? 'bg-[#0d92b4]' : 'bg-primaryBlue'} ${toggled && index == 2 ? 'opacity-0' : ''} ${toggled && index == 1 ? '!w-full rotate-45 translate-y-[0.63rem]' : ''}  ${toggled && index == 3 ? '!w-full -rotate-45 -translate-y-[0.83rem]' : ''} rounded-full`}></div>
   }
 
-  return <button onClick={e => toggle(!toggled)} className="w-11 items-end h-7 flex flex-col justify-between">
+  return <button onClick={e => toggle(!toggled)} className="w-10 items-end h-7 flex flex-col justify-between">
     {toggle && <>
       <Line index={1} width={80} />
       <Line index={2} />

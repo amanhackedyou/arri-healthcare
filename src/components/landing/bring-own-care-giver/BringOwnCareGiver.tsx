@@ -6,7 +6,7 @@ const BringOwnCareGiver = () => {
     return (
         <section id='get-personalized-quote' className='bg-white'>
             {/* <h3 className='text-xl font-semibold text-center mb-2 px-4'>Bring your own care giver</h3> */}
-            <Heading text='Choose Your Caregiver' />
+            <Heading text='Chosen Your Caregiver?' />
 
             <div className='relative w-full overflow-hidden mt-1'>
                 <img className='rounded w-full' src="/assets/images/bring-own-care-giver/img1.jpg" alt="Bring yoour own care giver." />
@@ -15,7 +15,7 @@ const BringOwnCareGiver = () => {
                         <div className='flex justify-center w-full'>
                             <img className='w-4' src="/assets/images/logo_icon.svg" alt="Logo icon" />
                         </div>
-                        <p className=' text-[16px] font-semibold leading-none mt-2 text-center'>Chosen your caregiver??</p>
+                        <p className=' text-[16px] font-semibold leading-none mt-2 text-center'>Chosen your caregiver?</p>
                         <p className=' text-[14px] mt-1 text-center font-semibold'>Bring them with you...</p>
                         <p className=' text-[14px] mt-3 text-center w-full font-medium italic'>We Want to keep the caregiver you love on your team. Now they can get paid while they care for you.</p>
                         <div className='flex justify-center w-full mt-2'>
