@@ -35,7 +35,7 @@ const Career = () => {
 
             <div className='flex flex-col gap-2'>
                 <form className={`py-4 flex flex-col gap-5 scroll-smooth ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
-                    <p className='text-lg mb-4'>At Arri Healthcare we are always looking for talented and compassionate Direct Support Professionals and Caregivers.<br />Please submit your resume to be considered for one of our open positions.</p>
+                    <p className='text-xl mb-4'>At Arri Healthcare we are always looking for talented and compassionate Direct Support Professionals and Caregivers.<br />Please submit your resume to be considered for one of our open positions.</p>
 
                     <InputField placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} />
                     <InputField placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} />
@@ -67,13 +67,13 @@ const Career = () => {
 
 
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-sm'>Upload your resume <b className='text-[#fe8f01]'>*</b></label>
+                        <label className='text-[#777]- text-black text-xl'>Upload your resume <b className='text-[#fe8f01]'>*</b></label>
                         <input type='file' />
                     </div>
 
                     <AgreementCheckButton label='Apply without Resume' isChecked={isWithoutResume} onClick={() => setIsWithoutResume(!isWithoutResume)} />
 
-                    <div className='flex justify-center mt-2'>
+                    <div className='flex justify-center mt-2 text-lg'>
                         <button type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button>
                     </div>
 
@@ -91,7 +91,7 @@ const OptionalField = ({ label, isYes, setOption, required = true }: { label: st
 
     const OptionButton = ({ optionText, isSelected, onClick }: { optionText: string, onClick: Function, isSelected: boolean | null }) => {
         return <button type='button' className='flex items-center p-3 justify-between border-b rounded active:bg-[#e5e5e5]' onClick={e => onClick()}>
-            <span className='text-lg leading-loose'>{optionText}</span>
+            <span className='text-xl leading-loose'>{optionText}</span>
             <div className={`min-w-[20px] min-h-[20px] rounded-full border border-[#777] flex items-center justify-center`}>
                 <div className={`w-[50%] aspect-square bg-primaryBlue transition-all rounded-full ${isSelected === true && isSelected !== null ? 'opacity-100' : 'opacity-0'}`}></div>
             </div>
@@ -99,7 +99,7 @@ const OptionalField = ({ label, isYes, setOption, required = true }: { label: st
     }
 
     return <div className='flex flex-col gap-1'>
-        <label className='text-[#777]- text-black text-lg'>{label} {required && <b className='text-[#fe8f01]'>*</b>}</label>
+        <label className='text-[#777]- text-black text-xl'>{label} {required && <b className='text-[#fe8f01]'>*</b>}</label>
 
         <div className='flex flex-col'>
             <OptionButton optionText='Yes' isSelected={isYes} onClick={() => setOption(true)} />

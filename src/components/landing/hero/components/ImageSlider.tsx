@@ -27,11 +27,11 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
                 <h2 style={{
                     // textShadow: '0px 0px 10px rgba(255, 255, 255, 0.5)'
                     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
-                }} className=" font-extrabold text-4xl text-center leading-[55px]">The Care <br /> You Deserve,<br /><span className="font-medium">Right in<br />Your Home.</span></h2>
+                }} className=" font-extrabold text-5xl text-center leading-[55px]">The Care <br /> You Deserve,<br /><span className="font-semibold">Right in<br />Your Home.</span></h2>
 
                 <div className="w-[80%] gap-3 flex flex-col items-center shadow-md py-4 bg-white rounded-lg absolute -bottom-[10%] z-20">
                     <Link href="/schedule_call" className={`${styles.cta} pointer-events-auto bg-[#e6b400]- bg-gradient-to-r from-[#fe8f01] to-[#ffac3f]`}>
-                        <span className="font-semibold leading-none">Get a personalized quote</span>
+                        <span className="font-semibold leading-none text-lg">Get a personalized quote</span>
                     </Link>
 
 

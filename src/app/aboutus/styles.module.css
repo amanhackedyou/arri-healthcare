@@ -12,7 +12,7 @@
 .body p,
 .body span,
 .body li {
-    @apply text-xl;
+    @apply text-xl font-medium;
 }
 
 

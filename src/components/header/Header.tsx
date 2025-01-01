@@ -45,7 +45,7 @@ const Header = () => {
           alt="Arri Healthcare"
         />
 
-        <a href="tel:+12404139953" className="flex items-center gap-2 text-primary">
+        <a href="tel:+12404139953" className="flex items-center text-lg gap-2 text-primary">
           <FaPhoneAlt />
           <span className="leading-none font-medium underline">+1 (240) 413-9953</span>
         </a>

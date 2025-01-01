@@ -34,11 +34,11 @@
 
 
 .nav ul li {
-  @apply text-lg flex w-full rounded-xl border border-primaryBlue;
+  @apply text-xl flex w-full rounded-xl border border-primaryBlue;
 }
 
 .nav ul li a {
-  @apply px-4 py-2;
+  @apply px-4 py-2 w-full;
 }
 
 li.opened {

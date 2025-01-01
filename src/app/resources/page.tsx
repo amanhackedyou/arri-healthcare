@@ -8,7 +8,7 @@ const Resources = () => {
             <Header />
             <HeroSectionWithTitle title='Wellness Resources' />
             <section className='flex flex-col gap-2 px-4 pt-4'>
-                <p className='text-lg'>
+                <p className='text-xl'>
                     Arri Healthcare Services is dedicated to supporting your health and well-being. Below, you&#39;ll find trusted resources offering guidance on home care, developmental disabilities, caregiver support, mental health, and aging. These links connect you to services and programs designed to help you and your loved ones lead healthier, more independent lives.
                 </p>
 
@@ -38,7 +38,7 @@ const Resources = () => {
 const ResourceCard = ({ title, link }: { title: string, link: string }) => {
     return <a href={link} target='_blank' className='bg-[#f1f1f1] active:bg-[#e5e5e5] shadow flex flex-col gap-3 border rounded py-3 px-4'>
         <span className='leading-none- font-medium text-xl text-primary'>{title}</span>
-        <span className='leading-none font-light'>{link.replace("https://", "")}</span>
+        <span className='leading-none text-lg font-normal'>{link.replace("https://", "")}</span>
     </a>
 }
 

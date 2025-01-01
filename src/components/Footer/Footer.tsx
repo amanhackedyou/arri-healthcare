@@ -46,8 +46,8 @@ const Footer = () => {
                 <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
 
 
-                    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-base mb-3">Pages to visit</h2>
+                    <div className="lg:w-1/4 md:w-1/2 w-full px-4 font-medium">
+                        <h2 className="title-font font-bold text-gray-900 tracking-widest text-base mb-3">Pages to visit</h2>
                         <nav className="list-none mb-10 text-lg flex flex-col gap-2">
                             <li>
                                 <Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link>

@@ -29,7 +29,7 @@ const ContactUs = () => {
 
             <div className={styles.body}>
                 <form className='flex flex-col gap-2' onSubmit={e => e.preventDefault()}>
-                    <p className='text-lg mb-4'>Do you have a question about our services? Please feel free to contact us at <b className='font-semibold'>+1 (419) 346-8826</b> or fill out the form below.</p>
+                    <p className='text-xl mb-4'>Do you have a question about our services? Please feel free to contact us at <b className='font-semibold'>+1 (419) 346-8826</b> or fill out the form below.</p>
                     <InputField placeholder='Full name' value={fullName} onChange={e => setFullName(e.target.value)} />
                     <InputField placeholder='Address' value={address} onChange={e => setAddress(e.target.value)} />
                     <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
@@ -40,16 +40,16 @@ const ContactUs = () => {
                     </div>
 
                     <div className='flex flex-col items-center mt-4'>
-                        <button type='submit' className='px-10 py-2 text-white font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
-                        <Link className='text-lg underline text-primaryBlue' href="/schedule_call">Schedule a call instead</Link>
+                        <button type='submit' className='px-10 py-2 text-white text-lg font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
+                        <Link className='text-xl underline text-primaryBlue' href="/schedule_call">Schedule a call instead</Link>
                     </div>
                 </form>
 
-                <div className='flex flex-col gap-10 mt-4'>
+                <div className='flex flex-col text-xl gap-10 mt-4'>
                     <div className='flex flex-col gap-1'>
                         <div className='flex items-center gap-2 text-primaryBlue font-semibold'>
-                            <FaPhoneAlt className='text-lg' />
-                            <span className='text-lg'>Contact Us</span>
+                            <FaPhoneAlt className='text-xl' />
+                            <span className='text-2xl'>Contact Us</span>
                         </div>
 
                         <div className='flex flex-col pl-6- font-medium'>
@@ -60,8 +60,8 @@ const ContactUs = () => {
 
                     <div className='flex flex-col gap-1'>
                         <div className='flex items-center gap-2 text-primaryBlue font-semibold'>
-                            <IoMail className='text-2xl' />
-                            <span className='text-lg'>Email Us</span>
+                            <IoMail className='text-3xl' />
+                            <span className='text-2xl'>Email Us</span>
                         </div>
 
                         <div className='flex flex-col pl-6- font-medium'>
@@ -72,8 +72,8 @@ const ContactUs = () => {
 
                     <div className='flex flex-col gap-1'>
                         <div className='flex items-center gap-2 text-primaryBlue font-semibold'>
-                            <GoHomeFill className='text-2xl' />
-                            <span className='text-lg'>Visit Us</span>
+                            <GoHomeFill className='text-3xl' />
+                            <span className='text-2xl'>Visit Us</span>
                         </div>
 
                         <div className='flex flex-col pl-6- font-medium'>
