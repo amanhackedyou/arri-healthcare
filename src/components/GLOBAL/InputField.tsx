@@ -9,4 +9,6 @@ const InputField = ({ placeholder, type = "text", value, onChange, min, max, req
     </div>
 }
 
+export const dynamic = 'force-dynamic';
+
 export default InputField;

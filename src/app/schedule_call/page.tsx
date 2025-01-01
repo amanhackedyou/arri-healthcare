@@ -130,3 +130,5 @@ const getCurrentTime = (addOnHours = 0) => {
 }
 
 export default ScheduleACall;
+
+export const dynamic = 'force-dynamic';
