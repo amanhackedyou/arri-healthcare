@@ -73,13 +73,13 @@ const ScheduleACall = () => {
                     <InputField type='number' placeholder='Zip' value={zip} onChange={e => setZip(e.target.value)} />
 
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-xl'> Best way to contact you <b className='text-[#fe8f01]'>*</b></label>
+                        <label className='text-[#777]- text-black text-lg'> Best way to contact you <b className='text-[#fe8f01]'>*</b></label>
                         <ContactOptionsView currentSelectedOption={selectedContactOption} setOptions={setSelectedContactOption} />
                     </div>
                     <InputField min={minimumDate} type='date' placeholder='Best day to contact you' value={preferredDate} onChange={e => setPreferredDate(e.target.value)} />
                     <InputField min={minimumTime} type='time' placeholder='Best time to contact you' value={preferredTime} onChange={e => setPreferredTime(e.target.value)} />
                     <div className='flex flex-col gap-1'>
-                        <label className='text-[#777]- text-black text-xl'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
+                        <label className='text-[#777]- text-black text-lg'>Add Comment <b className='text-[#fe8f01]'>*</b></label>
                         <textarea value={comment} onChange={e => setComment(e.target.value)} placeholder='' className='  px-3 py-3 w-full outline-none shadow focus:shodow-md border rounded-2xl focus:border-[#096982]'></textarea>
                     </div>
 
@@ -104,7 +104,7 @@ const ContactOptionsView = ({ currentSelectedOption, setOptions }: { currentSele
 
     const OptionButton = ({ optionText, isSelected }: { optionText: string, isSelected: boolean }) => {
         return <button className='flex items-center p-3 justify-between border-b rounded active:bg-[#e5e5e5]' onClick={e => setOptions(optionText)}>
-            <span className='text-xl leading-loose'>{optionText}</span>
+            <span className='text-lg font-medium leading-loose'>{optionText}</span>
             <div className={`min-w-[20px] min-h-[20px] rounded-full border border-[#777] flex items-center justify-center`}>
                 <div className={`w-[50%] aspect-square bg-primaryBlue transition-all rounded-full ${isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
             </div>
