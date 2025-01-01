@@ -9,7 +9,7 @@ const Resources = () => {
             <HeroSectionWithTitle title='Wellness Resources' />
             <section className='flex flex-col gap-2 px-4 pt-4'>
                 <p className='text-xl'>
-                    Arri Healthcare Services is dedicated to supporting your health and well-being. Below, you&#39;ll find trusted resources offering guidance on home care, developmental disabilities, caregiver support, mental health, and aging. These links connect you to services and programs designed to help you and your loved ones lead healthier, more independent lives.
+                    Arri Healthcare Services is dedicated to supporting your health and well-being. Below, you&#39;ll find trusted resources offering guidance on home care, developmental disabilities, caregiver support, mental health, and aging. These links connect you to services and programs designed to help you and your loved ones live healthier, more independent lives.
                 </p>
 
                 <div className='flex flex-col gap-4 py-4'>

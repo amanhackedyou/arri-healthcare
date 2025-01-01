@@ -26,7 +26,7 @@ const GetPersonalizedQuote = () => {
     const router = useRouter();
 
     return (
-        <section className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3'>
+        <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3'>
             {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
             <Heading text='Get a Personalized Quote' />
 
@@ -46,7 +46,7 @@ const GetPersonalizedQuote = () => {
                         )}
                     </div>
                     <span className="text-black font-medium">
-                        Seeking a caregiver
+                        I need a caregiver
                     </span>
                 </label>
 
@@ -65,7 +65,7 @@ const GetPersonalizedQuote = () => {
                         )}
                     </div>
                     <span className="text-black font-medium">
-                        Seeking DSP/Caregiver job
+                        I need a DSP/Caregiver job
                     </span>
                 </label>
 

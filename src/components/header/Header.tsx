@@ -45,9 +45,9 @@ const Header = () => {
           alt="Arri Healthcare"
         />
 
-        <a href="tel:+12404139953" className="flex items-center text-lg gap-2 text-primary">
+        <a href="tel:+14193468826" className="flex items-center text-lg gap-2 text-primary">
           <FaPhoneAlt />
-          <span className="leading-none font-extrabold underline">+1 (240) 413-9953</span>
+          <span className="leading-none font-extrabold underline">+1 (419) 346-8826</span>
         </a>
       </div>
 
@@ -109,7 +109,8 @@ const Header = () => {
           </ul>
 
 
-          <div className="flex mt-2 ml-3 items-center justify-center">
+          <div className="flex flex-col mt-2 ml-3 items-center justify-center">
+            <a href="tel:+14193468826" className="font-extrabold text-2xl text-primaryBlue">+1 (419) 346-8826</a>
             <a href="tel:+12404139953" className="font-extrabold text-2xl text-primaryBlue">+1 (240) 413-9953</a>
           </div>
 

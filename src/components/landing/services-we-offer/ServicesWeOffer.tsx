@@ -20,24 +20,7 @@ const ServicesWeOffer = () => {
 
             {/* <ServiceCard title='Out-of-home Services' dotColor='#fe8f01' list={["Transportation: We provide reliable and friendly transportation to ensure you or your loved ones reach appointments, events, or visits safely and comfortably.", "Shopping: Whether it's groceries or essentials, we'll accompany you or your loved ones to make shopping stress-free and enjoyable.", "Errands: Let us assist with errands, ensuring tasks are completed efficiently while keeping your preferences a priority.", "Outings: We accompany you or your loved ones on outings, helping create moments of joy and fostering meaningful connections."]} /> */}
             {/* <ServiceCard title='In-home-services' dotColor='#096982' list={["Companionship: We're here to offer heartfelt companionship, creating a friendly and supportive presence that brightens your day.", "Medication Reminders: We'll ensure you or your loved ones take medications on time, promoting health and peace of mind.", "Assistance with Walking & Mobility: With patience and care, we provide the support you or your loved ones need to move safely and confidently.", "Assistance Bathing, Toileting, & Dressing: Our caregivers offer respectful and compassionate assistance, making these essential tasks as comfortable as possible.", "Transferring Assistance: We provide safe and gentle help to ensure you or your loved ones move securely and comfortably.", "Cueing & Reminders of Daily Living: We offer friendly prompts to help you or your loved ones maintain daily routines and stay on track.", "Light Housekeeping: We help keep your home clean and welcoming, so you or your loved ones feel comfortable and cared for.", "Cooking & Feeding Help: With care and attention, we prepare meals and assist with feeding to ensure a pleasant dining experience.", "Safety Monitoring & Supervision: We keep a watchful eye to ensure the safety and well-being of you or your loved ones at all times.", "Turning & Repositioning: Our gentle assistance helps prevent discomfort and promotes better health for those with limited mobility."]} /> */}
-            <ServiceCard thumbnailScr='/assets/images/landing/services-we-offer/1.jpg' title='Out-of-home Services' dotColor='#fe8f01' services={[
-                {
-                    title: "Transportation",
-                    description: "We provide reliable and friendly transportation to ensure you or your loved ones reach appointments, events, or visits safely and comfortably."
-                },
-                {
-                    title: "Shopping",
-                    description: "Whether it's groceries or essentials, we'll accompany you or your loved ones to make shopping stress-free and enjoyable."
-                },
-                {
-                    title: "Errands",
-                    description: "Let us assist with errands, ensuring tasks are completed efficiently while keeping your preferences a priority."
-                },
-                {
-                    title: "Outings",
-                    description: "We accompany you or your loved ones on outings, helping create moments of joy and fostering meaningful connections."
-                },
-            ]} />
+
 
             <ServiceCard thumbnailScr='/assets/images/landing/services-we-offer/2.jpg' title='In-home-services' dotColor='#096982' services={[
                 {
@@ -90,6 +73,25 @@ const ServicesWeOffer = () => {
                     description: "Our gentle assistance helps prevent discomfort and promotes better health for those with limited mobility."
                 },
 
+            ]} />
+
+            <ServiceCard thumbnailScr='/assets/images/landing/services-we-offer/1.jpg' title='Out-of-home Services' dotColor='#fe8f01' services={[
+                {
+                    title: "Transportation",
+                    description: "We provide reliable and friendly transportation to ensure you or your loved ones reach appointments, events, or visits safely and comfortably."
+                },
+                {
+                    title: "Shopping",
+                    description: "Whether it's groceries or essentials, we'll accompany you or your loved ones to make shopping stress-free and enjoyable."
+                },
+                {
+                    title: "Errands",
+                    description: "Let us assist with errands, ensuring tasks are completed efficiently while keeping your preferences a priority."
+                },
+                {
+                    title: "Outings",
+                    description: "We accompany you or your loved ones on outings, helping create moments of joy and fostering meaningful connections."
+                },
             ]} />
 
 

@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
       </div> */}
 
 
-      <Heading text="Why Arri?" />
+      <Heading text="Why Arri Healthcare?" />
 
 
       <div className={styles.reasons}>

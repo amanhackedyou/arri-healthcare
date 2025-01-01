@@ -23,14 +23,14 @@ const AboutUs = () => {
                 <div className='flex flex-col gap-3'>
                     <h2 className={styles.heading}>Mission Statement</h2>
                     <p className=''>
-                        Our mission is to provide community-based services that support person-centered to improve the quality of life for individuals as families.
+                        Our mission is to provide community-based services that support a person-centered approach to improving the quality of life for individuals and families.
                     </p>
                 </div>
 
                 <div className='flex flex-col gap-3'>
                     <h2 className={styles.heading}>Vision Statement</h2>
                     <p className=''>
-                        We envision to create a  comfortable enviroment and ensure health needs to gain higher awareness, well-being, creativity and joy.
+                        We envision creating a comfortable environment and ensuring health needs are met to promote higher awareness, well-being, creativity, and joy.
                     </p>
                 </div>
 
@@ -44,7 +44,7 @@ const AboutUs = () => {
                         <li><b>Services: </b>providing a helping hand that allows our residents to feel valued and cared for by upholding their sense of dignity.</li>
                         <li><b>Trust: </b>maintaining honest lines of communication with safe and competent care that protects privacy.</li>
                         <li><b>Integrity: </b>fostering an undivided attitude directed towards doing the right thing the first time around, every time.</li>
-                        <li><b>Recpect: </b>: promoting esteem and acceptance for and towards everyone we come in contact with.</li>
+                        <li><b>Respect: </b>: promoting esteem and acceptance for and towards everyone we come in contact with.</li>
                     </ul>
                 </div>
             </div>

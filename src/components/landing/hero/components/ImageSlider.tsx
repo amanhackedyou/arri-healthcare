@@ -27,18 +27,17 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
                 <h2 style={{
                     // textShadow: '0px 0px 10px rgba(255, 255, 255, 0.5)'
                     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
-                }} className=" font-extrabold text-5xl text-center leading-[55px]">The Care <br /> You Deserve,<br /><span className="font-semibold">Right in<br />Your Home.</span></h2>
+                }} className=" font-extrabold text-5xl text-center leading-[55px]">Delivering Exeptional<br />Care,<br /><span className="font-semibold">Always.</span></h2>
 
-                <div className="w-[80%] gap-3 flex flex-col items-center shadow-md py-4 bg-white rounded-lg absolute -bottom-[10%] z-20">
-                    <Link href="/schedule_call" className={`${styles.cta} pointer-events-auto bg-[#e6b400]- bg-gradient-to-r from-[#fe8f01] to-[#ffac3f]`}>
+                <div className="w-[80%] gap-3 px-6 flex flex-col items-center shadow-md py-4 bg-white rounded-lg absolute -bottom-[15%] z-20">
+                    <Link href="/#get_personalized_quote_seeking_section" className={`${styles.cta} pointer-events-auto bg-[#e6b400]- bg-gradient-to-r from-[#fe8f01] to-[#ffac3f]`}>
                         <span className="font-semibold leading-none text-lg">Get a personalized quote</span>
                     </Link>
 
 
-                    <div className="flex items-center gap-2">
-                        <span className="text-black leading-none">or</span>
-                        <Link href="/career" className="text-black pointer-events-auto font-semibold text-lg underline leading-none">DSP/Caregiver jobs</Link>
-                    </div>
+                    <Link href="/career" className="text-black outline-primaryBlue outline w-full flex items-center justify-center h-11 rounded-full  pointer-events-auto font-semibold text-lg leading-none">DSP/Caregiver jobs</Link>
+                    {/* <div className="flex items-center gap-2"> */}
+                    {/* </div> */}
                 </div>
             </div>}
             <Slider className="bg-white" {...settings}>

@@ -29,7 +29,7 @@ const ContactUs = () => {
 
             <div className={styles.body}>
                 <form className='flex flex-col gap-2' onSubmit={e => e.preventDefault()}>
-                    <p className='text-xl mb-4'>Do you have a question about our services? Please feel free to contact us at <b className='font-semibold'>+1 (419) 346-8826</b> or fill out the form below.</p>
+                    <p className='text-xl mb-4'>Do you have a question about our services? Please feel free to contact us at <b className='font-bold'>+1 (419) 346-8826</b>/<b className='font-bold'>+1 (419) 346-8826</b> or fill out the form below.</p>
                     <InputField placeholder='Full name' value={fullName} onChange={e => setFullName(e.target.value)} />
                     <InputField placeholder='Address' value={address} onChange={e => setAddress(e.target.value)} />
                     <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
