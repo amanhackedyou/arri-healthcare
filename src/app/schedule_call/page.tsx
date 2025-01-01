@@ -9,9 +9,13 @@ import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 import Link from 'next/link';
 
 const ScheduleACall = () => {
-    const date = new Date();
-    const todayDate = date.toISOString().split('T')[0];
-    const currentTime = getCurrentTime(1);
+    // const date = new Date();
+    // // const date = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }))
+    // const todayDate = date.toISOString().split('T')[0];
+    // const currentTime = getCurrentTime(1);
+
+    // const todayDate = getCurrentDate();
+    // const currentTime = getCurrentTime(1);
 
 
     const [firstName, setFirstName] = useState<string>("");
@@ -19,21 +23,36 @@ const ScheduleACall = () => {
     const [email, setEmail] = useState<string>("");
     const [phone, setPhone] = useState<string>("");
     const [zip, setZip] = useState<string>("");
-    const [preferredDate, setPreferredDate] = useState<string>(todayDate);
-    const [preferredTime, setPreferredTime] = useState<string>(currentTime);
+    const [preferredDate, setPreferredDate] = useState<string>("");
+    const [preferredTime, setPreferredTime] = useState<string>("");
     const [comment, setComment] = useState<string>("");
     const [selectedContactOption, setSelectedContactOption] = useState("");
 
-    const [minimumDate, setMinimumDate] = useState(todayDate);
-    const [minimumTime, setMinimumTime] = useState(currentTime);
+    const [minimumDate, setMinimumDate] = useState<string>("");
+    const [minimumTime, setMinimumTime] = useState<string>("");
+
 
 
     useEffect(() => {
+
+
         // Updating the time after 10 seconds to ensure if everything is working fine.
 
+        // const date = new Date();
+        // const date = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }))
+        // const todayDate = date.toISOString().split('T')[0];
+        const todayDate = getCurrentDate();
+        const currentTime = getCurrentTime(1);
+
+        setPreferredDate(todayDate);
+        setPreferredTime(currentTime);
+
+        setMinimumDate(todayDate);
+        setMinimumTime(currentTime);
+
+
         setInterval(() => {
-            const date = new Date();
-            const currentDate = date.toISOString().split('T')[0];
+            const currentDate = getCurrentDate();
             const currentTime = getCurrentTime(1);
 
             if (preferredDate != currentDate) {
@@ -120,8 +139,15 @@ const ContactOptionsView = ({ currentSelectedOption, setOptions }: { currentSele
     </div>
 }
 
+
+
+export default ScheduleACall;
+
+
 const getCurrentTime = (addOnHours = 0) => {
     const date = new Date(Date.now() + (3600000 * addOnHours));
+    // const date = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }))
+
     const hours = String(date.getHours()).padStart(2, '0'); // Get hours and pad with 0 if necessary
     const minutes = String(date.getMinutes()).padStart(2, '0'); // Get minutes and pad with 0 if necessary
     const formattedTime = `${hours}:${minutes}`;
@@ -129,6 +155,13 @@ const getCurrentTime = (addOnHours = 0) => {
     return formattedTime;
 }
 
-export default ScheduleACall;
+function getCurrentDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
 
 export const dynamic = 'force-dynamic';
