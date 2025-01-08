@@ -55,8 +55,9 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
             <section className="w-full hidden md:flex px-10 py-4 items-center justify-around">
                 <div className="flex flex-col gap-4">
                     <h2 style={{
-                        filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
-                    }} className=" font-extrabold text-5xl text-center leading-[55px]">Delivering Exeptional<br />Care,<br /><span className="font-semibold">Always.</span></h2>
+                        // filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
+                    }} className=" font-extrabold text-5xl text-center- leading-[55px]">Delivering Exeptional<br />Care, <span className="font-semibold">Always.</span><br /></h2>
+                    <p className="">Providing the care you deserve, in the comfort of your home.</p>
 
                     <Link href="/#get_personalized_quote_seeking_section" className={`${styles.cta} pointer-events-auto bg-[#e6b400]- bg-gradient-to-r from-[#fe8f01] to-[#ffac3f]`}>
                         <span className="font-semibold leading-none text-lg">Get a personalized quote</span>
@@ -65,14 +66,16 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
 
                 </div>
 
-                <div className="w-[40%] rounded-3xl overflow-hidden">
-                    <Slider className="bg-white" {...settings}>
-                        {
-                            images.map((src, i) => {
-                                return <ImageView key={i} src={src} />
-                            })
-                        }
-                    </Slider>
+                <div className="w-[40%] rounded-3xl relative before:w-full before:h-full before:absolute before:bg-[#C1DADF] before:rounded-3xl before:translate-x-2 before:-translate-y-2">
+                    <div className="rounded-3xl overflow-hidden">
+                        <Slider className="bg-white" {...settings}>
+                            {
+                                images.map((src, i) => {
+                                    return <ImageView key={i} src={src} />
+                                })
+                            }
+                        </Slider>
+                    </div>
                 </div>
             </section>
         </>
