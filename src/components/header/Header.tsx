@@ -24,8 +24,6 @@ const Header = () => {
   }, [menuOpen]);
 
 
-
-
   return (
     <header className={styles.body}>
       {/* <Image
@@ -79,6 +77,9 @@ const Header = () => {
               rounded
             /> */}
 
+
+
+
             <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
 
           </div>
@@ -118,7 +119,20 @@ const Header = () => {
 
       </nav>
 
-      <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+
+      <div className="hidden md:flex items-center">
+        <LinkButton href="/" text="Home" isActive={pathname === "/"} />
+        <LinkButton href="/aboutus" text="About Us" isActive={pathname === "/aboutus"} />
+        <LinkButton href="/#services-we-offer" text="Services" isActive={pathname === "/#services-we-offer"} />
+        <LinkButton href="/training" text="Training" isActive={pathname === "/training"} />
+        <LinkButton href="/contact_us" text="Contact" isActive={pathname === "/contact_us"} />
+        <LinkButton href="/resources" text="Wellness Resources" isActive={pathname === "/resources"} />
+        <LinkButton href="/career" text="Careers" isActive={pathname === "/career"} />
+      </div>
+
+      <div className="inline-block md:hidden">
+        <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+      </div>
     </header>
   );
 };
@@ -139,6 +153,11 @@ const Hamburger = ({ toggled, toggle }: { toggled: boolean, toggle: Function }) 
       <Line index={3} width={70} />
     </>}
   </button>
+}
+
+
+const LinkButton = ({ href, text, isActive = false }: { href: string, text: string, isActive: boolean | null }) => {
+  return <Link className={` text-xl px-4 ${isActive ? 'text-black' : 'text-gray-500'}`} href={href}>{text}</Link>
 }
 
 export default Header;
