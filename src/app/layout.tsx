@@ -3,6 +3,7 @@ import { Roboto, Bree_Serif, Poppins, Rubik, Nunito, Assistant } from "next/font
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import localFont from 'next/font/local'
+import { Toaster } from "react-hot-toast";
 
 
 // const poppins = Poppins({
@@ -73,6 +74,10 @@ export default function RootLayout({
       <body
         className={`${assistantFont.className} antialiased`}
       >
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
         {children}
         <Footer />
       </body>

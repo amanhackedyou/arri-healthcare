@@ -12,6 +12,7 @@ import { IoMail } from 'react-icons/io5';
 import MapView from '@/components/GLOBAL/MapView';
 import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
 
 const ContactUs = () => {
     const [fullName, setFullName] = useState("");
@@ -40,7 +41,18 @@ const ContactUs = () => {
                     </div>
 
                     <div className='flex flex-col items-center mt-4'>
-                        <button type='submit' className='px-10 py-2 text-white text-lg font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
+                        <button onClick={e => {
+                            toast.promise(
+                                (async () => {
+                                    return new Promise(resolve => setTimeout(resolve, 1000));
+                                })(),
+                                {
+                                    loading: 'Submitting...',
+                                    success: <b>Submitted!</b>,
+                                    error: <b>Could not submit.</b>,
+                                }
+                            );
+                        }} type='submit' className='px-10 py-2 text-white text-lg font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
                         <Link className='text-xl underline text-primaryBlue' href="/schedule_call">Schedule a call instead</Link>
                     </div>
                 </form>

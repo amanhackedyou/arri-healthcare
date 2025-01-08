@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "hamburger-react": "^2.5.1",
-    "http-proxy-middleware": "^3.0.3",
     "next": "^14.2.20",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-hot-toast": "^2.5.1",
     "react-icons": "^5.4.0",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1"

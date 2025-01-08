@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 import InputField from '@/components/GLOBAL/InputField';
 import AgreementCheckButton from '@/components/GLOBAL/AgreementCheckButton';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
 
 const Career = () => {
     const [firstName, setFirstName] = useState<string>("");
@@ -74,7 +75,18 @@ const Career = () => {
                     <AgreementCheckButton label='Apply without Resume' isChecked={isWithoutResume} onClick={() => setIsWithoutResume(!isWithoutResume)} />
 
                     <div className='flex justify-center mt-2 text-lg'>
-                        <button type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button>
+                        <button onClick={e => {
+                            toast.promise(
+                                (async () => {
+                                    return new Promise((resolve, reject) => setTimeout(reject, 1000));
+                                })(),
+                                {
+                                    loading: 'Submitting...',
+                                    success: <b>Submitted!</b>,
+                                    error: <b>Could not submit.</b>,
+                                }
+                            );
+                        }} type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button>
                     </div>
 
 

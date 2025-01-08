@@ -4,6 +4,7 @@ import Heading from '@/components/GLOBAL/Heading';
 import InputField from '@/components/GLOBAL/InputField';
 import { useRouter } from 'next/navigation';
 import React, { ChangeEventHandler, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 const GetPersonalizedQuote = () => {
@@ -27,6 +28,7 @@ const GetPersonalizedQuote = () => {
 
     return (
         <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3'>
+
             {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
             <Heading text='Get a Personalized Quote' />
 
@@ -91,8 +93,19 @@ const GetPersonalizedQuote = () => {
                 <div className='flex justify-center mt-8'>
                     <button onClick={e => {
                         if (selectedOption === "Seeking DSP/Caregiver job") {
-                            router.push("/career")
+                            return router.push("/career")
                         }
+
+                        toast.promise(
+                            (async () => {
+                                return new Promise(resolve => setTimeout(resolve, 1000));
+                            })(),
+                            {
+                                loading: 'Submitting...',
+                                success: <b>Submitted!</b>,
+                                error: <b>Could not submit.</b>,
+                            }
+                        );
                     }} className='px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
                 </div>
 

@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import InputField from '@/components/GLOBAL/InputField';
 import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
 
 const ScheduleACall = () => {
     // const date = new Date();
@@ -104,7 +105,18 @@ const ScheduleACall = () => {
 
 
                     <div className='flex flex-col items-center mt-4'>
-                        <button type='submit' className='px-10 py-2 text-white font-semibold text-lg select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
+                        <button type='submit' onClick={e => {
+                            toast.promise(
+                                (async () => {
+                                    return new Promise(resolve => setTimeout(resolve, 1000));
+                                })(),
+                                {
+                                    loading: 'Submitting...',
+                                    success: <b>Submitted!</b>,
+                                    error: <b>Could not submit.</b>,
+                                }
+                            );
+                        }} className='px-10 py-2 text-white font-semibold text-lg select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
                         <Link className='text-xl underline text-primaryBlue' href="/contact_us">Leave a message instead</Link>
                     </div>
 

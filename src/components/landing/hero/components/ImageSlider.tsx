@@ -40,6 +40,8 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
                     {/* </div> */}
                 </div>
             </div>}
+
+
             <Slider className="bg-white" {...settings}>
                 {
                     images.map((src, i) => {
