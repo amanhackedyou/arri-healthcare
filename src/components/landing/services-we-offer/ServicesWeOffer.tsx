@@ -114,11 +114,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, services, dotColor, th
         </div>
     }
 
-    return <div className='w-full bg-white rounded-md shadow-md md:flex md:gap-4 md:h-[45vh]'>
-        <img className='rounded-t-md h-[220px] w-full object-center object-cover md:max-w-[40%] md:h-full  md:rounded-tr-none md:rounded-l-md' src={thumbnailScr} />
+    return <div className='w-full bg-white rounded-l-3xl shadow-md md:flex md:gap-4 md:h-[45vh]'>
+        <img className='rounded-t-md h-[220px] w-full object-center object-cover md:max-w-[40%] md:h-full md:rounded-3xl' src={thumbnailScr} />
 
 
-        <div className='pb-8 pt-4 px-5 h-full overflow-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-[#f1f1f1] dark:[&::-webkit-scrollbar-track]:rounded-full dark:[&::-webkit-scrollbar-thumb]:bg-[#C1DADF] dark:[&::-webkit-scrollbar-thumb]:rounded-full'>
+        <div className='pb-8 pt-4 px-5 h-full overflow-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-[#fff] dark:[&::-webkit-scrollbar-track]:rounded-full dark:[&::-webkit-scrollbar-thumb]:bg-primaryBlue dark:[&::-webkit-scrollbar-thumb]:rounded-full'>
             <h3 className='text-primary text-2xl font-bold'>{title}</h3>
 
             <div className='flex flex-col gap-3 md:gap-4 mt-4'>
