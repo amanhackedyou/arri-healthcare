@@ -27,49 +27,51 @@ const GetPersonalizedQuote = () => {
     const router = useRouter();
 
     return (
-        <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3 md:pt-12'>
+        <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 md:px-12 py-3 md:pt-12'>
 
             {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
             <Heading text='Get a Personalized Quote' />
 
             <div className='flex flex-col gap-2 mt-2'>
-                <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] font-medium focus-within:ring-offset-2">
-                    <input
-                        type="radio"
-                        name="option"
-                        value="Seeking a caregiver"
-                        checked={selectedOption === "Seeking a caregiver"}
-                        onChange={() => handleChange("Seeking a caregiver")}
-                        className="hidden peer"
-                    />
-                    <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-primaryBlue flex items-center justify-center">
-                        {selectedOption === "Seeking a caregiver" && (
-                            <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
-                        )}
-                    </div>
-                    <span className="text-black font-medium">
-                        I need a caregiver
-                    </span>
-                </label>
+                <div className='flex flex-col md:flex-row gap-2 md:gap-12 w-full'>
+                    <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer whiteButtonHover md:w-1/3 text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] font-medium focus-within:ring-offset-2">
+                        <input
+                            type="radio"
+                            name="option"
+                            value="Seeking a caregiver"
+                            checked={selectedOption === "Seeking a caregiver"}
+                            onChange={() => handleChange("Seeking a caregiver")}
+                            className="hidden peer"
+                        />
+                        <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-primaryBlue flex items-center justify-center">
+                            {selectedOption === "Seeking a caregiver" && (
+                                <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
+                            )}
+                        </div>
+                        <span className="text-black font-medium">
+                            I need a caregiver
+                        </span>
+                    </label>
 
-                <label id='get_personalized_quote_seeking_dsp_caregiver_job_button' className="cursor-pointer text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
-                    <input
-                        type="radio"
-                        name="option"
-                        value="Seeking a caregiver job"
-                        checked={selectedOption === "Seeking DSP/Caregiver job"}
-                        onChange={() => handleChange("Seeking DSP/Caregiver job")}
-                        className="hidden peer"
-                    />
-                    <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-primaryBlue flex items-center justify-center">
-                        {selectedOption === "Seeking DSP/Caregiver job" && (
-                            <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
-                        )}
-                    </div>
-                    <span className="text-black font-medium">
-                        I need a DSP/Caregiver job
-                    </span>
-                </label>
+                    <label id='get_personalized_quote_seeking_dsp_caregiver_job_button' className="cursor-pointer whiteButtonHover md:w-1/3 text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
+                        <input
+                            type="radio"
+                            name="option"
+                            value="Seeking a caregiver job"
+                            checked={selectedOption === "Seeking DSP/Caregiver job"}
+                            onChange={() => handleChange("Seeking DSP/Caregiver job")}
+                            className="hidden peer"
+                        />
+                        <div className="w-5 h-5 rounded-full border border-gray-400 peer-checked:border-[#096982] peer-checked:bg-primaryBlue flex items-center justify-center">
+                            {selectedOption === "Seeking DSP/Caregiver job" && (
+                                <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
+                            )}
+                        </div>
+                        <span className="text-black font-medium">
+                            I need a DSP/Caregiver job
+                        </span>
+                    </label>
+                </div>
 
 
 
@@ -78,13 +80,20 @@ const GetPersonalizedQuote = () => {
                     <>
 
                         <DropDownView selectedOptions={selectedDropdownOptions} setSelectedOptions={setSelectedDropdownOptions} />
+                        <div className='flex flex-col gap-2 md:flex-row md:gap-12'>
+                            <InputField placeholder='First name' value={firstName} onChange={e => setFirstName(e.target.value)} />
+                            <InputField placeholder='Last name' value={lastName} onChange={e => setLastName(e.target.value)} />
+                        </div>
 
-                        <InputField placeholder='First name' value={firstName} onChange={e => setFirstName(e.target.value)} />
-                        <InputField placeholder='Last name' value={lastName} onChange={e => setLastName(e.target.value)} />
-                        <InputField type='number' placeholder='Phone Number' value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
-                        <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
-                        <InputField type='text' placeholder='How many hours/days per week' value={hoursAndDays} onChange={e => setHoursAndDays(e.target.value)} />
-                        <InputField type='number' placeholder='Zip code' value={zipCode} onChange={e => setZipCode(e.target.value)} />
+                        <div className='flex flex-col gap-2 md:flex-row md:gap-12'>
+                            <InputField type='number' placeholder='Phone Number' value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
+                            <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
+                        </div>
+
+                        <div className='flex flex-col gap-2 md:flex-row md:gap-12'>
+                            <InputField type='text' placeholder='How many hours/days per week' value={hoursAndDays} onChange={e => setHoursAndDays(e.target.value)} />
+                            <InputField type='number' placeholder='Zip code' value={zipCode} onChange={e => setZipCode(e.target.value)} />
+                        </div>
 
 
 
@@ -108,7 +117,6 @@ const GetPersonalizedQuote = () => {
                         );
                     }} className='px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
                 </div>
-
 
 
 
@@ -148,7 +156,7 @@ const DropDownView = ({ selectedOptions, setSelectedOptions }: { selectedOptions
 
             setSelectedOptions(newOptions);
 
-        }} className={`w-full py-3 px-4 ${index != 0 ? 'border-t' : ''} flex gap-4 items-center active:bg-[#e5e5e5] transition-all`}>
+        }} className={`w-full whiteButtonHover cursor-pointer py-3 px-4 ${index != 0 ? 'border-t' : ''} flex gap-4 items-center active:bg-[#e5e5e5] transition-all`}>
 
             <div className={`min-w-[20px] min-h-[20px] rounded-full border border-[#777] flex items-center justify-center`}>
                 <div className={`w-[50%] aspect-square bg-primaryBlue transition-all rounded-full ${isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
@@ -172,7 +180,7 @@ const DropDownView = ({ selectedOptions, setSelectedOptions }: { selectedOptions
     }} onMouseLeave={e => {
         setIsOpened(false);
 
-    }} className='flex MAIN_CONTAINER bg-white w-full text-lg items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
+    }} className='flex MAIN_CONTAINER whiteButtonHover cursor-pointer bg-white w-full text-lg items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
         <span className='text-xl text-black pointer-events-none'>
             {
                 isOpened ? <IoIosArrowUp /> :
