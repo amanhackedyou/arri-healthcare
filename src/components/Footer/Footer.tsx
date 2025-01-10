@@ -49,7 +49,7 @@ const Footer = () => {
                 <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
                     <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                         <img className='h-8' src="/assets/images/logo_icon.svg" alt="" />
-                        <span className="ml-3 text-xl">ARRI</span>
+                        <span className="ml-3 text-xl">ARRI Healthcare</span>
                     </a>
                     <p className="mt-2 text-sm text-gray-500">5739 Little Red Rover St, Groveport OH 43125</p>
                 </div>
@@ -57,33 +57,54 @@ const Footer = () => {
 
 
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4 font-medium">
-                        <h2 className="title-font font-bold text-gray-900 tracking-widest text-base mb-3">Pages to visit</h2>
-                        <nav className="list-none mb-10 text-lg flex flex-col gap-2">
-                            <li>
-                                <Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link>
-                            </li>
-                            <li>
-                                <Link href="/#services-we-offer" className="text-gray-600 hover:text-gray-800">Services</Link>
-                            </li>
-                            <li>
-                                <Link href="/training" className="text-gray-600 hover:text-gray-800">Training</Link>
-                            </li>
-                            <li>
-                                <Link href="/resources" className="text-gray-600 hover:text-gray-800">Wellness Resources</Link>
-                            </li>
+                        <h2 className="title-font font-bold text-gray-900 tracking-widest text-lg mb-3">Pages to visit</h2>
+                        <div className='flex flex-col md:flex-row md:gap-32 whitespace-nowrap'>
+                            <nav className="list-none mb-10- text-xl flex flex-col gap-2">
+                                <li>
+                                    <Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link>
+                                </li>
+                                <li>
+                                    <Link href="/#services-we-offer" className="text-gray-600 hover:text-gray-800">Services</Link>
+                                </li>
+                                <li>
+                                    <Link href="/training" className="text-gray-600 hover:text-gray-800">Training</Link>
+                                </li>
+                                <li>
+                                    <Link href="/resources" className="text-gray-600 hover:text-gray-800 ">Wellness Resources</Link>
+                                </li>
 
-                            <li>
-                                <Link href="/career" className="text-gray-600 hover:text-gray-800">Careers</Link>
-                            </li>
+                                {/* <li>
+                                    <Link href="/career" className="text-gray-600 hover:text-gray-800">Careers</Link>
+                                </li>
 
-                            <li>
-                                <Link href="/aboutus" className="text-gray-600 hover:text-gray-800">About Us</Link>
-                            </li>
-                            <li>
-                                <Link href="/contact_us" className="text-gray-600 hover:text-gray-800">Contact Us</Link>
-                            </li>
+                                <li>
+                                    <Link href="/aboutus" className="text-gray-600 hover:text-gray-800">About Us</Link>
+                                </li>
+                                <li>
+                                    <Link href="/contact_us" className="text-gray-600 hover:text-gray-800">Contact Us</Link>
+                                </li> */}
 
-                        </nav>
+                            </nav>
+
+                            <nav className="list-none mb-10 text-xl flex flex-col gap-2">
+                                <li>
+                                    <Link href="/career" className="text-gray-600 hover:text-gray-800">Careers</Link>
+                                </li>
+
+                                <li>
+                                    <Link href="/aboutus" className="text-gray-600 hover:text-gray-800">About Us</Link>
+                                </li>
+                                <li>
+                                    <Link href="/contact_us" className="text-gray-600 hover:text-gray-800">Contact Us</Link>
+                                </li>
+
+                            </nav>
+                        </div>
+
+                        <div className='flex flex-col md:flex-row gap-2 whitespace-nowrap md:mt-2 mb-5'>
+                            <a href="tel:+14193468826" className="font-extrabold text-xl text-primaryBlue">+1 (419) 346-8826,</a>
+                            <a href="tel:+12404139953" className="font-extrabold text-xl text-primaryBlue">+1 (240) 413-9953</a>
+                        </div>
                     </div>
 
 
