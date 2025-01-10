@@ -4,7 +4,7 @@ import React from 'react'
 
 const BringOwnCareGiver = () => {
     return (
-        <section id='get-personalized-quote' className='bg-white'>
+        <section id='get-personalized-quote' className='bg-white md:pt-12'>
             {/* <h3 className='text-xl font-semibold text-center mb-2 px-4'>Bring your own care giver</h3> */}
             <Heading text='Do You Have a Caregiver?' />
 

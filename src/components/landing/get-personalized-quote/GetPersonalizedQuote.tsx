@@ -27,7 +27,7 @@ const GetPersonalizedQuote = () => {
     const router = useRouter();
 
     return (
-        <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3'>
+        <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 py-3 md:pt-12'>
 
             {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
             <Heading text='Get a Personalized Quote' />
