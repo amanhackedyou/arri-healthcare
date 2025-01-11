@@ -7,11 +7,11 @@
 } */
 
 .reasons {
-    @apply grid grid-cols-2 gap-3;
+    @apply grid grid-cols-2 gap-3 lg:grid-cols-3;
 }
 
 .reason {
-    @apply flex flex-col items-center justify-center gap-1 text-center py-2 px-2 rounded w-[170px] h-[120px];
+    @apply flex flex-col items-center justify-center gap-1 text-center py-2 px-2 rounded w-[170px] h-[120px] lg:w-[200px] lg:h-[170px];
 }
 
 .reason>span {
