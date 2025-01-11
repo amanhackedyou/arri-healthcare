@@ -45,15 +45,17 @@ const Footer = () => {
 
     return (
         <footer className="text-gray-600- bg-[#e5e5e5] body-font">
-            <div className="container px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div className="container px-5 py-10 mx-auto md:mx-0 flex md:justify-evenly md:items-center  lg:items-start- md:flex-row md:flex-nowrap flex-wrap flex-col">
                 <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
                     <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                         <img className='h-8' src="/assets/images/logo_icon.svg" alt="" />
-                        <span className="ml-3 text-xl">ARRI Healthcare</span>
+                        <span className="ml-3 text-xl">Arri Healthcare</span>
                     </a>
                     <p className="mt-2 text-sm text-gray-500">5739 Little Red Rover St, Groveport OH 43125</p>
                 </div>
-                <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+
+
+                <div className="flex-grow md:flex-grow-0 flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
 
 
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4 font-medium">

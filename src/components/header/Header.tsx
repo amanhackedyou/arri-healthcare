@@ -120,7 +120,7 @@ const Header = () => {
       </nav>
 
 
-      <div className="hidden md:flex items-center">
+      <div className="hidden lg:flex items-center">
         <LinkButton href="/" text="Home" isActive={pathname === "/"} />
         <LinkButton href="/aboutus" text="About Us" isActive={pathname === "/aboutus"} />
         <LinkButton href="/#services-we-offer" text="Services" isActive={pathname === "/#services-we-offer"} />
@@ -130,7 +130,7 @@ const Header = () => {
         <LinkButton href="/career" text="Careers" isActive={pathname === "/career"} />
       </div>
 
-      <div className="inline-block md:hidden">
+      <div className="inline-block lg:hidden">
         <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
       </div>
     </header>

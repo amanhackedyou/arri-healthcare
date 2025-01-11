@@ -7,11 +7,11 @@ const BringOwnCareGiver = () => {
 
 
     return (
-        <section id='get-personalized-quote' className='bg-white md:pt-12'>
+        <section id='get-personalized-quote' className='bg-white lg:pt-12'>
             {/* <h3 className='text-xl font-semibold text-center mb-2 px-4'>Bring your own care giver</h3> */}
             <Heading text='Do You Have a Caregiver?' />
 
-            <div className='relative w-full overflow-hidden mt-1 block md:hidden'>
+            <div className='relative w-full overflow-hidden mt-1 block lg:hidden'>
                 <img className='rounded w-full' src="/assets/images/bring-own-care-giver/img1.jpg" alt="Bring yoour own care giver." />
 
                 <div className='w-full flex justify-start px-2 overflow-hidden h-full z-10 bg-gradient-to-l text-black  from-[#00000000] via-[#00000000]- to-[#ffffffbb]  absolute top-0 left-0'>
@@ -30,7 +30,7 @@ const BringOwnCareGiver = () => {
                 </div>
             </div>
 
-            <div className='relative w-full overflow-hidden mt-1 hidden md:block'>
+            <div className='relative w-full overflow-hidden mt-1 hidden lg:block'>
                 <img className='rounded w-full max-h-[80vh] object-cover object-top' src="/assets/images/bring-own-care-giver/img1.jpg" alt="Bring yoour own care giver." />
 
                 <div className='w-full flex justify-start px-2  overflow-hidden h-full z-10 bg-gradient-to-l  absolute top-0 left-0'>

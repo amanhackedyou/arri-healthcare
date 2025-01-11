@@ -15,7 +15,7 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
     };
 
     const ImageView: React.FC<ImageViewProps> = ({ src }) => {
-        return <div className={`w-full ${oriantation === "portrait" ? 'h-[25rem]' : 'h-64'}  bg-white`}>
+        return <div className={`w-full ${oriantation === "portrait" ? 'h-[25rem] ' : 'h-64 md:h-[25rem]'}  bg-white`}>
             <img className="w-full h-full object-cover object-center" src={src} />
         </div>
     }
@@ -23,7 +23,7 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
 
     return (
         <>
-            <section className="w-full block md:hidden overflow-hidden- relative">
+            <section className="w-full block lg:hidden overflow-hidden- relative">
                 {oriantation === "portrait" && <div className="w-full h-full text-white z-10 flex flex-col items-center justify-center absolute top-0 left-0 bg-[#00000080] pointer-events-none">
                     <h2 style={{
                         filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
@@ -52,7 +52,7 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
             </section>
 
 
-            <section className="w-full hidden md:flex px-10 py-4 items-center justify-around">
+            <section className="w-full hidden lg:flex px-10 py-4 items-center justify-around">
                 <div className="flex flex-col gap-4">
                     <h2 style={{
                         // filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))'
@@ -66,7 +66,7 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
 
                 </div>
 
-                <div className="w-[40%] rounded-3xl relative before:w-full before:h-full before:absolute before:bg-[#C1DADF] before:rounded-3xl before:translate-x-2 before:-translate-y-2">
+                <div className="w-[37%] rounded-3xl relative before:w-full before:h-full before:absolute before:bg-[#C1DADF] before:rounded-3xl before:translate-x-2 before:-translate-y-2">
                     <div className="rounded-3xl overflow-hidden">
                         <Slider className="bg-white" {...settings}>
                             {

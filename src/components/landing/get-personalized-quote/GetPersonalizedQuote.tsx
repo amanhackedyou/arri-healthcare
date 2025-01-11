@@ -27,14 +27,14 @@ const GetPersonalizedQuote = () => {
     const router = useRouter();
 
     return (
-        <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 md:px-12 py-3 md:pt-12'>
+        <section id='get_personalized_quote_seeking_section' className='bg-[#f1fdff]- font-medium bg-transparent px-4 lg:px-12 py-3 lg:pt-12'>
 
             {/* <h2 className='font-rubik text-xl font-bold text-center'>Get a personalized Quote</h2> */}
             <Heading text='Get a Personalized Quote' />
 
             <div className='flex flex-col gap-2 mt-2'>
-                <div className='flex flex-col md:flex-row gap-2 md:gap-12 w-full'>
-                    <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer whiteButtonHover md:w-1/3 text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] font-medium focus-within:ring-offset-2">
+                <div className='flex flex-col lg:flex-row gap-2 lg:gap-12 w-full'>
+                    <label id='get_personalized_quote_seeking_caregiver_button' className="cursor-pointer whiteButtonHover lg:w-1/3 text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] font-medium focus-within:ring-offset-2">
                         <input
                             type="radio"
                             name="option"
@@ -53,7 +53,7 @@ const GetPersonalizedQuote = () => {
                         </span>
                     </label>
 
-                    <label id='get_personalized_quote_seeking_dsp_caregiver_job_button' className="cursor-pointer whiteButtonHover md:w-1/3 text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
+                    <label id='get_personalized_quote_seeking_dsp_caregiver_job_button' className="cursor-pointer whiteButtonHover lg:w-1/3 text-lg flex items-center gap-4 p-4 bg-white border rounded-lg shadow-sm transition-shadow duration-200 focus-within:ring focus-within:ring-[#096982] focus-within:ring-offset-2">
                         <input
                             type="radio"
                             name="option"
@@ -80,17 +80,17 @@ const GetPersonalizedQuote = () => {
                     <>
 
                         <DropDownView selectedOptions={selectedDropdownOptions} setSelectedOptions={setSelectedDropdownOptions} />
-                        <div className='flex flex-col gap-2 md:flex-row md:gap-12'>
+                        <div className='flex flex-col gap-2 lg:flex-row lg:gap-12'>
                             <InputField placeholder='First name' value={firstName} onChange={e => setFirstName(e.target.value)} />
                             <InputField placeholder='Last name' value={lastName} onChange={e => setLastName(e.target.value)} />
                         </div>
 
-                        <div className='flex flex-col gap-2 md:flex-row md:gap-12'>
+                        <div className='flex flex-col gap-2 lg:flex-row lg:gap-12'>
                             <InputField type='number' placeholder='Phone Number' value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
                             <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
                         </div>
 
-                        <div className='flex flex-col gap-2 md:flex-row md:gap-12'>
+                        <div className='flex flex-col gap-2 lg:flex-row lg:gap-12'>
                             <InputField type='text' placeholder='How many hours/days per week' value={hoursAndDays} onChange={e => setHoursAndDays(e.target.value)} />
                             <InputField type='number' placeholder='Zip code' value={zipCode} onChange={e => setZipCode(e.target.value)} />
                         </div>

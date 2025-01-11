@@ -28,19 +28,19 @@ const Certification = () => {
         <h2 className='font-rubik leading-none'>Who We Are?</h2>
       </div> */}
 
-      <div className="md:mt-20">
+      <div className="lg:mt-20">
         <Heading text="Who We Are" />
       </div>
 
-      <div className="flex flex-col relative w-full md:w-[50%] px-4-  ">
-        <p className='text-[0.9rem] z-10 text-center absolute px-8 top-[20%] md:text-2xl md:mx-12 bg-[#00000071]- text-balance font-medium'>
+      <div className="flex flex-col relative w-full lg:w-[50%] px-4-  ">
+        <p className='text-[0.9rem] z-10 text-center absolute px-8 top-[20%] lg:text-2xl lg:mx-12 bg-[#00000071]- text-balance font-medium'>
           <b className='font-bold'>At Arri Healthcare, We Serve with Compassion</b><br />We provide dedicated support to individuals with developmental disabilities, seniors, and those with unique health needs. As a licensed non-medical home health company, we ensure every client is treated with dignity, respect, and tailored care. Our mission is to create a nurturing environment where everyone feels valued, loved, and empowered to thrive. At Arri Healthcare, your well-being is our purpose.
         </p>
         <img className="" src={Images.ohioMap} alt="Ohio Map" />
         {/* <Image className="absolute" width={300}
           height={375} src={Images.ohioMap} alt="OHIO MAP" /> */}
 
-        <img className="absolute w-14 md:w-20 bottom-6 right-14 md:bottom-10" src={Images.ohioDODD} alt="" />
+        <img className="absolute w-14 lg:w-20 bottom-6 right-14 lg:bottom-10" src={Images.ohioDODD} alt="" />
       </div>
 
 
