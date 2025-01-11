@@ -1,5 +1,5 @@
 .body {
-    @apply flex flex-col lg:flex-row lg:justify-around items-center lg:items-start lg:pt-10 w-full py-3 bg-white;
+    @apply flex flex-col lg:flex-row lg:justify-around items-center lg:items-start lg:pt-10 lg:h-[45rem] w-full py-3 bg-white;
 }
 
 /* .body h2 {

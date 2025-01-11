@@ -9,8 +9,11 @@ import Heading from "@/components/GLOBAL/Heading";
 const Certification = () => {
   return (
     <section className={`${styles.body}`}>
-      <div className="lg:mt-20">
+      <div className="lg:pt-20- lg:flex lg:flex-col lg:justify-around lg:h-full ">
         <Heading text="Who We Are" />
+
+        {/* <img className="absolute- w-14 lg:w-32 bottom-6 right-14 lg:bottom-10- lg:bottom-20 lg:inline-block" src={Images.ohioDODD} alt="" /> */}
+        <img className="hidden w-32 lg:inline-block mt-32 -translate-x-6" src={Images.ohioDODD} alt="" />
       </div>
 
       <div className="flex flex-col relative w-full lg:w-[45%]- lg:w-[40rem] px-4-  ">
@@ -18,7 +21,7 @@ const Certification = () => {
           <b className='font-bold'>At Arri Healthcare, We Serve with Compassion</b><br />We provide dedicated support to individuals with developmental disabilities, seniors, and those with unique health needs. As a licensed non-medical home health company, we ensure every client is treated with dignity, respect, and tailored care. Our mission is to create a nurturing environment where everyone feels valued, loved, and empowered to thrive. At Arri Healthcare, your well-being is our purpose.
         </p>
         <img className="" src={Images.ohioMap} alt="Ohio Map" />
-        <img className="absolute w-14 lg:w-20 bottom-6 right-14 lg:bottom-10" src={Images.ohioDODD} alt="" />
+        <img className="absolute w-14 lg:w-32 bottom-6 right-14 lg:bottom-10- lg:bottom-20 lg:hidden" src={Images.ohioDODD} alt="" />
       </div>
 
 
