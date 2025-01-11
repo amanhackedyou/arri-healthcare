@@ -35,7 +35,7 @@ const Career = () => {
 
 
             <div className='flex flex-col gap-2'>
-                <form className={`py-4 flex flex-col gap-5 scroll-smooth ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
+                <form className={`py-4 flex flex-col gap-5 lg:w-1/2 lg:mx-auto scroll-smooth ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
                     <p className='text-xl mb-4'>At Arri Healthcare we are always looking for talented and compassionate Direct Support Professionals and Caregivers.<br />Please submit your resume to be considered for one of our open positions.</p>
 
                     <InputField placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} />

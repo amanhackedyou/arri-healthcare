@@ -59,7 +59,7 @@ const Footer = () => {
 
 
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4 font-medium">
-                        <h2 className="title-font font-bold text-gray-900 tracking-widest text-lg mb-3">Pages to visit</h2>
+                        <h2 className="title-font font-bold text-gray-900 tracking-widest text-lg mb-3 whitespace-nowrap">Pages to visit</h2>
                         <div className='flex flex-col md:flex-row md:gap-32 whitespace-nowrap'>
                             <nav className="list-none mb-10- text-xl flex flex-col gap-2">
                                 <li>

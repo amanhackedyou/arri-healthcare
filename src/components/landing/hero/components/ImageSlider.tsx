@@ -15,7 +15,7 @@ export default function ImageSlider({ images, oriantation }: { images: string[],
     };
 
     const ImageView: React.FC<ImageViewProps> = ({ src }) => {
-        return <div className={`w-full ${oriantation === "portrait" ? 'h-[25rem] ' : 'h-64 md:h-[25rem]'}  bg-white`}>
+        return <div className={`w-full ${oriantation === "portrait" ? 'h-[25rem] ' : 'h-64 lg:h-[25rem]'}  bg-white`}>
             <img className="w-full h-full object-cover object-center" src={src} />
         </div>
     }
