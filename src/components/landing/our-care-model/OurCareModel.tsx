@@ -25,11 +25,11 @@ const OurCareModel = () => {
             </div>
 
 
-            <div className='hidden gap-6 lg:flex px-12 h-[40vh] items-center'>
+            <div className='hidden gap-6 lg:flex px-12 h-[25rem] items-center'>
                 <img className='h-[220px]- rounded-3xl h-full w-full object-top object-cover' src="/assets/images/hero/our-care-model/img1.jpg" alt="Our care model" />
 
-                <div className='flex flex-col gap-6 overflow-auto h-full custom_scroll'>
-                    <p className={`${styles.para} px-4 mb-5`}>At Arri Healthcare, our care model is built on compassion, respect, and empowerment. We take a holistic approach, addressing not just the physical needs of our clients but also their emotional and social well-being.</p>
+                <div className='flex flex-col gap-6 overflow-auto- h-fit- h-full justify-center custom_scroll-'>
+                    <p className={`${styles.para} px-4 mb-2`}>At Arri Healthcare, our care model is built on compassion, respect, and empowerment. We take a holistic approach, addressing not just the physical needs of our clients but also their emotional and social well-being.</p>
                     <p className={`${styles.para} px-4`}>We empower individuals to maintain their independence and dignity while providing the personalized support they deserve. As advocates for our clients, we ensure their voices are heard and their needs are met with urgency and care.</p>
                     <p className={`${styles.para} px-4`}>By fostering trust and building meaningful connections, we create a nurturing environment where every individual can thrive. Our care is more than a service - it&#39;s a partnership rooted in understanding and unwavering commitment.</p>
 
