@@ -83,7 +83,7 @@ const ScheduleACall = () => {
 
                 <HeroSectionWithTitle title='Schedule A Call' />
 
-                <form className={`py-4 flex flex-col gap-2 ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
+                <form className={`py-4 flex flex-col lg:w-1/2 lg:mx-auto gap-2 ${styles.container_px}`} onSubmit={e => e.preventDefault()}>
                     <p className='text-xl font-medium mb-2'>Please fill out the form to set an appointment and we will do our best to contact you on your preferred date and time.</p>
 
                     <InputField placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} />
