@@ -9,7 +9,7 @@ import Heading from "@/components/GLOBAL/Heading";
 const Certification = () => {
   return (
     <section className={`${styles.body}`}>
-      <div className='bg-primaryBg h-12 w-full top-0 left-0 rounded-b-[100%]'></div>
+      <div className='bg-primaryBg bg-red-200- h-20 w-full top-0 left-0 rounded-b-[100%]'></div>
       {/* <div className="lg:pt-20- lg:flex lg:flex-col lg:justify-around lg:h-full ">
         <Heading text="Who We Are" />
 
