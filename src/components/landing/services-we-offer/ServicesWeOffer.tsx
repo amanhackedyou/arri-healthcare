@@ -117,7 +117,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, services, dotColor, th
     return <div className={`w-full bg-white lg:rounded-3xl lg:overflow-hidden lg:pr-4- shadow-md lg:flex ${layoutDirection === "left-to-right" ? "flex-row-reverse pl-4" : ""} lg:gap-4 lg:h-[45vh]`}>
         <img className={` h-[220px] rounded-t-md lg:rounded-tl-none w-full object-center object-cover lg:max-w-[40%] lg:h-full  ${layoutDirection === "right-to-left" ? "lg:rounded-l-3xl" : ""}`} src={thumbnailScr} />
 
-        <div className='pb-8 pt-4 px-5 h-full overflow-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-[#fff] dark:[&::-webkit-scrollbar-track]:rounded-full dark:[&::-webkit-scrollbar-thumb]:bg-primaryBlue dark:[&::-webkit-scrollbar-thumb]:rounded-full'>
+        <div className='pb-8 pt-4 px-5 h-full overflow-auto custom_scroll'>
             <h3 className='text-primary text-2xl font-bold'>{title}</h3>
 
             <div className='flex flex-col gap-3 lg:gap-4 mt-4'>
