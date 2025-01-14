@@ -2,26 +2,68 @@
 
 import Heading from '@/components/GLOBAL/Heading';
 import InputField from '@/components/GLOBAL/InputField';
+import { post } from '@/services/NextworkServices';
 import { useRouter } from 'next/navigation';
+import { resolve } from 'path';
 import React, { ChangeEventHandler, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import validator from 'validator';
+
 
 const GetPersonalizedQuote = () => {
-    const [selectedOption, setSelectedOption] = useState<string>("");
+    const [selectedOption, setSelectedOption] = useState<string>("Seeking a caregiver");
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [hoursAndDays, setHoursAndDays] = useState<string>("");
     const [zipCode, setZipCode] = useState<string>("");
-    // const [daysPerWeek, setDaysPerWeek] = useState<string>("");
     const [selectedDropdownOptions, setSelectedDropdownOptions] = useState<string[]>([]);
+
+    const [isSubmiting, setIsSubmiting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("Could not submit.");
+
 
     const handleChange = (value: string) => {
 
         setSelectedOption(value);
     };
+
+
+    const isFormValidated = () => {
+
+        if (!firstName || !lastName || !phoneNumber || !email || !hoursAndDays || !zipCode) {
+            return false;
+        }
+
+        if (firstName.toString().length < 3) {
+            return false;
+        }
+
+        if (lastName.toString().length < 1) {
+            return false;
+        }
+
+        if (!validator.isMobilePhone(phoneNumber.toString())) {
+            return false;
+        }
+
+        if (!validator.isEmail(email.toString())) {
+            return false;
+        }
+
+
+        if (hoursAndDays.toString().length < 2) {
+            return false;
+        }
+
+        if (!validator.isPostalCode(zipCode.toString(), "any")) {
+            return false;
+        }
+
+        return true;
+    }
 
 
     const router = useRouter();
@@ -101,22 +143,62 @@ const GetPersonalizedQuote = () => {
                 }
                 <div className='flex justify-center mt-8'>
                     <button onClick={e => {
+                        if (isSubmiting) return;
                         if (selectedOption === "Seeking DSP/Caregiver job") {
                             return router.push("/career")
                         }
 
-                        toast.promise(
-                            (async () => {
-                                return new Promise(resolve => setTimeout(resolve, 1000));
-                            })(),
-                            {
-                                loading: 'Submitting...',
-                                success: <b>Submitted!</b>,
-                                error: <b>Could not submit.</b>,
-                            }
-                        );
-                    }} className='px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue'>{selectedOption !== "Seeking DSP/Caregiver job" ? "Submit" : "Submit Resume"}</button>
+
+                        if (selectedOption === "Seeking a caregiver" && isFormValidated()) {
+
+                            toast.promise(
+                                (async () => {
+                                    return new Promise<void>((resolve, reject) => {
+                                        setIsSubmiting(true);
+
+                                        const formData = new FormData();
+                                        formData.append("firstName", firstName);
+                                        formData.append("lastName", lastName);
+                                        formData.append("phoneNumber", phoneNumber);
+                                        formData.append("email", email);
+                                        formData.append("hoursPerDayNWeek", hoursAndDays);
+                                        formData.append("zipCode", zipCode);
+
+                                        post("/api/need_caregiver", formData).then(result => {
+                                            resolve();
+                                        }).catch(e => {
+                                            setErrorMessage(e);
+                                            reject();
+                                        }).finally(() => {
+                                            setIsSubmiting(false);
+                                        });
+                                    });
+                                })(),
+                                {
+                                    loading: 'Submitting...',
+                                    success: <b>Submitted!</b>,
+                                    error: <b>{errorMessage}</b>,
+                                }
+                            );
+                        }
+
+
+
+
+
+                        // toast.promise(
+                        //     (async () => {
+                        //         return new Promise(resolve => setTimeout(resolve, 1000));
+                        //     })(),
+                        //     {
+                        //         loading: 'Submitting...',
+                        //         success: <b>Submitted!</b>,
+                        //         error: <b>Could not submit.</b>,
+                        //     }
+                        // );
+                    }} className={`${selectedOption === "Seeking a caregiver" ? !isFormValidated() || isSubmiting ? 'opacity-20' : '' : ''} px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue`}>{selectedOption !== "Seeking DSP/Caregiver job" ? isSubmiting ? <span>Submitting...</span> : "Submit" : "Submit Resume"}</button>
                 </div>
+                {/* <div className='animate-spin w-6 h-6 border-2 border- border-t-0 rounded-full '></div> */}
 
 
 
@@ -169,18 +251,17 @@ const DropDownView = ({ selectedOptions, setSelectedOptions }: { selectedOptions
     }
 
     return <div onMouseDown={e => {
-
         // @ts-ignore
         if (e.target.classList.contains("MAIN_CONTAINER") && isOpened === true) {
             return setIsOpened(false);
         }
 
         setIsOpened(true);
-
     }} onMouseLeave={e => {
         setIsOpened(false);
+    }}
 
-    }} className='flex MAIN_CONTAINER whiteButtonHover cursor-pointer bg-white w-full text-lg items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
+        className='flex MAIN_CONTAINER whiteButtonHover cursor-pointer bg-white w-full text-lg items-center gap-4 relative py-4 px-4 border rounded-lg shadow-sm transition-shadow duration-200'>
         <span className='text-xl text-black pointer-events-none'>
             {
                 isOpened ? <IoIosArrowUp /> :
