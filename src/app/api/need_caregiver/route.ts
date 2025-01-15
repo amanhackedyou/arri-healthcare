@@ -1,3 +1,5 @@
+import { Mailer } from "@/utils/mailer";
+import { ADMIN_INFO } from "@/utils/Utils";
 import { NextRequest, NextResponse } from "next/server";
 import validator from 'validator';
 
@@ -25,7 +27,27 @@ export const POST = async (request: NextRequest) => {
     }
 
 
+    const firstName = formData.get("firstName");
+    const lastName = formData.get("lastName");
+    const phoneNumber = formData.get("phoneNumber");
+    const email = formData.get("email");
+    const hoursPerDayNWeek = formData.get("hoursPerDayNWeek");
+    const zipCode = formData.get("zipCode");
 
+
+    const html = `
+    <div style="color: black; font-size: 1.2rem; font-weight: 500;">
+        <div>First Name: <b>${firstName}</b></div>
+        <div>Last Name: <b>${lastName}</b></div>
+        <div>Phone Number: <b>${phoneNumber}</b></div>
+        <div>Email: <b>${email}</b></div>
+        <div>Zip: <b>${zipCode}</b></div>
+        <div>Hours per day/week: <b>${hoursPerDayNWeek}</b></div>
+    </div>
+    `
+
+
+    await Mailer.sendMail(ADMIN_INFO.email, "Caregiver", html);
 
 
     return NextResponse.json({

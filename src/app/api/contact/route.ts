@@ -1,3 +1,5 @@
+import { Mailer } from "@/utils/mailer";
+import { ADMIN_INFO } from "@/utils/Utils";
 import { NextRequest, NextResponse } from "next/server";
 import validator from 'validator';
 
@@ -23,6 +25,27 @@ export const POST = async (request: NextRequest) => {
             status: 400
         });
     }
+
+
+    const fullName = formData.get("fullName")?.toString().trim();
+    const phoneNumber = formData.get("phoneNumber")?.toString().trim();
+    const email = formData.get("email")?.toString().trim();
+    const address = formData.get("address")?.toString().trim();
+    const message = formData.get("message")?.toString().trim();
+
+
+    const html = `
+        <div style="color: black; font-size: 1.2rem; font-weight: 500;">
+            <div>Full Name: <b>${fullName}</b></div>
+            <div>Phone Number: <b>${phoneNumber}</b></div>
+            <div>Email: <b>${email}</b></div>
+            <div>Address: <b>${address}</b></div>
+            <div>Message: <b>${message}</b></div>
+        </div>
+        `
+
+
+    await Mailer.sendMail(ADMIN_INFO.email, "Contact", html);
 
 
 

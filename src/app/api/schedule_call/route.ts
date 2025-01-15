@@ -1,3 +1,5 @@
+import { Mailer } from "@/utils/mailer";
+import { ADMIN_INFO } from "@/utils/Utils";
 import { NextRequest, NextResponse } from "next/server";
 import validator from 'validator';
 
@@ -23,6 +25,36 @@ export const POST = async (request: NextRequest) => {
             status: 400
         });
     }
+
+
+
+    const firstName = formData.get("firstName");
+    const lastName = formData.get("lastName");
+    const phoneNumber = formData.get("phoneNumber");
+    const email = formData.get("email");
+    const zipCode = formData.get("zipCode");
+    const contactMethod = formData.get("contactMethod");
+    const date = formData.get("date");
+    const time = formData.get("time");
+    const comment = formData.get("comment");
+
+
+    const html = `
+        <div style="color: black; font-size: 1.2rem; font-weight: 500;">
+            <div>First Name: <b>${firstName}</b></div>
+            <div>Last Name: <b>${lastName}</b></div>
+            <div>Phone Number: <b>${phoneNumber}</b></div>
+            <div>Email: <b>${email}</b></div>
+            <div>Zip: <b>${zipCode}</b></div>
+            <div>Contact Method: <b>${contactMethod?.toString().toUpperCase()}</b></div>
+            <div>Best date to contact: <b>${date?.toString().toUpperCase()}</b></div>
+            <div>Best time to contact: <b>${time?.toString().toUpperCase()}</b></div>
+            <div>Comment: <b>${comment}</b></div>
+        </div>
+        `
+
+
+    await Mailer.sendMail(ADMIN_INFO.email, "Call Schedule", html);
 
 
 
