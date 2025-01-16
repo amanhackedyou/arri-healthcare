@@ -3,13 +3,19 @@
 import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle'
 import Header from '@/components/header/Header'
 import styles from './styles.module.css';
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import InputField from '@/components/GLOBAL/InputField';
 import AgreementCheckButton from '@/components/GLOBAL/AgreementCheckButton';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import validator from 'validator';
+import { post } from '@/services/NextworkServices';
 
 const Career = () => {
+    // Referances
+    const resumeRef = useRef();
+
+    // Form States
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [DOB, setDOB] = useState<string>("");
@@ -18,7 +24,7 @@ const Career = () => {
     const [howSoonAvailable, setHowSoonAvailable] = useState<string>("");
     const [howHourlyPayExpectation, setHourlyPayExpectation] = useState<string>("");
     const [certifications, setCertifications] = useState<string>("");
-    const [resume, setResume] = useState<File>();
+    const [resume, setResume] = useState<File | undefined>();
     const [hasDrivingLicense, setHasDrivingLicense] = useState<boolean | null>(null);
     const [hasUSADocument, setHasUSADocument] = useState<boolean | null>(null);
     const [hasHighSchoolDiploma, setHasHighSchoolDiploma] = useState<boolean | null>(null);
@@ -26,6 +32,124 @@ const Career = () => {
     const [agreeForTrainingCourse, setAgreeForTrainingCourse] = useState<boolean | null>(null);
     const [isAgreedForBackgroundCheck, setIsAgreedForBackgroundCheck] = useState<boolean | null>(null);
     const [isWithoutResume, setIsWithoutResume] = useState<boolean>(false);
+
+
+
+    // Network requests releted states
+    const [isSubmiting, setIsSubmiting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const validate = () => {
+        const res = {
+            status: "error",
+            message: ""
+        };
+
+        const isDateValid = (data: string) => {
+            const splitedDate = data.trim().split("-");
+
+            if (splitedDate.length != 3) return false;
+
+            splitedDate.forEach(dateWord => {
+                try {
+                    parseInt(dateWord);
+                } catch (e) {
+                    return false;
+                }
+            });
+
+            return true;
+        }
+
+        // console.log(`${!firstName} || ${!lastName} || ${!zip} || ${!DOB} || ${!city} || ${!hasDrivingLicense} || ${!howSoonAvailable} || ${!hasHighSchoolDiploma} || ${!hasReliableTransportation} || ${!isAgreedForBackgroundCheck} || ${!agreeForTrainingCourse} || ${!howHourlyPayExpectation} || ${!isWithoutResume}`)
+
+        if (!firstName || !lastName || !zip || !DOB || !city || hasDrivingLicense == null || !howSoonAvailable || hasHighSchoolDiploma == null || hasReliableTransportation == null || isAgreedForBackgroundCheck == null || agreeForTrainingCourse == null || !howHourlyPayExpectation) {
+            res["message"] = "Mandatory fields are not provided, please fill all the feilds and try again."
+            return res;
+        }
+
+        if (firstName.toString().length < 3) {
+            res["message"] = "First name atleast has the contain 3 characters."
+            return res;
+        }
+
+        if (lastName.toString().length < 1) {
+            res["message"] = "Last name atleast has the contain 1 character."
+            return res;
+        }
+
+        if (!validator.isPostalCode(zip.toString(), "any")) {
+            res["message"] = "Pin code is missing."
+            return res;
+        }
+
+        if (!isDateValid(DOB?.toString() || "")) {
+            res["message"] = "Invalid Date of Birth."
+            return res;
+        }
+
+        if (hasDrivingLicense !== true && hasDrivingLicense !== false) {
+            res["message"] = "Invalid Q&As"
+            return res;
+        }
+
+        if (validator.isEmpty(howSoonAvailable)) {
+            res["message"] = "Invalid Q&As"
+            return res;
+        }
+
+        if (hasHighSchoolDiploma !== true && hasHighSchoolDiploma !== false) {
+            res["message"] = "Invalid Q&As"
+            return res;
+        }
+
+        if (hasReliableTransportation !== true && hasReliableTransportation !== false) {
+            res["message"] = "Invalid Q&As"
+            return res;
+        }
+
+        if (isAgreedForBackgroundCheck !== true && isAgreedForBackgroundCheck !== false) {
+            res["message"] = "Invalid Q&As"
+            return res;
+        }
+
+        if (agreeForTrainingCourse !== true && agreeForTrainingCourse !== false) {
+            res["message"] = "Invalid Q&As"
+            return res;
+        }
+
+        if (isWithoutResume != true && !resume) {
+            res["message"] = "Resume is missing.";
+            return res
+        }
+
+        res["status"] = "ok";
+        return res;
+    }
+
+    const resetForm = () => {
+        setFirstName("");
+        setLastName("")
+        setDOB("")
+        setZip("")
+        setCity("")
+        setHowSoonAvailable("")
+        setHourlyPayExpectation("");
+        setCertifications("");
+        setHasDrivingLicense(null);
+        setHasUSADocument(null);
+        setHasHighSchoolDiploma(null);
+        setHasReliableTransportation(null);
+        setAgreeForTrainingCourse(null);
+        setIsAgreedForBackgroundCheck(null);
+        setIsWithoutResume(false);
+        setResume(undefined);
+
+        //@ts-ignore
+        resumeRef.current.value = "";
+    }
+
+    let isFormValid = validate().status === "ok";
 
 
     return (
@@ -69,13 +193,79 @@ const Career = () => {
 
                     <div className='flex flex-col gap-1'>
                         <label className='text-[#777]- text-black text-xl'>Upload your resume <b className='text-[#fe8f01]'>*</b></label>
-                        <input type='file' />
+                        {/* @ts-ignore */}
+                        <input ref={resumeRef} onChange={e => {
+                            // @ts-ignore
+                            let file = e.target.files[0];
+                            setResume(file);
+                        }} type='file' />
                     </div>
 
                     <AgreementCheckButton label='Apply without Resume' isChecked={isWithoutResume} onClick={() => setIsWithoutResume(!isWithoutResume)} />
 
                     <div className='flex justify-center mt-2 text-lg'>
+
+
+
                         <button onClick={e => {
+                            if (isSubmiting) return;
+
+                            if (isFormValid) {
+                                toast.promise(
+                                    (async () => {
+                                        return new Promise<void>((resolve, reject) => {
+                                            setIsSubmiting(true);
+
+                                            const formData = new FormData();
+                                            formData.append("firstName", firstName);
+                                            formData.append("lastName", lastName);
+                                            formData.append("dob", DOB);
+                                            formData.append("city", city);
+                                            formData.append("zipCode", zip);
+                                            formData.append("certificates", certifications);
+                                            formData.append("availableForWork", howSoonAvailable);
+                                            formData.append("hourlyPayExpectation", howHourlyPayExpectation);
+                                            formData.append("applyWithoutResume", `${isWithoutResume}`);
+                                            formData.append("hasDrivingLicense", hasDrivingLicense ? "yes" : "no");
+                                            formData.append("allowedForWork", hasUSADocument ? "yes" : "no");
+                                            formData.append("hasHighSchoolDiploma", hasHighSchoolDiploma ? "yes" : "no");
+                                            formData.append("hasTransportationInsuranceForJob", hasReliableTransportation ? "yes" : "no");
+                                            formData.append("agreeForUndergoBackgroundCheck", isAgreedForBackgroundCheck ? "yes" : "no");
+                                            formData.append("agreeFor4HourTraining", agreeForTrainingCourse ? "yes" : "no");
+
+
+                                            if (!isWithoutResume) {
+                                                // @ts-ignore
+                                                formData.append("resume", resume);
+                                            }
+
+                                            post("/api/career", formData).then(result => {
+                                                resolve();
+                                                resetForm();
+
+                                            }).catch(e => {
+                                                setErrorMessage(e);
+                                                reject();
+                                            }).finally(() => {
+                                                setIsSubmiting(false);
+                                            });
+                                        });
+                                    })(),
+                                    {
+                                        loading: 'Submitting...',
+                                        success: <b>Submitted!</b>,
+                                        error: <b>{errorMessage ?? "Something went wrong."}</b>,
+                                    }
+                                );
+                            }
+                        }} className={`${!isFormValid || isSubmiting ? 'opacity-20' : ''} px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue`}>{isSubmiting ? <span>Submitting...</span> : "Submit"}</button>
+
+
+
+
+
+
+                        {/* <button onClick={e => {
                             toast.promise(
                                 (async () => {
                                     return new Promise((resolve, reject) => setTimeout(reject, 1000));
@@ -86,7 +276,7 @@ const Career = () => {
                                     error: <b>Could not submit.</b>,
                                 }
                             );
-                        }} type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button>
+                        }} type='submit' className='px-10 py-2 text-white select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Sumit</button> */}
                     </div>
 
 

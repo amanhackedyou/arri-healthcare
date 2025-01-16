@@ -3,7 +3,7 @@
 import Header from '@/components/header/Header'
 import Hero from '@/components/landing/hero/Hero'
 import styles from './styles.module.css';
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import InputField from '@/components/GLOBAL/InputField';
 import { FaPhone, FaPhoneAlt } from 'react-icons/fa';
 import { MdEmail, MdOutlineEmail, MdOutlineMailOutline } from 'react-icons/md';
@@ -12,15 +12,76 @@ import { IoMail } from 'react-icons/io5';
 import MapView from '@/components/GLOBAL/MapView';
 import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 import Link from 'next/link';
+import validator from 'validator';
 import toast from 'react-hot-toast';
+import { post } from '@/services/NextworkServices';
 
 const ContactUs = () => {
+    // Form States
     const [fullName, setFullName] = useState("");
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
 
+    // Network requests releted states
+    const [isSubmiting, setIsSubmiting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+
+
+
+    const validate = () => {
+        const res = {
+            status: "error",
+            message: ""
+        };
+
+        if (!fullName || !phone || !email || !address || !message) {
+            res["message"] = "Mandatory fields are not provided, please fill all the feilds and try again."
+            return res;
+        }
+
+        if (fullName.toString().length < 3) {
+            res["message"] = "First name atleast has the contain 3 characters."
+            return res;
+        }
+
+        if (!validator.isMobilePhone(phone.toString())) {
+            res["message"] = "Phone is missing."
+            return res;
+        }
+
+        if (!validator.isEmail(email.toString())) {
+            res["message"] = "Email is missing."
+            return res;
+        }
+
+
+        if (address.toString().length < 3) {
+            res["message"] = "Address should contain atleast 3 characters."
+            return res;
+        }
+
+        if (message.toString().split(" ").length < 3) {
+            res["message"] = "Message should contain atleast 3 words."
+            return res;
+        }
+
+        res["status"] = "ok";
+        return res;
+    }
+
+
+    const resetForm = () => {
+        setFullName("");
+        setAddress("")
+        setEmail("")
+        setPhone("")
+        setMessage("")
+    }
+
+
+    let isFormValid = validate().status === "ok";
 
     return (
         <>
@@ -41,7 +102,45 @@ const ContactUs = () => {
                     </div>
 
                     <div className='flex flex-col items-center mt-4'>
+
                         <button onClick={e => {
+                            if (isSubmiting) return;
+
+                            if (isFormValid) {
+                                toast.promise(
+                                    (async () => {
+                                        return new Promise<void>((resolve, reject) => {
+                                            setIsSubmiting(true);
+
+                                            const formData = new FormData();
+                                            formData.append("fullName", fullName);
+                                            formData.append("address", address);
+                                            formData.append("phoneNumber", phone);
+                                            formData.append("email", email);
+                                            formData.append("message", message);
+
+                                            post("/api/contact", formData).then(result => {
+                                                resolve();
+                                                resetForm();
+
+                                            }).catch(e => {
+                                                setErrorMessage(e);
+                                                reject();
+                                            }).finally(() => {
+                                                setIsSubmiting(false);
+                                            });
+                                        });
+                                    })(),
+                                    {
+                                        loading: 'Submitting...',
+                                        success: <b>Submitted!</b>,
+                                        error: <b>{errorMessage ?? "Something went wrong."}</b>,
+                                    }
+                                );
+                            }
+                        }} className={`${!isFormValid || isSubmiting ? 'opacity-20' : ''} px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue`}>{isSubmiting ? <span>Submitting...</span> : "Submit"}</button>
+
+                        {/* <button onClick={e => {
                             toast.promise(
                                 (async () => {
                                     return new Promise(resolve => setTimeout(resolve, 1000));
@@ -52,7 +151,7 @@ const ContactUs = () => {
                                     error: <b>Could not submit.</b>,
                                 }
                             );
-                        }} type='submit' className='px-10 py-2 text-white text-lg font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
+                        }} type='submit' className='px-10 py-2 text-white text-lg font-semibold select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button> */}
                         <Link className='text-xl underline text-primaryBlue' href="/schedule_call">Schedule a call instead</Link>
                     </div>
                 </form>

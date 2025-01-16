@@ -8,6 +8,9 @@ import InputField from '@/components/GLOBAL/InputField';
 import HeroSectionWithTitle from '@/components/GLOBAL/HeroSectionWithTitle';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import validator from 'validator';
+import { post } from '@/services/NextworkServices';
+
 
 const ScheduleACall = () => {
     // const date = new Date();
@@ -28,9 +31,106 @@ const ScheduleACall = () => {
     const [preferredTime, setPreferredTime] = useState<string>("");
     const [comment, setComment] = useState<string>("");
     const [selectedContactOption, setSelectedContactOption] = useState("");
-
     const [minimumDate, setMinimumDate] = useState<string>("");
     const [minimumTime, setMinimumTime] = useState<string>("");
+
+
+    // Network requests releted states
+    const [isSubmiting, setIsSubmiting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+
+
+    const validate = () => {
+        const res = {
+            status: "error",
+            message: ""
+        };
+
+        const isDateValid = (data: string) => {
+            const splitedDate = data.trim().split("-");
+
+            if (splitedDate.length != 3) return false;
+
+            splitedDate.forEach(dateWord => {
+                try {
+                    parseInt(dateWord);
+                } catch (e) {
+                    return false;
+                }
+            });
+
+            return true;
+        }
+
+        const isTimeValid = (time: string) => {
+            const splitedTime = time.trim().split(":");
+
+            if (splitedTime.length != 2) return false;
+
+            splitedTime.forEach(timeWord => {
+                try {
+                    parseInt(timeWord);
+                } catch (e) {
+                    return false;
+                }
+            });
+
+            return true;
+        }
+
+        if (!firstName || !lastName || !phone || !email || !zip || !selectedContactOption || !preferredDate || !preferredTime || !comment) {
+            res["message"] = "Mandatory fields are not provided, please fill all the feilds and try again."
+            return res;
+        }
+
+        if (firstName.toString().length < 3) {
+            res["message"] = "First name atleast has the contain 3 characters."
+            return res;
+        }
+
+        if (lastName.toString().length < 1) {
+            res["message"] = "Last name atleast has the contain 1 character."
+            return res;
+        }
+
+        if (!validator.isMobilePhone(phone.toString())) {
+            res["message"] = "Phone is missing."
+            return res;
+        }
+
+        if (!validator.isEmail(email.toString())) {
+            res["message"] = "Email is missing."
+            return res;
+        }
+
+        if (selectedContactOption.toString().toLowerCase() !== "phone" && selectedContactOption.toString().toLowerCase() !== "email" && selectedContactOption.toString().toLowerCase() !== "text") {
+            res["message"] = "Way of contact method is not valid."
+            return res;
+        }
+
+        if (!validator.isPostalCode(zip.toString(), "any")) {
+            res["message"] = "Pin code is missing."
+            return res;
+        }
+
+        if (!isDateValid(preferredDate?.toString() || "")) {
+            res["message"] = "Invalid date."
+            return res;
+        }
+
+        if (!isTimeValid(preferredTime?.toString() || "")) {
+            res["message"] = "Invalid time."
+            return res;
+        }
+
+        if ((comment?.toString() || "").split(" ").length < 3) {
+            res["message"] = "Comment ssage should contain atleast 3 words."
+            return res;
+        }
+
+        res["status"] = "ok";
+        return res;
+    }
 
 
 
@@ -74,6 +174,20 @@ const ScheduleACall = () => {
 
 
 
+    const resetForm = () => {
+        setFirstName("");
+        setLastName("")
+        setEmail("")
+        setPhone("")
+        setComment("")
+        setPhone("");
+        setSelectedContactOption("");
+    }
+
+
+    let isFormValid = validate().status === "ok";
+
+
     return (
         <>
             <Header />
@@ -105,7 +219,53 @@ const ScheduleACall = () => {
 
 
                     <div className='flex flex-col items-center mt-4'>
-                        <button type='submit' onClick={e => {
+
+
+                        <button onClick={e => {
+                            if (isSubmiting) return;
+
+                            if (isFormValid) {
+                                toast.promise(
+                                    (async () => {
+                                        return new Promise<void>((resolve, reject) => {
+                                            setIsSubmiting(true);
+
+                                            const formData = new FormData();
+                                            formData.append("firstName", firstName);
+                                            formData.append("lastName", lastName);
+                                            formData.append("phoneNumber", phone);
+                                            formData.append("email", email);
+                                            formData.append("comment", comment);
+                                            formData.append("contactMethod", selectedContactOption);
+                                            formData.append("zipCode", zip);
+                                            formData.append("date", preferredDate);
+                                            formData.append("time", preferredTime);
+
+                                            post("/api/schedule_call", formData).then(result => {
+                                                resolve();
+                                                resetForm();
+
+                                            }).catch(e => {
+                                                setErrorMessage(e);
+                                                reject();
+                                            }).finally(() => {
+                                                setIsSubmiting(false);
+                                            });
+                                        });
+                                    })(),
+                                    {
+                                        loading: 'Submitting...',
+                                        success: <b>Submitted!</b>,
+                                        error: <b>{errorMessage ?? "Something went wrong."}</b>,
+                                    }
+                                );
+                            }
+                        }} className={`${!isFormValid || isSubmiting ? 'opacity-20' : ''} px-10 py-2 text-white rounded-full text-lg font-semibold bg-primaryBlue`}>{isSubmiting ? <span>Submitting...</span> : "Submit"}</button>
+
+
+
+
+                        {/* <button type='submit' onClick={e => {
                             toast.promise(
                                 (async () => {
                                     return new Promise(resolve => setTimeout(resolve, 1000));
@@ -116,7 +276,7 @@ const ScheduleACall = () => {
                                     error: <b>Could not submit.</b>,
                                 }
                             );
-                        }} className='px-10 py-2 text-white font-semibold text-lg select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button>
+                        }} className='px-10 py-2 text-white font-semibold text-lg select-none rounded-full bg-primaryBlue active:bg-[#0f5a6d]'>Submit</button> */}
                         <Link className='text-xl underline text-primaryBlue' href="/contact_us">Leave a message instead</Link>
                     </div>
 
