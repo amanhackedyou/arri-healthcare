@@ -1,5 +1,5 @@
 .body {
-  @apply py-2 flex items-center justify-between relative bg-transparent;
+  @apply py-2 w-full flex items-center justify-between relative bg-transparent;
 }
 
 .logo {
