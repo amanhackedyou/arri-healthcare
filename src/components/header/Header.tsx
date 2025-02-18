@@ -8,10 +8,10 @@ import Link from "next/link";
 // import Hamburger from "hamburger-react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { IoMail } from "react-icons/io5";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
 
   let pathname = usePathname();
 
@@ -35,18 +35,44 @@ const Header = () => {
       /> */}
 
       <div className="flex flex-col gap-2">
-        <Image
-          src={Images.logo}
-          width={150}
-          height={40}
-          className={styles.logo}
-          alt="Arri Healthcare"
-        />
+        <div className="w-full flex items-center justify-between px-4">
+          <Image
+            src={Images.logo}
+            width={150}
+            height={40}
+            className={styles.logo}
+            alt="Arri Healthcare"
+          />
 
-        <a href="tel:+14193468826" className="flex items-center text-lg gap-2 text-primary">
-          <FaPhoneAlt />
-          <span className="leading-none font-extrabold underline">+1 (419) 346-8826</span>
-        </a>
+          <div className="inline-block lg:hidden">
+            <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+          </div>
+        </div>
+
+        {/* @ts-ignore */}
+        <marquee behavior="alternate">
+          <div className="flex items-center gap-4">
+            <a href="tel:+14193468826" className="flex items-center text-lg gap-2 text-primary">
+              <FaPhoneAlt />
+              <span className="leading-none font-extrabold underline">+1 (419) 346-8826</span>
+            </a>
+
+            <a href="tel:+12404139953" className="flex items-center text-lg gap-2 text-primary">
+              <FaPhoneAlt />
+              <span className="leading-none font-extrabold underline">+1(240) 413-9953</span>
+            </a>
+
+
+
+            <a href="mailto:arrihealthcareservices@gmail.com" className="flex items-center text-lg gap-2 text-primary">
+              <IoMail className="text-xl" />
+              <span className="leading-none font-extrabold underline">Arrihealthcareservices@gmail.com</span>
+            </a>
+          </div>
+          {/* @ts-ignore */}
+        </marquee>
+
+
       </div>
 
 
@@ -130,9 +156,9 @@ const Header = () => {
         <LinkButton href="/career" text="Careers" isActive={pathname === "/career"} />
       </div>
 
-      <div className="inline-block lg:hidden">
+      {/* <div className="inline-block lg:hidden">
         <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
-      </div>
+      </div> */}
     </header>
   );
 };

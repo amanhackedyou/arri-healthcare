@@ -97,7 +97,7 @@ const ContactUs = () => {
 
             <div className={styles.body}>
                 <form className='flex flex-col gap-2 w-full ' onSubmit={e => e.preventDefault()}>
-                    <p className='text-xl mb-4'>Do you have a question about our services? Please feel free to contact us at <b className='font-bold'>+1 (419) 346-8826</b>/<b className='font-bold'>+1 (419) 346-8826</b> or fill out the form below.</p>
+                    <p className='text-xl mb-4'>Do you have a question about our services? Please feel free to contact us at <b className='font-bold'>+1 (419) 346-8826</b>/<b className='font-bold'>+1(240) 413-9953</b> or fill out the form below.</p>
                     <InputField placeholder='Full name' value={fullName} onChange={e => setFullName(e.target.value)} />
                     <InputField placeholder='Address' value={address} onChange={e => setAddress(e.target.value)} />
                     <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
@@ -170,8 +170,8 @@ const ContactUs = () => {
                         </div>
 
                         <div className='flex flex-col pl-6- font-medium'>
-                            <span>+1(240) 413-9953</span>
-                            <span>+1(419) 346-8826</span>
+                            <a href='tel:+14193468826' target='_blank'>+1(419) 346-8826</a>
+                            <a href='tel:+12404139953' target='_blank'>+1(240) 413-9953</a>
                         </div>
                     </div>
 
@@ -182,8 +182,9 @@ const ContactUs = () => {
                         </div>
 
                         <div className='flex flex-col pl-6- font-medium'>
-                            <span>Ngosongamin@gmail.com</span>
-                            <span>Malafast2013@gmail.com</span>
+                            <a href='mailto:arrihealthcareservices@gmail.com' target='_blank'>Arrihealthcareservices@gmail.com</a>
+                            {/* <span>Ngosongamin@gmail.com</span>
+                            <span>Malafast2013@gmail.com</span> */}
                         </div>
                     </div>
 
