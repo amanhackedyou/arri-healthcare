@@ -135,8 +135,8 @@ const Header = () => {
 
       {/* @ts-ignore */}
       {/* <marquee className="" behavior="alternate"> */}
-      <div className="flex flex-col relative overflow-hidden md:flex-row items-center md:items-start bg-[#e5e5e5] md:bg-transparent px-4 gap-2 md:gap-6 mb-2- py-2">
-        <div className="w-full md:hidden absolute top-0 shadow-[0px_0px_10px_3px_rgba(0,0,0,0.2)] bg-[#000]- h-[1px]"></div>
+      <div className="flex flex-col relative overflow-hidden md:flex-row items-center md:items-start bg-[#eae9e9] md:bg-transparent px-4 gap-2 md:gap-6 mb-2- py-2">
+        <div className="w-full md:hidden absolute top-0 shadow-[0px_0px_10px_3px_rgba(0,0,0,0.13)] bg-[#000]- h-[1px]"></div>
         <div className="flex  w-full md:w-fit gap-2 justify-center md:gap-6 justify-between- md:justify-normal">
           <a href="tel:+14193468826" className="flex items-center text-base gap-2 text-primary">
             <FaPhoneAlt />
