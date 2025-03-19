@@ -34,7 +34,22 @@ export class Mailer {
         };
 
 
-        const send = await this._transporter.sendMail(mailOptions);
-        console.log(send);
+        // const send = await this._transporter.sendMail(mailOptions);
+        try {
+            const sendMail = await (new Promise((resolve, reject) => {
+                this._transporter.sendMail(mailOptions, (err, info) => {
+                    if (err) {
+                        console.error(err);
+                        reject(err.message);
+                    } else {
+                        resolve(true);
+                    }
+                });
+            }));
+
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 }

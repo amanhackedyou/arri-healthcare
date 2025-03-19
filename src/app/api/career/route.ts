@@ -66,7 +66,7 @@ export const POST = async (request: NextRequest) => {
 
 
     // console.log(resume.name)
-    await Mailer.sendMail(ADMIN_INFO.email, "Career", html, applyWithoutResume === "false" ? [
+    let sendMail = await Mailer.sendMail(ADMIN_INFO.email, "Career", html, applyWithoutResume === "false" ? [
         {
             // @ts-ignore
             filename: resume.name,
@@ -75,8 +75,12 @@ export const POST = async (request: NextRequest) => {
         }
     ] : undefined);
 
-
-
+    if (sendMail !== true) {
+        return NextResponse.json({
+            status: "error",
+            message: "Failed to submit the form, please try again."
+        }, { status: 500 });
+    }
 
 
     return NextResponse.json({
