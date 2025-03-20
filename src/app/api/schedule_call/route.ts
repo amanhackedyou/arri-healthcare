@@ -42,19 +42,19 @@ export const POST = async (request: NextRequest) => {
     const html = `
         <div style="color: black; font-size: 1.2rem; font-weight: 500;">
             <div>First Name: <b>${firstName}</b></div>
-            <div>Last Name: <b>${lastName}</b></div>
-            <div>Phone Number: <b>${phoneNumber}</b></div>
-            <div>Email: <b>${email}</b></div>
-            <div>Zip: <b>${zipCode}</b></div>
-            <div>Contact Method: <b>${contactMethod?.toString().toUpperCase()}</b></div>
-            <div>Best date to contact: <b>${date?.toString().toUpperCase()}</b></div>
-            <div>Best time to contact: <b>${time?.toString().toUpperCase()}</b></div>
-            <div>Comment: <b>${comment}</b></div>
+            <div style="margin-top: 15px;">Last Name: <b>${lastName}</b></div>
+            <div style="margin-top: 15px;">Phone Number: <b>${phoneNumber}</b></div>
+            <div style="margin-top: 15px;">Email: <b>${email}</b></div>
+            <div style="margin-top: 15px;">Zip: <b>${zipCode}</b></div>
+            <div style="margin-top: 15px;">Contact Method: <b>${contactMethod?.toString().toUpperCase()}</b></div>
+            <div style="margin-top: 15px;">Best date to contact: <b>${date?.toString().toUpperCase()}</b></div>
+            <div style="margin-top: 15px;">Best time to contact: <b>${time?.toString().toUpperCase()}</b></div>
+            <div style="margin-top: 15px;">Comment: <b>${comment}</b></div>
         </div>
         `
 
 
-    await Mailer.sendMail(ADMIN_INFO.email, "Call Schedule", html);
+    await Mailer.sendMail(ADMIN_INFO.email, `for the booking page : ${firstName} booked a call`, html);
 
 
 

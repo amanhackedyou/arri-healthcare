@@ -38,16 +38,16 @@ export const POST = async (request: NextRequest) => {
     const html = `
     <div style="color: black; font-size: 1.2rem; font-weight: 500;">
         <div>First Name: <b>${firstName}</b></div>
-        <div>Last Name: <b>${lastName}</b></div>
-        <div>Phone Number: <b>${phoneNumber}</b></div>
-        <div>Email: <b>${email}</b></div>
-        <div>Zip: <b>${zipCode}</b></div>
-        <div>Hours per day/week: <b>${hoursPerDayNWeek}</b></div>
+        <div style="margin-top: 15px;">Last Name: <b>${lastName}</b></div>
+        <div style="margin-top: 15px;">Phone Number: <b>${phoneNumber}</b></div>
+        <div style="margin-top: 15px;">Email: <b>${email}</b></div>
+        <div style="margin-top: 15px;">Zip: <b>${zipCode}</b></div>
+        <div style="margin-top: 15px;">Hours per day/week: <b>${hoursPerDayNWeek}</b></div>
     </div>
     `
 
 
-    await Mailer.sendMail(ADMIN_INFO.email, "Caregiver", html);
+    await Mailer.sendMail(ADMIN_INFO.email, `for the Need Caregiver page : ${firstName} need a caregiver`, html);
 
 
     return NextResponse.json({

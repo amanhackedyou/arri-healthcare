@@ -37,15 +37,15 @@ export const POST = async (request: NextRequest) => {
     const html = `
         <div style="color: black; font-size: 1.2rem; font-weight: 500;">
             <div>Full Name: <b>${fullName}</b></div>
-            <div>Phone Number: <b>${phoneNumber}</b></div>
-            <div>Email: <b>${email}</b></div>
-            <div>Address: <b>${address}</b></div>
-            <div>Message: <b>${message}</b></div>
+            <div style="margin-top: 15px;">Phone Number: <b>${phoneNumber}</b></div>
+            <div style="margin-top: 15px;">Email: <b>${email}</b></div>
+            <div style="margin-top: 15px;">Address: <b>${address}</b></div>
+            <div style="margin-top: 15px;">Message: <b>${message}</b></div>
         </div>
         `
 
 
-    await Mailer.sendMail(ADMIN_INFO.email, "Contact", html);
+    await Mailer.sendMail(ADMIN_INFO.email, `for the contact page: ${fullName} contacted you`, html);
 
 
 

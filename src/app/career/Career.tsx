@@ -21,6 +21,8 @@ const Career = () => {
     const [DOB, setDOB] = useState<string>("");
     const [zip, setZip] = useState<string>("");
     const [city, setCity] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
     const [howSoonAvailable, setHowSoonAvailable] = useState<string>("");
     const [howHourlyPayExpectation, setHourlyPayExpectation] = useState<string>("");
     const [certifications, setCertifications] = useState<string>("");
@@ -63,7 +65,7 @@ const Career = () => {
 
         // console.log(`${!firstName} || ${!lastName} || ${!zip} || ${!DOB} || ${!city} || ${!hasDrivingLicense} || ${!howSoonAvailable} || ${!hasHighSchoolDiploma} || ${!hasReliableTransportation} || ${!isAgreedForBackgroundCheck} || ${!agreeForTrainingCourse} || ${!howHourlyPayExpectation} || ${!isWithoutResume}`)
 
-        if (!firstName || !lastName || !zip || !DOB || !city || hasDrivingLicense == null || !howSoonAvailable || hasHighSchoolDiploma == null || hasReliableTransportation == null || isAgreedForBackgroundCheck == null || agreeForTrainingCourse == null || !howHourlyPayExpectation) {
+        if (!firstName || !lastName || !zip || !DOB || !phone || !email || !city || hasDrivingLicense == null || !howSoonAvailable || hasHighSchoolDiploma == null || hasReliableTransportation == null || isAgreedForBackgroundCheck == null || agreeForTrainingCourse == null || !howHourlyPayExpectation) {
             res["message"] = "Mandatory fields are not provided, please fill all the feilds and try again."
             return res;
         }
@@ -80,6 +82,16 @@ const Career = () => {
 
         if (!validator.isPostalCode(zip.toString(), "any")) {
             res["message"] = "Pin code is missing."
+            return res;
+        }
+
+        if (!validator.isEmail(email.toString())) {
+            res["message"] = "Email is missing."
+            return res;
+        }
+
+        if (phone.trim().length < 6) {
+            res["message"] = "Invalid phone number."
             return res;
         }
 
@@ -136,6 +148,8 @@ const Career = () => {
         setHowSoonAvailable("")
         setHourlyPayExpectation("");
         setCertifications("");
+        setPhone("");
+        setEmail("");
         setHasDrivingLicense(null);
         setHasUSADocument(null);
         setHasHighSchoolDiploma(null);
@@ -164,6 +178,8 @@ const Career = () => {
 
                     <InputField placeholder='First Name' value={firstName} onChange={e => setFirstName(e.target.value)} />
                     <InputField placeholder='Last Name' value={lastName} onChange={e => setLastName(e.target.value)} />
+                    <InputField type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
+                    <InputField type='number' placeholder='Phone' value={phone} onChange={e => setPhone(e.target.value)} />
                     <InputField type='date' placeholder='Date of Birth' value={DOB} onChange={e => setDOB(e.target.value)} />
                     <InputField placeholder='City' value={city} onChange={e => setCity(e.target.value)} />
                     <InputField type='number' placeholder='Zip' value={zip} onChange={e => setZip(e.target.value)} />
@@ -219,6 +235,8 @@ const Career = () => {
                                             const formData = new FormData();
                                             formData.append("firstName", firstName);
                                             formData.append("lastName", lastName);
+                                            formData.append("email", email);
+                                            formData.append("phone", phone);
                                             formData.append("dob", DOB);
                                             formData.append("city", city);
                                             formData.append("zipCode", zip);

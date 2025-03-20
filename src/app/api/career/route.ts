@@ -28,6 +28,8 @@ export const POST = async (request: NextRequest) => {
 
     const firstName = formData.get("firstName");
     const lastName = formData.get("lastName");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
     const dob = formData.get("dob");
     const city = formData.get("city");
     const zipCode = formData.get("zipCode");
@@ -46,27 +48,29 @@ export const POST = async (request: NextRequest) => {
 
     const html = `
         <div style="color: black; font-size: 1.2rem; font-weight: 500;">
-            <div>First Name: <b>${firstName}</b></div>
-            <div>Last Name: <b>${lastName}</b></div>
-            <div>DOB: <b>${dob}</b></div>
-            <div>City: <b>${city}</b></div>
-            <div>Zip: <b>${zipCode}</b></div>
-            <div>Driving License: <b>${hasDrivingLicense?.toString().toUpperCase()}</b></div>
-            <div>allowedForWork: <b>${allowedForWork?.toString().toUpperCase()}</b></div>
-            <div>hasHighSchoolDiploma: <b>${hasHighSchoolDiploma?.toString().toUpperCase()}</b></div>
-            <div>hasTransportationInsuranceForJob: <b>${hasTransportationInsuranceForJob?.toString().toUpperCase()}</b></div>
-            <div>agreeForUndergoBackgroundCheck: <b>${agreeForUndergoBackgroundCheck?.toString().toUpperCase()}</b></div>
-            <div>agreeFor4HourTraining: <b>${agreeFor4HourTraining?.toString().toUpperCase()}</b></div>
-            <div>certificates: <b>${certificates?.toString().toUpperCase()}</b></div>
-            <div>availableForWork: <b>${availableForWork?.toString().toUpperCase()}</b></div>
-            <div>hourlyPayExpectation: <b>${hourlyPayExpectation?.toString().toUpperCase()}</b></div>
-            <div>Apply without resume?: <b>${applyWithoutResume?.toString().toLowerCase() === "true" ? "YES" : "NO"}</b></div>
+            <div>First Name: <b>${firstName}</b></div></br>
+            <div style="margin-top: 15px;">Last Name: <b>${lastName}</b></div></br>
+            <div style="margin-top: 15px;">Email: <b>${email}</b></div></br>
+            <div style="margin-top: 15px;">Phone: <b>${phone}</b></div></br>
+            <div style="margin-top: 15px;">DOB: <b>${dob}</b></div></br>
+            <div style="margin-top: 15px;">City: <b>${city}</b></div></br>
+            <div style="margin-top: 15px;">Zip: <b>${zipCode}</b></div></br>
+            <div style="margin-top: 15px;">Allowed to work in the US: <b>${allowedForWork?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Driving License: <b>${hasDrivingLicense?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Has high school diploma: <b>${hasHighSchoolDiploma?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Has reliable transportation and Insurance for the job: <b>${hasTransportationInsuranceForJob?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Agrees to undergo background check: <b>${agreeForUndergoBackgroundCheck?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Agree to take a 4 hour training: <b>${agreeFor4HourTraining?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Applicable certificates: <b>${certificates?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Work availability: <b>${availableForWork?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Hourly pay expectations: <b>${hourlyPayExpectation?.toString().toUpperCase()}</b></div></br>
+            <div style="margin-top: 15px;">Apply without resume?: <b>${applyWithoutResume?.toString().toLowerCase() === "true" ? "YES" : "NO"}</b></div></br>
         </div>
         `
 
 
     // console.log(resume.name)
-    let sendMail = await Mailer.sendMail(ADMIN_INFO.email, "Career", html, applyWithoutResume === "false" ? [
+    let sendMail = await Mailer.sendMail(ADMIN_INFO.email, `for the Career page: ${firstName} filled a job form`, html, applyWithoutResume === "false" ? [
         {
             // @ts-ignore
             filename: resume.name,
@@ -132,6 +136,8 @@ const validate = async (formData: FormData) => {
 
     const firstName = formData.get("firstName");
     const lastName = formData.get("lastName");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
     const dob = formData.get("dob");
     const city = formData.get("city");
     const zipCode = formData.get("zipCode");
@@ -147,7 +153,7 @@ const validate = async (formData: FormData) => {
     const resume = formData.get("resume");
     const applyWithoutResume = formData.get("applyWithoutResume");
 
-    if (!firstName || !lastName || !zipCode || !dob || !city || !hasDrivingLicense || !allowedForWork || !hasHighSchoolDiploma || !hasTransportationInsuranceForJob || !agreeForUndergoBackgroundCheck || !agreeFor4HourTraining || !availableForWork || !hourlyPayExpectation || !applyWithoutResume) {
+    if (!firstName || !lastName || !zipCode || !phone || !email || !dob || !city || !hasDrivingLicense || !allowedForWork || !hasHighSchoolDiploma || !hasTransportationInsuranceForJob || !agreeForUndergoBackgroundCheck || !agreeFor4HourTraining || !availableForWork || !hourlyPayExpectation || !applyWithoutResume) {
         res["message"] = "Mandatory fields are not provided, please fill all the feilds and try again."
         return res;
     }
@@ -164,6 +170,16 @@ const validate = async (formData: FormData) => {
 
     if (!validator.isPostalCode(zipCode.toString(), "any")) {
         res["message"] = "Pin code is missing."
+        return res;
+    }
+
+    if (!validator.isEmail(email.toString())) {
+        res["message"] = "Email is missing."
+        return res;
+    }
+
+    if (`${phone}`.trim().length < 6) {
+        res["message"] = "Invalid phone number."
         return res;
     }
 

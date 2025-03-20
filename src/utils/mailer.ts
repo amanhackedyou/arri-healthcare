@@ -26,7 +26,7 @@ export class Mailer {
 
         const mailOptions = {
             // from: SECRETS.mail.auth.user,
-            from: `Arri Healthcare <${SECRETS.mail.auth.user}>`,
+            from: `Arri System <${SECRETS.mail.auth.user}>`,
             to: to,
             subject: subject,
             html: html,
